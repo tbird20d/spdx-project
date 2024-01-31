@@ -5,7 +5,7 @@
 #
 # To do:
 # - find correct input file(s)
-# - handle objcopy
+# - handle more miscellaneous tools
 #
 # deferred for now:
 # - find tool version for each tool used
@@ -321,8 +321,18 @@ class build_line_class:
         # objcopy --remove-section=.note.gnu.property drivers/firmware/efi/libstub/efi-stub-helper.o drivers/firmware/efi/libstub/efi-stub-helper.stub.o
 
         input_found = False
+        in_option = False
         output_found = False
         for arg in args:
+            # handle "-O <type>"
+            if arg in ["-F", "-I", "-O", "-B", "-K", "-N", "-G", "-L", "-W", "-b", "-j", "-R"]:
+                in_option = True
+                self.args.append(arg)
+                continue
+            if in_option:
+                in_option = False
+                self.args[-1] += (" " + arg)
+                continue
             if arg.startswith("-"):
                 self.args.append(arg)
                 continue
