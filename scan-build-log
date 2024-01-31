@@ -5,17 +5,17 @@
 #
 # To do:
 # - find correct input file(s)
-#   + scan line for multiple regex matches, and use correct ones?
-#   + parse line and differentiate includes, inputs and outputs and args
-#     + detect include files (-include)
-#     + detect output files (-o)
-# + parse and save tool used for each build line
-#   - find tool version for each tool use
-# + parse and save arguments for each tool use
+# - handle objcopy
+#
+# deferred for now:
+# - find tool version for each tool used
 # - write SPDX file for build
 #   - start with tag value format
 
 # handle special tools and syntax:
+#  - handle scripts/asn1_compiler output
+#  - handle cert/extract-cert tool
+#  - handle 'nm' tool
 #  - interpret orc_hash.sh inputs and outputs
 #  - interpret scripts/syscallhdr.sh inputs and outputs
 #  - handle quoted args: (e.g. trap "rm -f ..." EXIT)
@@ -34,7 +34,6 @@
 # grep -o "[^ ]*[.][chS]\($\|[ ]\)" $1 | grep / | sort | uniq
 
 import sys
-#import os
 import re
 
 debug = False
@@ -44,6 +43,7 @@ verbose = False
 #show_unhandled_args = True
 show_unhandled_args = False
 show_unparsed_shell_frags = False
+show_tool_builds = False
 
 def dprint(msg):
     if debug:
@@ -75,6 +75,7 @@ Options:
  -v       Show verbose output
  -u       Show unhandled build arguments
  -s       Warn about unparsed shell fragments
+ -t       Show information about tool builds (e.g. objcopy)
  --debug  Show debug output
 """)
     sys.exit(0)
@@ -83,6 +84,7 @@ class build_line_class:
     def __init__(self, build_line, line_no):
         self.build_line = build_line
         self.line_no = line_no
+        self.is_tool_build = False
         self.tool = "unknown"
         self.tool_type = "unknown"
         self.args = []
@@ -91,6 +93,7 @@ class build_line_class:
         self.outputs = []
 
         self.parse_build_line()
+        #dprint("in __init__(): self=\n'%s'" % str(self))
 
     def detect_tool_type(self):
         tool = self.tool
@@ -101,21 +104,25 @@ class build_line_class:
         if tool.endswith("/cc1") and "gcc" in tool:
             # cc1 converts pre-processed C-language files to assembly
             return "gcc cc1"
-        if tool == "as":
-            # as converts .s files to .o files
-            return "as"
-        if tool == "make":
-            return "make"
         if tool.endswith("ld"):
             return "ld"
+        if tool.endswith("objcopy"):
+            return "objcopy"
+        if tool.endswith("strip"):
+            return "strip"
         if tool in ["mkdir", "rm", "mv", "cp"]:
             return "filesystem utility"
-        if tool in ["echo", "trap"]:
+        if tool in ["echo", "trap", "exit"]:
             return "shell utility"
-        if tool in ["if", "then", "else", "fi", "{", "}"]:
+        if tool in ["if", "then", "else", "fi", "{", "}", "/bin/false"]:
             return "shell script fragment"
-        if tool == "sed":
-            return "sed"
+
+        # for some tools, use their name as their type
+        if tool in ["make", "sed", "printf", "ar", "as", "touch"]:
+            # as converts .s files to .o files
+            # ar creates object archives (.a files)
+            return tool
+
         eprint("Error: unknown tool type for '%s'" % self.tool)
         eprint("build line was: %d: '%s'" % (self.line_no, self.build_line))
         return "unknown"
@@ -180,6 +187,8 @@ class build_line_class:
             if in_output_arg:
                 in_output_arg = False
                 self.outputs.append(arg.strip())
+                if "test/tools" in arg:
+                    self.is_tool_build = True
                 continue
 
             # match *.[chS]
@@ -270,6 +279,92 @@ class build_line_class:
                 print(" ".join(rest))
                 break
 
+    def parse_printf_build_line(self, args):
+        # printf line looks like this:
+        # printf "init/%s " main.o version.o | xargs ar cDPrST init/built-in.a
+
+        # first arg is the format string for the items in the library
+        format_str = args.pop(0)
+        out_path = format_str[1:-4]
+        dprint("out_path='%s'" % out_path)
+        for arg in args:
+            if arg == "|":
+                break
+            self.src_map[out_path + arg] = True
+
+        # second to last arg are the 'ar' flags
+        self.args.append(args[-2])
+
+        # last arg is the library name
+        lib_name = args[-1]
+        # sanity check this
+        if not lib_name.endswith("built-in.a"):
+            eprint("Warning: unrecognized library name: %s" % lib_name)
+        self.outputs.append(lib_name)
+
+    def parse_ar_build_line(self, args):
+        # ar line looks like this:
+        # ar cDPrST drivers/perf/built-in.a
+
+        # first arg is the 'ar' option flags
+        self.args.append(args[0])
+
+        # last arg is the library name
+        lib_name = args[-1]
+        # sanity check this
+        if not lib_name.endswith("built-in.a"):
+            eprint("Warning: unrecognized library name: %s" % lib_name)
+        self.outputs.append(lib_name)
+
+    def parse_objcopy_build_line(self, args):
+        # objcopy line may look like this:
+        # objcopy --remove-section=.note.gnu.property drivers/firmware/efi/libstub/efi-stub-helper.o drivers/firmware/efi/libstub/efi-stub-helper.stub.o
+
+        input_found = False
+        output_found = False
+        for arg in args:
+            if arg.startswith("-"):
+                self.args.append(arg)
+                continue
+            if not input_found:
+                input_found = True
+                self.src_map[arg] = True
+                continue
+            if not output_found:
+                output_found = True
+                self.outputs.append(arg)
+                continue
+            eprint("Warning: unrecognized objcopy parameter: '%s'" % arg)
+
+        return
+
+    def parse_strip_build_line(self, args):
+        # strip line may look like this:
+        # strip --strip-debug -o drivers/firmware/efi/libstub/lib-cmdline.stub.o drivers/firmware/efi/libstub/lib-cmdline.o
+        input_found = False
+        output_found = False
+        for arg in args:
+            if arg == "-o":
+                in_output_arg = True
+                continue
+            if arg.startswith("-"):
+                self.args.append(arg)
+                continue
+            if in_output_arg:
+                in_output_arg = False
+                output_found = True
+                self.outputs.append(arg)
+                continue
+            if not input_found:
+                input_found = True
+                self.src_map[arg] = True
+                continue
+            if not output_found:
+                output_found = True
+                self.outputs.append(arg)
+            eprint("Warning: unrecognized objcopy parameter: '%s'" % arg)
+
+        return
 
     def parse_build_line(self):
         args = self.build_line.split()
@@ -283,30 +378,44 @@ class build_line_class:
             self.tool = tool
             self.tool_type = self.detect_tool_type()
 
-        dprint("tool=%s" % tool)
+        dprint("tool=%s, tool_type=%s" % (tool, self.tool_type))
 
         if self.tool in ["make", "mkdir"]:
             # FIXTHIS - detect make args, directory, and target?
             return
-        if self.tool_type.startswith("shell"):
-            # FIXTHIS - parse shell fragments to decipher build line?
-            vprint("Warning: NOT parsing build line for tool '%s" % self.tool)
-            return
-
         if self.tool_type in ["gcc compiler", "gcc cc1", "as"]:
             self.parse_gcc_build_line(args)
             return
         if self.tool_type in ["ld"]:
             self.parse_ld_build_line(args)
             return
-        vprint("Warning: NOT parsing build line for tool '%s" % self.tool)
+        if self.tool_type == "printf" and "| xargs ar" in self.build_line:
+            self.parse_printf_build_line(args)
+            return
+        if self.tool_type == "ar":
+            self.parse_ar_build_line(args)
+            return
+        if self.tool_type == "objcopy":
+            self.parse_objcopy_build_line(args)
+            return
+        if self.tool_type == "strip":
+            self.parse_strip_build_line(args)
+            return
+
+        if self.tool_type.startswith("shell"):
+            # FIXTHIS - parse shell fragments to decipher build line?
+            vprint("Warning: NOT parsing build line for shell fragment (tool '%s')" % self.tool)
+            return
+
+        vprint("Warning: NOT parsing build line for tool '%s'" % self.tool)
+        return
 
     def sources(self):
         return list(self.src_map.keys())
 
     def __str__(self):
         # produce human-readable info about build line
-        s = "== build line ==\n"
+        s = "== build line object ==\n"
         s += "tool=%s\n" % self.tool
         s += "tool_type=%s\n" % self.tool_type
         s += "includes=%s\n" % self.includes
@@ -336,6 +445,9 @@ def parse_line(line, line_no):
 def main():
     global debug
     global verbose
+    global show_unhandled_args
+    global show_unparsed_shell_frags
+    global show_tool_builds
 
     # parse command line arguments
     if "-h" in sys.argv or "--help" in sys.argv:
@@ -350,8 +462,12 @@ def main():
         sys.argv.remove("-u")
 
     if "-s" in sys.argv:
-        show_unparse_shell_frags = True
+        show_unparsed_shell_frags = True
         sys.argv.remove("-s")
+
+    if "-t" in sys.argv:
+        show_tool_builds = True
+        sys.argv.remove("-t")
 
     if "--debug" in sys.argv:
         debug = True
@@ -364,7 +480,7 @@ def main():
 
     logfile = sys.argv[1]
     fd = open(logfile, "r")
-    src_map = {}
+    build_lines = []
     line_prefix = ""
     in_ignore_block = False
     line_no = 0
@@ -383,6 +499,15 @@ def main():
         if line.startswith("#"):
             continue
 
+        # when using 'make V=1", scripts/link-vmlinux.sh emits debug
+        # shell output (set +x), and all its lines are prefixed with
+        # "+ " - ignore all these debug lines
+        # (there is a gcc and a few ld lines in there, but for now
+        # ignore this part of the build
+        # Note: it includes the init/version-timestamp.c build)
+        if line.startswith("+ "):
+            continue
+
         # handle blank line
         if not line:
             if line_prefix:
@@ -391,6 +516,15 @@ def main():
             else:
                 continue
 
+        # ignore output from some scripts and tools
+        if line.startswith("Extracted "):
+            dprint("ignoring line")
+            continue
+        if line.startswith("Pass "):
+            dprint("ignoring line")
+            continue
+
+
         # ignore some specific blocks of gcc/cc1 output
         # detect beginning of ignore blocks
         if line.startswith("Using built-in specs."):
@@ -398,6 +532,10 @@ def main():
             dprint("starting ignore block")
             continue
         if line.startswith("GNU C11"):
+            in_ignore_block = True
+            dprint("starting ignore block")
+            continue
+        if line.startswith("GNU C17"):
             in_ignore_block = True
             dprint("starting ignore block")
             continue
@@ -474,8 +612,7 @@ def main():
 
                 bl = parse_line(part.strip(), line_no)
                 if bl:
-                    for src in bl.sources():
-                        src_map[src] = 1
+                    build_lines.append(bl)
                     dprint(str(bl))
             continue
 
@@ -486,11 +623,20 @@ def main():
 
         bl = parse_line(line.strip(), line_no)
         if bl:
-            for src in bl.sources():
-                src_map[src] = 1
+            build_lines.append(bl)
             dprint(str(bl))
 
-    src_list_full = list(src_map.keys())
+    # OK - now we have a list of parsed build-line objects
+
+    # retrieve all the filepaths from that list
+    src_filepath_map = {}
+    for bl in build_lines:
+        if bl.is_tool_build and not show_tool_builds:
+            continue
+        for src_filepath in bl.sources():
+            src_filepath_map[src_filepath] = 1
+
+    src_list_full = list(src_filepath_map.keys())
     src_list = []
     for src in src_list_full:
         if src.startswith("/tmp/") and src.endswith(".s"):
