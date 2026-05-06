@@ -1,0 +1,918 @@
+#!/usr/bin/python
+# scan-build-log - scan a build log produced by the kernel build system
+#
+# generate a list of source files found in a build log
+#
+# To do:
+# - find correct input file(s)
+# - handle more miscellaneous tools
+#
+# deferred for now:
+# - find tool version for each tool used
+# - write SPDX file for build
+#   - start with tag value format
+
+# handle special tools and syntax:
+#  + handle "rm -rf ... && ar ..."
+#  - handle scripts/asn1_compiler output
+#  + handle objcopy --remove-section {space} <section_name>
+#  + handle cert/extract-cert tool
+#  + handle 'nm' tool
+#  - interpret orc_hash.sh inputs and outputs
+#  - interpret scripts/syscallhdr.sh inputs and outputs
+#  - handle quoted args: (e.g. trap "rm -f ..." EXIT)
+#  + continuation lines - ending in '\'
+#  + use of ; for multiple shell lines - ugh
+#  - if ... || ! cmp
+#  + mv version.h .tmp_version.h
+#  + foo bar > version.h
+#  + compiler output: "Using built-in specs." until "COLLECT_GCC_OPTIONS="
+#    + ignore all lines between these
+#  + ignore cc1 include search dirs
+#    - from "#include ... search starts here" to "End of search list."
+
+# NOTE: Here is what scan-build-log.sh uses:
+# echo "Source files mentioned in the build log:"
+# grep -o "[^ ]*[.][chS]\($\|[ ]\)" $1 | grep / | sort | uniq
+
+import sys
+import re
+
+debug = False
+verbose = False
+
+# use this while in development, so see what the parser misses
+#show_unhandled_args = True
+show_unhandled_args = False
+show_unparsed_shell_frags = False
+show_tool_builds = False
+
+def dprint(msg):
+    if debug:
+        print("DEBUG: "+msg)
+        sys.stdout.flush()
+
+def vprint(msg):
+    if verbose:
+        print(msg)
+        sys.stdout.flush()
+
+def eprint(msg):
+    sys.stderr.write(msg + "\n")
+    sys.stderr.flush()
+
+def usage():
+    print("""Usage: scan-build-log [<options>] <build.log>
+This scans a build log for the Linux kernel, and outputs a list
+of source files referenced in the build.
+
+A build log can be created by using the arguments: V=1 EXTRA_CFLAGS=-v with
+the kernel make command, and putting the output (both stdout and stderr) to
+a file, like so:
+
+ $ make V=1 EXTRA_CFLAGS=-v vmlinux 2>&1 | tee build.log
+
+Options:
+ -h       Show usage help
+ -v       Show verbose output
+ -u       Show unhandled build arguments
+ -s       Warn about unparsed shell fragments
+ -t       Show information about tool builds (e.g. objtool)
+ --debug  Show debug output
+""")
+    sys.exit(0)
+
+class build_line_class:
+    def __init__(self, build_line, line_no):
+        self.build_line = build_line
+        self.line_no = line_no
+        self.is_tool_build = False
+        self.tool = "unknown"
+        self.tool_type = "unknown"
+        self.args = []
+        self.includes = []
+        self.src_map = {}
+        self.outputs = []
+
+        self.parse_build_line()
+        #dprint("in __init__(): self=\n'%s'" % str(self))
+
+    def detect_tool_type(self):
+        tool = self.tool
+        if tool.endswith("gcc"):
+            return "gcc compiler"
+        if tool.endswith(".sh"):
+            return "shell script"
+        if tool.endswith("/cc1") and "gcc" in tool:
+            # cc1 converts pre-processed C-language files to assembly
+            return "gcc cc1"
+        if tool.endswith("ld"):
+            return "ld"
+        if tool.endswith("objcopy"):
+            return "objcopy"
+        if tool == "nm":
+            return "nm"
+
+        if tool.endswith("objtool"):
+            return "objtool"
+        if tool.endswith("strip"):
+            return "strip"
+        if tool in ["mkdir", "rm", "cp"]:
+            return "filesystem utility"
+        if tool in ["echo", "exit"]:
+            return "shell utility"
+        if tool in ["if", "then", "else", "fi", "{", "}", "/bin/false", "/bin/false)", "(echo", ")", "trap"]:
+            return "shell script fragment"
+        if tool.startswith("make["):
+            return "make"
+
+        if tool in ["./scripts/remove-stale-files", "scripts/mod/mk_elfconfig",
+                "cat", "arch/x86/tools/relocs", "certs/extract-cert",
+                "scripts/selinux/genheaders","./scripts/asn1_compiler",
+                "lib/gen_crc32table", "perl", "awk",
+                "drivers/tty/vt/conmakehash",
+                "arch/x86/entry/vdso/vdso2c"]:
+            return "kernel build script"
+
+        # FIXTHIS - may need to handle these, if output from link-vmlinux.sh
+        if tool in ["AS", "SORTTAB", "KSYMS", "LD", "NM"]:
+            return "script output"
+
+        # for some tools, use their name as their type
+        if tool in ["make", "sed", "printf", "ar", "as", "touch", "mv", "trap"]:
+            # as converts .s files to .o files
+            # ar creates object archives (.a files)
+            return tool
+
+        eprint("Error: unknown tool type for '%s'" % self.tool)
+        self.report_line()
+        return "unknown"
+
+    def parse_gcc_build_line(self, args):
+        in_include_arg = False
+        in_output_arg = False
+        save_next_arg = False
+        option = ""
+
+        for arg in args:
+            if save_next_arg:
+                save_next_arg = False
+                # ignore this argument token as possible source, but save
+                # as part of an option
+                full_opt = option + " " + arg
+                self.args.append(full_opt)
+                continue
+
+            if arg[:2] in ["-E", "-W", "-f", "-m", "-v", "-O", "-c", "-p", "-l", "-S", "-U"]:
+                self.args.append(arg)
+                continue
+
+            # '-I' and "-D" can have their argument next to it or separate
+            # handle the next to it case here, and the
+            if arg[:2] in ["-I", "-D"] and len(arg)>2:
+                self.args.append(arg)
+                continue
+
+            if arg in ["-nostdinc", "-quiet", "--64", "-g", "-P", "-C", "-", "-ggdb3", "--32"]:
+                self.args.append(arg)
+                continue
+
+            # handle options with args that should be ignored
+            if arg in ["-I", "-D", "-MMD", "-auxbase-strip", "-dumpbase", "-imultiarch", "--remove-section", "--param", "-imultilib"]:
+                option = arg
+                save_next_arg = True
+                continue
+
+            should_continue_outer = False
+            for opt in ["-std=", "--param="]:
+                if arg.startswith(opt):
+                    self.args.append(arg)
+                    should_continue_outer = True
+                    break
+
+            if should_continue_outer:
+                continue
+
+            if arg[:2] in ["-M"]:
+                self.args.append(arg)
+                continue
+
+            if arg == "-include":
+                in_include_arg = True
+                continue
+
+            if arg == "-o":
+                in_output_arg = True
+                continue
+
+            if in_output_arg:
+                in_output_arg = False
+                self.outputs.append(arg.strip())
+
+                # This catches tools besides objtool
+                if "test/tools" in arg:
+                    self.is_tool_build = True
+                continue
+
+            # match *.[chS]
+            if re.match(ur"\S+[.][ochSs]", arg):
+                if in_include_arg:
+                    in_include_arg = False
+                    self.includes.append(arg)
+                else:
+                    self.src_map[arg] = True
+                continue
+
+            if in_include_arg:
+                print("Warning: unrecognized include file type for file: %s" % arg)
+                in_include_arg = False
+                continue
+
+            if arg.startswith("-"):
+                print("Warning: unrecognized build argument: %s" % arg)
+
+            # ignore anything else
+            if show_unhandled_args:
+                eprint("Warning: unrecognized build argument: %s" % arg)
+                self.report_line()
+
+    def parse_ld_build_line(self, args):
+        in_output_arg = False
+        save_next_arg = False
+        option = ""
+
+        for arg in args:
+            if save_next_arg:
+                save_next_arg = False
+                # ignore this argument token as possible source, but save
+                # as part of an option
+                full_opt = option + " " + arg
+                self.args.append(full_opt)
+                continue
+
+            if arg[:2] in ["-B"]:
+                self.args.append(arg)
+                continue
+
+            if arg in ["-shared", "--no-undefined", "-r", "--eh-frame-hdr", "--emit-relocs"]:
+                self.args.append(arg)
+                continue
+
+            # handle options with args that should be ignored
+            if arg in ["-z", "-m", "-soname", "-T"]:
+                option = arg
+                save_next_arg = True
+                continue
+
+            should_continue_outer = False
+            for opt in ["--hash-style=", "--build-id=", "--"]:
+                if arg.startswith(opt):
+                    self.args.append(arg)
+                    should_continue_outer = True
+                    break
+
+            if should_continue_outer:
+                continue
+
+            if arg == "-o":
+                in_output_arg = True
+                continue
+
+            if in_output_arg:
+                in_output_arg = False
+                self.outputs.append(arg)
+                continue
+
+            # match *.[chS]
+            if re.match(ur"\S+[.][oa]", arg) or arg.endswith(".dbg"):
+                self.src_map[arg] = True
+                continue
+
+            if arg.startswith("-"):
+                print("Warning: unrecognized build argument: %s" % arg)
+
+            # ignore anything else
+            if show_unhandled_args:
+                print("Warning: unrecognized build argument: %s" % arg)
+
+            if arg == "&&":
+                # get a shell construct, warn and give up
+                print("Warning: Rest of build line is a shell construct")
+                rest = args[args.index(arg) + 1:]
+                print(" ".join(rest))
+                break
+
+    def parse_printf_build_line(self, args):
+        # printf line looks like this:
+        # printf "init/%s " main.o version.o | xargs ar cDPrST init/built-in.a
+        # args=['"init/%s', '"', 'main.o', 'version.o', '|', 'xargs', 'ar', 'cDPrST', 'init/build-in.a']
+        dprint("args=%s" % str(args))
+
+        # first 2 args are the format string for the items in the library
+        format_str = args.pop(0) + args.pop(0)
+        out_path = format_str[1:-3]
+        dprint("out_path='%s'" % out_path)
+        new_tool = False
+        xarg = False
+        for arg in args:
+            if arg == "|":
+                new_tool = True
+                continue
+            if new_tool:
+                if arg=="xargs":
+                    continue
+                if arg.endswith("ar"):
+                    # change to 'ar' tool
+                    new_tool = False
+                    self.tool = "ar"
+                    self.tool_type = "ar"
+                break
+
+            self.src_map[out_path + arg] = True
+
+        if self.tool == "ar":
+            # second to last arg has the 'ar' flags
+            self.args.append(args[-2])
+
+            # last arg is the library name
+            lib_name = args[-1]
+            # sanity check this
+            if not lib_name.endswith("built-in.a"):
+                eprint("Warning: unrecognized library name: %s" % lib_name)
+            self.outputs.append(lib_name)
+        else:
+            eprint("Unrecognized tool used with printf: '%s'" % arg)
+        return
+
+    def parse_ar_build_line(self, args):
+        # ar line looks like this:
+        # ar cDPrST drivers/perf/built-in.a
+
+        # first arg is the 'ar' option flags
+        self.args.append(args[0])
+
+        # last arg is the library name
+        lib_name = args[-1]
+        # sanity check this
+        if not lib_name.endswith("built-in.a"):
+            eprint("Warning: unrecognized library name: %s" % lib_name)
+        self.outputs.append(lib_name)
+
+    def parse_mv_build_line(self, args):
+        # mv line looks like this:
+        # mv -f include/config/.tmp_kernel.release include/config/kernel.release
+
+        if "-f" in args:
+            self.args.append("-f")
+            args.remove("-f")
+
+        try:
+            self.src_map[args[0]] = True
+            self.outputs.append(args[1])
+        except IndexError:
+            eprint("Warning: unrecognized arguments for 'mv'")
+            self.report_line()
+
+    def parse_nm_build_line(self, args):
+        # nm line looks like this:
+        # nm arch/x86/realmode/rm/header.o arch/x86/realmode/rm/trampoline_64.o ... | sed -n -r -e 's/^([0-9a-fA-F]+) [ABCDGRSTVW] (.+)$/pa_^B = ^B;/p' | sort | uniq > arch/x86/realmode/rm/pasyms.h
+
+        # tokens to first vertical bar are inputs
+        for arg in args:
+            if arg == "|":
+                break
+            else:
+                self.src_map[arg] = True
+
+        # last token is output
+        try:
+            if args[-2] == ">":
+                self.outputs.append(args[-1])
+            else:
+                eprint("Warning: missing '> {outfile} for 'nm'")
+                self.report_line()
+
+        except IndexError:
+            eprint("Warning: unrecognized arguments for 'nm'")
+            self.report_line()
+        return
+
+    def parse_objcopy_build_line(self, args):
+        # objcopy line may look like this:
+        # objcopy --remove-section=.note.gnu.property drivers/firmware/efi/libstub/efi-stub-helper.o drivers/firmware/efi/libstub/efi-stub-helper.stub.o
+        # or this:
+        # objcopy -S --remove-section __ex_table  arch/x86/entry/vdso/vdso64.so.dbg arch/x86/entry/vdso/vdso64.so
+
+        input_found = False
+        in_option = False
+        output_found = False
+        for arg in args:
+            # handle "-O <type>"
+            if arg in ["-F", "-I", "-O", "-B", "-K", "-N", "-G", "-L", "-W", "-b", "-j", "-R"]:
+                in_option = True
+                self.args.append(arg)
+                continue
+            if in_option:
+                in_option = False
+                self.args[-1] += (" " + arg)
+                continue
+            if arg.startswith("-"):
+                if arg == "--remove-section":
+                    in_option = True
+                    self.args.append(arg)
+                    continue
+                self.args.append(arg)
+                continue
+            if not input_found:
+                input_found = True
+                self.src_map[arg] = True
+                continue
+            if not output_found:
+                output_found = True
+                self.outputs.append(arg)
+                continue
+            eprint("Warning: unrecognized objcopy parameter: '%s'" % arg)
+
+        return
+
+    def parse_strip_build_line(self, args):
+        # strip line may look like this:
+        # strip --strip-debug -o drivers/firmware/efi/libstub/lib-cmdline.stub.o drivers/firmware/efi/libstub/lib-cmdline.o
+        input_found = False
+        output_found = False
+        for arg in args:
+            if arg == "-o":
+                in_output_arg = True
+                continue
+            if arg.startswith("-"):
+                self.args.append(arg)
+                continue
+            if in_output_arg:
+                in_output_arg = False
+                output_found = True
+                self.outputs.append(arg)
+                continue
+            if not input_found:
+                input_found = True
+                self.src_map[arg] = True
+                continue
+            if not output_found:
+                output_found = True
+                self.outputs.append(arg)
+            eprint("Warning: unrecognized objcopy parameter: '%s'" % arg)
+
+        return
+
+    def report_line(self):
+        eprint("build line was: %d: '%s'" % (self.line_no, self.build_line))
+
+    def parse_kernel_build_script_line(self, args):
+        if self.tool.endswith("/remove-stale-files"):
+            return
+
+        if self.tool.endswith("/extract-cert"):
+            return
+
+        if self.tool == "scripts/mod/mk_elfconfig":
+            if args[0] == "<" and args[2] == ">":
+                self.src_map[args[1]] = True
+                self.outputs.append(args[3])
+            else:
+                eprint("Warning: unrecognized arguments to mk_elfconfig")
+                self.report_line()
+            return
+
+        if self.tool == "cat":
+            if args[1] == ">":
+                self.src_map[args[0]] = True
+                self.outputs.append(args[2])
+            else:
+                eprint("Warning: unrecognized arguments to cat")
+                self.report_line()
+            return
+
+        if self.tool.endswith("/vdso2c"):
+            for arg in args[:-1]:
+                self.src_map[args[0]] = True
+            self.outputs.append(args[-1])
+            return
+
+        if self.tool.endswith("/relocs"):
+            # sample relocs line:
+            # arch/x86/tools/relocs --realmode arch/x86/realmode/rm/realmode.elf > arch/x86/realmode/rm/realmode.relocs
+            if args[-2] == ">":
+                self.src_map[args[-3]] = True
+                self.outputs.append(args[-1])
+            else:
+                eprint("Warning: unrecognized arguments to 'relocs'")
+                self.report_line()
+
+            # catch args also
+            try:
+                dprint("reloc args=%s" % args)
+                for arg in args[:-4]:
+                    dprint("reloc arg=%s" % arg)
+                    self.args.append(arg)
+            except:
+                pass
+            return
+
+        if self.tool.endswith("/asn1_compiler"):
+            # sample asn1_compiler line:
+            # ./scripts/asn1_compiler crypto/asymmetric_keys/x509.asn1 crypto/asymmetric_keys/x509.asn1.c crypto/asymmetric_keys/x509.asn1.h
+            for arg in args[:-1]:
+                self.src_map[arg] = True
+            self.outputs.append(args[-1])
+            return
+
+        eprint("Error: Unhandled kernel build tool '%s'" % self.tool)
+        self.report_line()
+
+    def parse_sed_build_line(self, args):
+        # this line is of the form "sed ... < somefile ... > outfile"
+        in_input = False
+        in_output = False
+        for arg in args:
+            if arg == "<":
+                in_input = True
+                continue
+            if in_input:
+                if arg.endswith(";"):
+                    arg = arg[:-1]
+                self.src_map[arg] = True
+                in_input = False
+                continue
+            if arg == ">":
+                in_output = True
+                continue
+            if in_output:
+                self.outputs.append(arg)
+                in_output = False
+                continue
+            self.args.append(arg)
+
+        if not self.outputs:
+            eprint("Error: missing output file for sed build line:")
+            self.report_line()
+
+
+    def parse_build_line(self):
+        args = self.build_line.split()
+
+        if not args:
+            self.tool = "ERROR"
+            self.tool_type = "ERROR"
+            return
+
+        tool = args.pop(0)
+        if tool == "sh":
+            script = args.pop(0)
+            self.tool = script
+            self.tool_type = "shell script"
+        else:
+            self.tool = tool
+            self.tool_type = self.detect_tool_type()
+
+        dprint("tool=%s, tool_type=%s" % (tool, self.tool_type))
+
+        if self.tool in ["make", "mkdir", "rm"]:
+            # FIXTHIS - detect make args, directory, and target?
+            return
+
+        if self.tool_type in ["make"]:
+            # ignore make lines
+            # note: some make lines don't start with "make ...", which
+            # is caught above (e.g. "make[4] ...")
+            return
+
+        if self.tool_type in ["gcc compiler", "gcc cc1", "as"]:
+            self.parse_gcc_build_line(args)
+            return
+        if self.tool_type in ["ld"]:
+            self.parse_ld_build_line(args)
+            return
+        if self.tool_type == "printf" and "| xargs ar" in self.build_line:
+            self.parse_printf_build_line(args)
+            return
+        if self.tool_type == "ar":
+            self.parse_ar_build_line(args)
+            return
+        if self.tool_type == "mv":
+            self.parse_mv_build_line(args)
+            return
+        if self.tool_type == "objcopy":
+            self.parse_objcopy_build_line(args)
+            return
+        if self.tool_type == "strip":
+            self.parse_strip_build_line(args)
+            return
+        if self.tool_type == "touch":
+            self.outputs.append(args)
+            return
+        if self.tool_type == "nm":
+            self.parse_nm_build_line(args)
+            return
+
+        if self.tool_type == "kernel build script":
+            self.parse_kernel_build_script_line(args)
+            return
+
+        if self.tool_type.startswith("shell"):
+            # ignore some shell script fragments
+            if self.tool in ["if", "trap", "exit"]:
+                dprint("Ignoring shell command '%s'" % self.tool)
+                return
+
+            # FIXTHIS - parse other shell fragments to decipher build line?
+            vprint("Warning: NOT parsing build line for shell fragment (tool '%s')" % self.tool)
+            return
+
+        if self.tool_type == "sed":
+            self.parse_sed_build_line(args)
+            return
+
+        vprint("Warning: NOT parsing build line for tool '%s'" % self.tool)
+        self.report_line()
+        return
+
+    def sources(self):
+        return list(self.src_map.keys())
+
+    def __str__(self):
+        # produce human-readable info about build line
+        s = "== build line object ==\n"
+        s += "tool=%s\n" % self.tool
+        s += "tool_type=%s\n" % self.tool_type
+        s += "includes=%s\n" % self.includes
+        s += "sources=%s\n" % self.sources()
+        s += "outputs=%s\n" % self.outputs
+        s += "args=%s\n" % self.args
+        return s
+
+
+# echo "Source files mentioned in the build log:"
+# grep -o "[^ ]*[.][chS]\($\|[ ]\)" $1 | grep / | sort | uniq
+
+# find strings that end with .c, .h or .S in a line
+# return the string as a source file, or None if no match was found
+def parse_line(line, line_no):
+    dprint("line=%s" % line)
+    bl = build_line_class(line, line_no)
+    if bl.tool != "unknown":
+        vprint(bl.tool.upper())
+    if bl.sources():
+        vprint("  sources found: %s" % bl.sources())
+        return bl
+    else:
+        vprint("  no sources found")
+        return None
+
+def main():
+    global debug
+    global verbose
+    global show_unhandled_args
+    global show_unparsed_shell_frags
+    global show_tool_builds
+
+    # parse command line arguments
+    if "-h" in sys.argv or "--help" in sys.argv:
+        usage()
+
+    if "-v" in sys.argv:
+        verbose = True
+        sys.argv.remove("-v")
+
+    if "-u" in sys.argv:
+        show_unhandled_args = True
+        sys.argv.remove("-u")
+
+    if "-s" in sys.argv:
+        show_unparsed_shell_frags = True
+        sys.argv.remove("-s")
+
+    if "-t" in sys.argv:
+        show_tool_builds = True
+        sys.argv.remove("-t")
+
+    if "--debug" in sys.argv:
+        debug = True
+        sys.argv.remove("--debug")
+
+    if len(sys.argv) < 2:
+        eprint("Error: missing <build.log> argument")
+        eprint("Use '-h' for usage help")
+        sys.exit(1)
+
+    logfile = sys.argv[1]
+    fd = open(logfile, "r")
+    build_lines = []
+    line_prefix = ""
+    in_ignore_block = False
+    line_no = 0
+    for line in fd.readlines():
+        line_no += 1
+        line = line.strip()
+
+        dprint("in main loop: %d: line='%s'" % (line_no, line))
+
+        if line.endswith("search starts here:"):
+            in_ignore_block = True
+            dprint("starting ignore block")
+            continue
+
+        # ignore comments
+        if line.startswith("#"):
+            continue
+
+        # when using 'make V=1", scripts/link-vmlinux.sh emits debug
+        # shell output (set +x), and all its lines are prefixed with
+        # "+ " - ignore all these debug lines
+        # (there is a gcc and a few ld lines in there, but for now
+        # ignore this part of the build
+        # Note: it includes the init/version-timestamp.c build)
+        if line.startswith("+ "):
+            continue
+
+        # handle blank line
+        if not line:
+            if line_prefix:
+                line = line_prefix
+                line_prefix = ""
+            else:
+                continue
+
+        # ignore output from some scripts and tools
+        if line.startswith("Extracted "):
+            dprint("ignoring line")
+            continue
+        if line.startswith("Pass "):
+            dprint("ignoring line")
+            continue
+
+
+        # ignore some specific blocks of gcc/cc1 output
+        # detect beginning of ignore blocks
+        if line.startswith("Using built-in specs."):
+            in_ignore_block = True
+            dprint("starting ignore block")
+            continue
+        if line.startswith("GNU C11"):
+            in_ignore_block = True
+            dprint("starting ignore block")
+            continue
+        if line.startswith("GNU C17"):
+            in_ignore_block = True
+            dprint("starting ignore block")
+            continue
+        if line.startswith("GNU assembler version"):
+            in_ignore_block = True
+            dprint("starting ignore block")
+            continue
+        if line.startswith("COMPILER_PATH="):
+            in_ignore_block = True
+            dprint("starting ignore block")
+            continue
+
+
+        # detect end of ignore blocks
+        if line.startswith("COLLECT_GCC_OPTIONS="):
+            in_ignore_block = False
+            dprint("ending ignore block")
+            continue
+
+        if line.startswith("End of search list"):
+            in_ignore_block = False
+            dprint("ending ignore block")
+            continue
+
+        if line.startswith("as "):
+            in_ignore_block = False
+            dprint("ending ignore block")
+
+        if in_ignore_block:
+            continue
+
+        if line_prefix:
+            line = line_prefix + line
+            line_prefix = ""
+            dprint("line with prefix='%s'" % line)
+
+        if line.endswith("\\"):
+            dprint("found line continuation")
+            dprint("line='%s'" % line)
+            line_prefix = line[:-1]
+            dprint("line_prefix='%s'" % line_prefix)
+            continue
+
+
+        if ";" in line and not (("| sed" in line and "/pa_" in line) or \
+            ("shipped_regdb_certs" in line) or \
+            ('{' in line and 'echo ""; sed' in line)):
+            # this line is a shell fragment
+            # where each part needs to be split and handled separately
+            parts = line.split(";")
+            dprint("parts=%s" % parts)
+            sed_line = ""
+            for part in parts:
+                # skip shell/make error management commands
+                if part.strip() == "set -e":
+                    continue
+                if part.lstrip().startswith("sed "):
+                    # reconstruct sed line as we process tokens
+                    sed_line = part.lstrip()
+                    dprint("sed_line='%s'" % sed_line)
+
+                    # find out if the whole regex is present
+                    # if both single-quotes are present, we're done
+                    if sed_line.count("'") != 2:
+                        continue
+                if sed_line:
+                    sed_line += ";" + part
+                    if sed_line.count("'") != 2:
+                        dprint("sed_line='%s'" % sed_line)
+                        continue
+
+                    part = sed_line
+                    sed_line = ""
+
+                dprint("part='%s'" % part)
+
+                bl = parse_line(part.strip(), line_no)
+                if bl:
+                    build_lines.append(bl)
+                    dprint(str(bl))
+            continue
+
+        # handle this obnoxious line (and a few more like it):
+        # set -e; mkdir -p scripts/mod/; trap "rm -f scripts/mod/.tmp_devicetable-offsets.h" EXIT; { 	 echo "#ifndef __DEVICETABLE_OFFSETS_H__"; echo "#define __DEVICETABLE_OFFSETS_H__"; echo "/*"; echo " * DO NOT MODIFY."; echo " *"; echo " * This file was generated by Kbuild"; echo " */"; echo ""; sed -ne 	's:^[[:space:]]*\.ascii[[:space:]]*"\(.*\)".*:\1:; /^->/{s:->#\(.*\):/* \1 */:; s:^->\([^ ]*\) [\$#]*\([^ ]*\) \(.*\):#define \1 \2 /* \3 */:; s:->::; p;}' < scripts/mod/devicetable-offsets.s; echo ""; echo "#endif"; } > scripts/mod/.tmp_devicetable-offsets.h; if [ ! -r scripts/mod/devicetable-offsets.h ] || ! cmp -s scripts/mod/devicetable-offsets.h scripts/mod/.tmp_devicetable-offsets.h; then : '  UPD     scripts/mod/devicetable-offsets.h'; mv -f scripts/mod/.tmp_devicetable-offsets.h scripts/mod/devicetable-offsets.h; fi
+        if ";" in line and ("{" in line and 'echo ""; sed' in line):
+            parts = line.split(";")
+            dprint("parts=%s" % parts)
+            sed_line = ""
+            for part in parts:
+                # skip shell/make error management commands
+                if part.strip() == "set -e":
+                    continue
+
+                if part.lstrip().startswith("sed "):
+                    # reconstruct sed line as we process tokens
+                    sed_line = part.lstrip()
+                    dprint("sed_line='%s'" % sed_line)
+                    continue
+
+                if sed_line:
+                    sed_line += ";" + part
+
+                    # detect end of sed line (kind of, keep one extra echo)
+                    # when we see "} > ", we're done
+                    if not part.lstrip().startswith("} > "):
+                        dprint("sed_line='%s'" % sed_line)
+                        continue
+
+                    part = sed_line
+                    sed_line = ""
+
+                dprint("part='%s'" % part)
+
+                bl = parse_line(part.strip(), line_no)
+                if bl:
+                    build_lines.append(bl)
+                    dprint(str(bl))
+            continue
+
+        # FIXTHIS - handle shell piping as a build tool
+        if "|" in line:
+            if "xargs" in line:
+                print("NOTE: found xargs line:\n'%s'" % line)
+
+        bl = parse_line(line.strip(), line_no)
+        if bl:
+            build_lines.append(bl)
+            dprint(str(bl))
+
+    # OK - now we have a list of parsed build-line objects
+
+    # retrieve all the filepaths from that list
+    src_filepath_map = {}
+    for bl in build_lines:
+        if bl.is_tool_build and not show_tool_builds:
+            continue
+        for src_filepath in bl.sources():
+            src_filepath_map[src_filepath] = 1
+
+    src_list_full = list(src_filepath_map.keys())
+    src_list = []
+    for src in src_list_full:
+        if src.startswith("/tmp/") and src.endswith(".s"):
+            continue
+        if src.endswith(".o"):
+            continue
+        src_list.append(src)
+
+    src_list.sort()
+    for src in src_list:
+        print(src)
+
+if __name__ == "__main__":
+    main()
+

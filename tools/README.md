@@ -1,0 +1,43 @@
+Here is some information about the tools in this directory:
+
+The tools fall into 4 categories:
+ helper tools, file list checkers, report tools, build log scanner
+
+== Tools ==
+ * helper tools:
+   * guess-license - scan file for license text and suggest an appropriate SDPX-license identifier line
+   * git-when-introduced.sh - provide info on when a file was first introduced into the kernel source tree
+     - should be used in a Linux repo with full history
+   * git-when-deleted.sh - provide info on when a file was deleted from the kernel source tree
+   * files-worked-on - show files that were worked on (based on commits that match certain criteria: author, date range, etc.)
+   * diffinfo - do patch analysis similar to diffstat, but with options for filtering files and hunks
+   * spdx-next.sh - has a list of the next directories to work on
+   * spdx-count-ids.sh - generates a list of the different ids used in a directory
+
+ * file list checkers: (check specific file lists for missing spdx id lines)
+   * check-files-for-spdx.sh - scan a list of files for spdx id lines
+   * get-missing-spdx-for-source-files.sh - scan only source files for missing spdx id lines
+   * top-dirs-from-file-list.py - gives counts of how many files are in each top dir (used to see missing counts from build data)
+
+ * generate kernel reports:
+   * gen-spdx-top-dir-report.sh
+   * report-spdx-data.sh - all spdx lines, their author and date of introduction
+     - generates a csv file
+   * author-report-breakdown-by-author.sh
+   * author-report-breakdown-by-year.sh
+
+ * build log scanner:
+   * scan-build-log - my attempt at deriving build files from output of kernel make
+
+== Tools ==
+ * scripts/spdx-omit-nobuild-files
+   * files to omit some files and dirs from inclusion in spdxcheck.py reports
+     * to be put in: scripts/spdx-omit-nobuild-files in a kernel source tree
+
+Tools and data not in this directory:
+~/work/kselftest/ktap-benchmark-support/spdx-missing-test.sh
+ - produces ktap value lines and results lines for kernel top-level directories
+ - uses ~/work/kselftest/ktap-benchmark-support/process-results.py and
+ - /home/tbird/spdx-stuff/sdpx-missing-[criteria|ref-value].txt files
+
+
