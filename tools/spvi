@@ -1,0 +1,114 @@
+#!/bin/sh
+# spvi - edit a file for SPDX id line work
+# add a default SDPX-License-Identifier line to a file, and edit the file
+#
+
+# uncomment to debug
+#set -x
+
+usage() {
+    cat <<HERE
+Usage: spvi [options] {filename}
+
+Edit the filename, adding a header SPDX-License-Identifier line
+at the top of the file.
+
+Options:
+ -h     Show this usage help
+ -o     Default to GPL-2.0-only
+ -l     Default to GPL-2.0-or-later
+ -ll    Default to LGPL-2.1-or-later
+ -+     Default to GPL-2.0+
+ -m     Default to MIT
+ -b     Default to BSD
+ -3     Default to BSD-3-Clause
+HERE
+    exit 0
+}
+
+SPDX_ID="GPL-2.0"
+while [ -n "$1" ] ; do
+    case $1 in
+        -h)
+            usage
+            ;;
+        -o)
+            SPDX_ID="GPL-2.0-only"
+            shift
+            ;;
+        -ll)
+            SPDX_ID="LGPL-2.1-or-later"
+            shift
+            ;;
+        -l)
+            SPDX_ID="GPL-2.0-or-later"
+            shift
+            ;;
+        -+)
+            SPDX_ID="GPL-2.0+"
+            shift
+            ;;
+        -m)
+            SPDX_ID="MIT"
+            shift
+            ;;
+        -3)
+            SPDX_ID="BSD-3-Clause"
+            shift
+            ;;
+        -b)
+            SPDX_ID="BSD"
+            shift
+            ;;
+        *)
+            FILEPATH=$1
+            shift
+            ;;
+    esac
+done
+
+if [ -z "$FILEPATH" ] ; then
+    echo "Missing filename. Use -h for help"
+    exit 1
+fi
+
+if [ ! -f "$FILEPATH" ] ; then
+    echo "Error: Missing file '$FILEPATH'. Use -h for help"
+    exit 1
+fi
+
+EXT=${FILEPATH##*.}
+
+if [ "$EXT" = "c" ] ; then
+    COMMENT_START="//"
+    COMMENT_END=""
+fi
+# disable wildcard expansion for the COMMENT vars
+set -f
+if [ "$EXT" = "h" ] ; then
+    COMMENT_START="/*"
+    COMMENT_END=" */"
+fi
+if [ "$EXT" = "S" ] ; then
+    COMMENT_START="//"
+    COMMENT_END=""
+fi
+FILENAME="$(basename $FILEPATH)"
+if [ "$FILENAME" = "Makefile" -o "$FILENAME" = "Kconfig" ] ; then
+    COMMENT_START="#"
+    COMMENT_END=""
+fi
+
+if [ -z "$COMMENT_START" ] ; then
+    echo "Error: Unrecognized extension: '$EXT' and unknown comment style for file $FILENAME"
+    exit 1
+fi
+
+SPDX_LINE="${COMMENT_START} SPDX-License-Identifier: ${SPDX_ID}${COMMENT_END}"
+TMPFILE=$(mktemp)
+echo $SPDX_LINE >$TMPFILE
+cat $FILEPATH >>$TMPFILE
+cp $TMPFILE $FILEPATH
+rm $TMPFILE
+exec vi $FILEPATH
+

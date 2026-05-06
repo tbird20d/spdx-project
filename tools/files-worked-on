@@ -1,0 +1,84 @@
+#!/bin/bash
+# Show information about files worked on for a set of commits
+#   (specifically, create a sorted list of files that were affected by a
+#    set of commits)
+#
+# Usage: files-worked-on [scope-qualifiers]
+#
+# <scope-qualifiers> are any valid arguments usable with 'git log' to restrict
+# the set of commits to analyze.  Some common ones are:
+# v3.4..  - set a baseline version (only include commits after v3.4)
+# --author="*sony*"
+# --since=2023-04-01
+#
+# uses environment var GIT_SCOPE, if defined
+#
+# See README-git-analysis-tools.txt for details about the suite of
+# tools that this tool is part of
+#
+
+# uncomment the next line to debug this script
+set -x
+
+KERNEL_SRC=/home/tbird/work/torvalds/linux
+
+usage() {
+cat <<HERE
+Usage: files-worked-on <options> <scope-args>
+
+List the files worked in a git repository, using the specified scope
+arguments.  The scope arguments are the same as passed to 'git log',
+and are usually something like --author= and --since=
+
+Example:
+files-worked-on --author=tim.bird --since=2024-01-01
+
+Options:
+ -h   Show this usage help
+ -f   Force using the current directory.  If this option is not specified
+      and there is no MAINTAINERS file in the current directory, then
+      change to a default KERNEL_SRC directory, before running the command.
+      The default KERNEL_SRC dir is: $KERNEL_SRC
+HERE
+}
+
+if [ "$1" = "-h" ] ; then
+    usage
+    exit 0
+fi
+
+CHECK_DIR=1
+if [ "$1" = "-f" ] ; then
+    shift
+    CHECK_DIR=
+fi
+
+if [ -n "$CHECK_DIR" ] ; then
+    if [ ! -e MAINTAINERS ] ; then
+        echo "Not at root of kernel source tree, using default"
+        echo "KERNEL_SRC=$KERNEL_SRC"
+        pushd $KERNEL_SRC >/dev/null
+        DID_PUSHD=1
+    fi
+fi
+
+SCOPE="$GIT_SCOPE $@"
+if [ -n "$SCOPE" ] ; then
+    echo "SCOPE=$SCOPE"
+fi
+COMMIT_LIST=$(git log --all-match --pretty=%h -i $SCOPE)
+
+TMPFILE=$(mktemp)
+for COMMIT in $COMMIT_LIST ; do
+    git show $COMMIT | diffstat -p 0 | head -n-1 >>$TMPFILE
+done
+
+cat $TMPFILE | sort
+rm $TMPFILE
+
+COMMIT_COUNT=$(echo $COMMIT_LIST | wc -w)
+echo "COMMIT_COUNT=$COMMIT_COUNT"
+
+if [ -n "$DID_PUSHD" ] ; then
+    popd >/dev/null
+fi
