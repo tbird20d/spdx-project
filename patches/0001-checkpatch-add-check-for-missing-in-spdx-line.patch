@@ -1,0 +1,39 @@
+From 2f582982bb1e076a78e388e0e8da83d8e6edd859 Mon Sep 17 00:00:00 2001
+From: Tim Bird <tim.bird@sony.com>
+Date: Mon, 19 Jan 2026 15:11:01 -0700
+Subject: [PATCH] checkpatch: add check for missing */ in spdx line
+
+Add an explicit check for leading /* but missing */
+to avoid a malformed SPDX line.
+
+In many cases an SPDX-License-Identifier line immediately
+precedes another C-style comment.  In that case, if
+the SPDX line starts with '/*' but is missing the closing '*/',
+the compiler may not catch it (the leading '/*' on
+the next line and the rest of the header comment is just
+treated as part of the SPDX comment).
+
+Signed-off-by: Tim Bird <tim.bird@sony.com>
+---
+ scripts/checkpatch.pl | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+diff --git a/scripts/checkpatch.pl b/scripts/checkpatch.pl
+index c0250244cf7a..1cc3fd5e72af 100755
+--- a/scripts/checkpatch.pl
++++ b/scripts/checkpatch.pl
+@@ -3794,6 +3794,11 @@ sub process {
+ 					WARN("SPDX_LICENSE_TAG",
+ 					     "Improper SPDX comment style for '$realfile', please use '$comment' instead\n" . $herecurr);
+ 				}
++				if ($comment eq '/*' &&
++				    $rawline !~ m@\*/@) {
++					WARN("SPDX_LICENSE_TAG",
++					     "Improper SPDX comment style for '$realfile', missing closing '*/'\n" . $herecurr);
++				}
+ 
+ 				if ($comment !~ /^$/ &&
+ 				    $rawline !~ m@^\+\Q$comment\E SPDX-License-Identifier: @) {
+-- 
+2.43.0
+
