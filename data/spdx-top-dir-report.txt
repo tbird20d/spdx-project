@@ -1,0 +1,392 @@
+== fs ==
+
+License files:               19
+Exception files:              2
+License IDs                  32
+Exception IDs                 2
+
+Files excluded:               0
+Files checked:             2369
+Lines checked:             5142
+Files with SPDX:           2165  91%
+Files without SPDX:         204   8%
+Files with errors:            0
+
+Directories accounted:       98
+Directories complete:        67  68%
+== security ==
+
+License files:               19
+Exception files:              2
+License IDs                  32
+Exception IDs                 2
+
+Files excluded:               0
+Files checked:              254
+Lines checked:              352
+Files with SPDX:            244  96%
+Files without SPDX:          10   3%
+Files with errors:            0
+
+Directories accounted:       22
+Directories complete:        15  68%
+== include ==
+
+License files:               19
+Exception files:              2
+License IDs                  32
+Exception IDs                 2
+
+Files excluded:               0
+Files checked:             6017
+Lines checked:            12798
+Files with SPDX:           5486  91%
+Files without SPDX:         531   8%
+Files with errors:            0
+
+Directories accounted:      298
+Directories complete:       233  78%
+== samples ==
+
+License files:               19
+Exception files:              2
+License IDs                  32
+Exception IDs                 2
+
+Files excluded:               0
+Files checked:              276
+Lines checked:             1065
+Files with SPDX:            218  78%
+Files without SPDX:          58  21%
+Files with errors:            0
+
+Directories accounted:       42
+Directories complete:        33  78%
+== block ==
+
+License files:               19
+Exception files:              2
+License IDs                  32
+Exception IDs                 2
+
+Files excluded:               0
+Files checked:              101
+Lines checked:              115
+Files with SPDX:            100  99%
+Files without SPDX:           1   0%
+Files with errors:            0
+
+Directories accounted:        2
+Directories complete:         1  50%
+== ipc ==
+
+License files:               19
+Exception files:              2
+License IDs                  32
+Exception IDs                 2
+
+Files excluded:               0
+Files checked:               13
+Lines checked:               27
+Files with SPDX:             12  92%
+Files without SPDX:           1   7%
+Files with errors:            0
+
+Directories accounted:        1
+Directories complete:         0   0%
+== scripts ==
+
+License files:               19
+Exception files:              2
+License IDs                  32
+Exception IDs                 2
+
+Files excluded:               0
+Files checked:              489
+Lines checked:             1670
+Files with SPDX:            372  76%
+Files without SPDX:         117  23%
+Files with errors:            0
+
+Directories accounted:       45
+Directories complete:        15  33%
+== kernel ==
+
+License files:               19
+Exception files:              2
+License IDs                  32
+Exception IDs                 2
+
+Files excluded:              10
+Files checked:              566
+Lines checked:              931
+Files with SPDX:            538  95%
+Files without SPDX:          28   4%
+Files with errors:            0
+
+Directories accounted:       26
+Directories complete:        13  50%
+== drivers ==
+
+License files:               19
+Exception files:              2
+License IDs                  32
+Exception IDs                 2
+
+Files excluded:               0
+Files checked:            33097
+Lines checked:           112824
+Files with SPDX:          27308  82%
+Files without SPDX:        5789  17%
+Files with errors:            0
+
+Directories accounted:     2040
+Directories complete:      1315  64%
+== usr ==
+
+License files:               19
+Exception files:              2
+License IDs                  32
+Exception IDs                 2
+
+Files excluded:               0
+Files checked:               12
+Lines checked:               27
+Files with SPDX:             11  91%
+Files without SPDX:           1   8%
+Files with errors:            0
+
+Directories accounted:        3
+Directories complete:         2  66%
+== virt ==
+
+License files:               19
+Exception files:              2
+License IDs                  32
+Exception IDs                 2
+
+Files excluded:               0
+Files checked:               19
+Lines checked:               19
+Files with SPDX:             19 100%
+Files without SPDX:           0   0%
+Files with errors:            0
+
+Directories accounted:        3
+Directories complete:         3 100%
+== rust ==
+
+License files:               19
+Exception files:              2
+License IDs                  32
+Exception IDs                 2
+
+Files excluded:               0
+Files checked:               61
+Lines checked:               75
+Files with SPDX:             60  98%
+Files without SPDX:           1   1%
+Files with errors:            0
+
+Directories accounted:       12
+Directories complete:        11  91%
+== lib ==
+
+License files:               19
+Exception files:              2
+License IDs                  32
+Exception IDs                 2
+
+Files excluded:               0
+Files checked:              562
+Lines checked:             2179
+Files with SPDX:            431  76%
+Files without SPDX:         131  23%
+Files with errors:            0
+
+Directories accounted:       25
+Directories complete:         9  36%
+== net ==
+
+License files:               19
+Exception files:              2
+License IDs                  32
+Exception IDs                 2
+
+Files excluded:               0
+Files checked:             1973
+Lines checked:             4557
+Files with SPDX:           1785  90%
+Files without SPDX:         188   9%
+Files with errors:            0
+
+Directories accounted:       96
+Directories complete:        63  65%
+== mm ==
+
+License files:               19
+Exception files:              2
+License IDs                  32
+Exception IDs                 2
+
+Files excluded:               0
+Files checked:              183
+Lines checked:              314
+Files with SPDX:            173  94%
+Files without SPDX:          10   5%
+Files with errors:            0
+
+Directories accounted:        5
+Directories complete:         3  60%
+== crypto ==
+
+License files:               19
+Exception files:              2
+License IDs                  32
+Exception IDs                 2
+
+Files excluded:               0
+Files checked:              186
+Lines checked:              544
+Files with SPDX:            156  83%
+Files without SPDX:          30  16%
+Files with errors:            0
+
+Directories accounted:        3
+Directories complete:         1  33%
+== io_uring ==
+
+License files:               19
+Exception files:              2
+License IDs                  32
+Exception IDs                 2
+
+Files excluded:               0
+Files checked:               56
+Lines checked:              140
+Files with SPDX:             50  89%
+Files without SPDX:           6  10%
+Files with errors:            0
+
+Directories accounted:        1
+Directories complete:         0   0%
+== tools ==
+
+License files:               19
+Exception files:              2
+License IDs                  32
+Exception IDs                 2
+
+Files excluded:               0
+Files checked:             6728
+Lines checked:            28528
+Files with SPDX:           4776  70%
+Files without SPDX:        1952  29%
+Files with errors:            0
+
+Directories accounted:      644
+Directories complete:       225  34%
+== arch ==
+
+License files:               19
+Exception files:              2
+License IDs                  32
+Exception IDs                 2
+
+Files excluded:             323
+Files checked:            16718
+Lines checked:            46842
+Files with SPDX:          14429  86%
+Files without SPDX:        2289  13%
+Files with errors:            0
+
+Directories accounted:      824
+Directories complete:       481  58%
+== certs ==
+
+License files:               19
+Exception files:              2
+License IDs                  32
+Exception IDs                 2
+
+Files excluded:               0
+Files checked:               12
+Lines checked:               45
+Files with SPDX:              9  75%
+Files without SPDX:           3  25%
+Files with errors:            0
+
+Directories accounted:        1
+Directories complete:         0   0%
+== patches ==
+FAIL: "Blob or Tree named 'patches' not found"
+Traceback (most recent call last):
+  File "scripts/spdxcheck.py", line 386, in <module>
+    scan_git_subtree(repo.head.reference.commit.tree, p,
+  File "scripts/spdxcheck.py", line 305, in scan_git_subtree
+    tree = tree[p]
+  File "/home/tbird/.local/lib/python3.8/site-packages/git/objects/tree.py", line 294, in __getitem__
+    return self.join(item)
+  File "/home/tbird/.local/lib/python3.8/site-packages/git/objects/tree.py", line 240, in join
+    raise KeyError(msg % file)
+KeyError: "Blob or Tree named 'patches' not found"
+
+== Documentation ==
+
+License files:               19
+Exception files:              2
+License IDs                  32
+Exception IDs                 2
+
+Files excluded:               4
+Files checked:             9487
+Lines checked:            63112
+Files with SPDX:           5536  58%
+Files without SPDX:        3951  41%
+Files with errors:            0
+
+Directories accounted:      640
+Directories complete:       233  36%
+== init ==
+
+License files:               19
+Exception files:              2
+License IDs                  32
+Exception IDs                 2
+
+Files excluded:               0
+Files checked:               15
+Lines checked:               16
+Files with SPDX:             15 100%
+Files without SPDX:           0   0%
+Files with errors:            0
+
+Directories accounted:        1
+Directories complete:         1 100%
+== sound ==
+
+License files:               19
+Exception files:              2
+License IDs                  32
+Exception IDs                 2
+
+Files excluded:               0
+Files checked:             2722
+Lines checked:             3495
+Files with SPDX:           2657  97%
+Files without SPDX:          65   2%
+Files with errors:            0
+
+Directories accounted:      172
+Directories complete:       149  86%
+== LICENSES ==
+
+License files:               19
+Exception files:              2
+License IDs                  32
+Exception IDs                 2
+
+Files excluded:              21
+Files checked:                0
+Lines checked:                0
+Files with errors:            0

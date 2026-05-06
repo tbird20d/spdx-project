@@ -1,0 +1,54 @@
+Here are some notes about submitting SPDX header patches.
+
+For guidelines for analyzing an individual patch and deciding the
+license identifier, see
+ - https://birdcloud.org/bc/Guidelines_for_fixing_Missing_SPDX_lines
+
+= to do =
+ - make edits
+ - make commits
+ - make patches
+ - find original authors, maintainers and lists
+ - create mysend.sh
+ - test with --dry-run
+ + check git send-email config settings
+
+== process ==
+ - cd ~/work/torvalds/linux
+ - git checkout spdx-work
+ - edit files to add SPDX-License-Identifier lines
+   - make sure to use 'GPL-2.0', and not 'GPL 2.0' (ie make sure to use a dash)
+ - git add files
+   - add subject lines
+     - specify subsystem, e.g. 'kernel:' or 'kernel: bpf:'
+     - add topic: Add SPDX-License-Identifier lines to...
+ - git commmit -s
+ - git format-patch -s HEAD^
+ - mv 0001-...*.patch to ~/work/torvalds/patches
+ - run checkpatch.pl
+   - scripts/checkpatch.pl ../patches/0001-....patch
+ - determine people to send to
+   - scripts/get_maintainers.pl {file}
+   - scripts/get_maintainers.pl {patch}
+ - edit ~/work/torvalds/mysend.sh
+   - add original authors
+   - add current maintainers
+   - add linux-spdx@vger.kernel.org
+   - add linux-kernel@vger.kernel.org
+
+== git send-email config ==
+This used to work:
+$ git config -l | grep send
+sendemail.smtpserver=mail.bird.org
+sendemail.smtpserverport=465
+sendemail.smtpencryption=ssl
+sendemail.smtpuser=tim@bird.org
+
+I now get:
+atal: Only 'http' and 'https' schemes are allowed. (Parameter 'requestUri')
+Password for 'smtp://tim%40bird.org@mail.bird.org:465': 
+fatal: Only 'http' and 'https' schemes are allowed. (Parameter 'requestUri')
+Incorrect authentication data
+
+I added --stmp-pass={password} to mysend.sh and it worked.
+I still get the message about only 'http' and 'https' schemes are allowed.

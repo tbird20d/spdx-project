@@ -1,0 +1,349 @@
+filepath,status,difficulty,notes
+kernel/cgroup/cgroup.c,no spdx,easy,GPL => GPL-2.0-only with tortured copyrights
+kernel/cgroup/cpuset.c,no spdx,easy,GPL => GPL-2.0-only
+kernel/cgroup/legacy_freezer.c,no spdx,medium,file is LGPL 2.1
+kernel/cpu.c,no spdx,easy,GPL => GPL-2.0-only
+kernel/module/kmod.c,no spdx,easy,(empty) => GPL-2.0-only
+kernel/relay.c,no spdx,easy,GPL => GPL-2.0-only
+
+init/utsversion-tmp.h,no spdx,no conversion,is a generated file
+
+mm/memfd.c,no spdx,easy,GPL => GPL-2.0-only
+mm/rmap.c,no spdx,easy,GPL => GPL-2.0-only
+mm/shmem.c,no spdx,easy,GPL => GPL-2.0-only
+mm/folio-compat.c,no spdx,easy,(empty) => GPL-2.0-only
+mm/hugetlb_cgroup.c,no spdx,medium,file is LGPL 2.1
+mm/mmu_gather.c,no spdx,easy,(empty) => GPL-2.0-only
+
+ipc/mqueue.c,no spdx,easy,GPL => GPL-2.0-only
+
+include/generated/asm-offsets.h,no spdx,no conversion,is a generated file
+include/generated/bounds.h,no spdx,no conversion,is a generated file
+include/generated/compile.h,no spdx,no conversion,is a generated file
+include/generated/timeconst.h,no spdx,no conversion,is a generated file
+include/generated/uapi/linux/version.h,no spdx,no conversion,is a generated file
+include/generated/utsrelease.h,no spdx,no conversion,is a generated file
+
+fs/aio.c,no spdx,easy,COPYING => GPL-2.0-only
+fs/proc/util.c,no spdx,easy,(empty) => GPL-2.0-only
+fs/ext4/orphan.c,no spdx,(empty) => GPL-2.0-only
+fs/hugetlbfs/inode.c,no spdx,easy,GPL => GPL-2.0-only
+fs/ramfs/file-mmu.c,no spdx,easy,GPL => GPL-2.0-only (by Linus)
+fs/ramfs/inode.c,no spdx,easy,GPL => GPL-2.0-only (by Linus)
+fs/nfs/nfs4idmap.c,no spdx
+fs/nfs/nfs4proc.c,no spdx
+fs/nfs/nfs4renewd.c,no spdx
+fs/nfs/nfs4state.c,no spdx
+fs/nfs/nfs4xdr.c,no spdx
+fs/nls/nls_ascii.c,no spdx
+fs/nls/nls_base.c,no spdx
+fs/nls/nls_cp437.c,no spdx
+fs/nls/nls_iso8859-1.c,no spdx
+fs/nls/nls_utf8.c,no spdx
+
+net/core/fib_notifier.c,no spdx
+net/core/sock_diag.c,no spdx
+net/dns_resolver/dns_key.c,no spdx
+net/dns_resolver/dns_query.c,no spdx
+net/ipv4/inetpeer.c,no spdx
+net/ipv4/ipmr_base.c,no spdx
+net/ipv4/netfilter.c,no spdx
+net/ipv4/tcp_plb.c,no spdx
+net/ipv6/fib6_notifier.c,no spdx
+net/ipv6/netfilter.c,no spdx
+net/netfilter/core.c,no spdx
+net/netfilter/nf_conntrack_netlink.c,no spdx
+net/netfilter/nfnetlink.c,no spdx
+net/netfilter/nf_queue.c,no spdx
+net/sunrpc/auth_gss/gss_generic_token.c,no spdx
+net/sunrpc/auth_gss/gss_krb5_crypto.c,no spdx
+net/sunrpc/auth_gss/gss_krb5_keys.c,no spdx
+net/sunrpc/auth_gss/gss_krb5_seal.c,no spdx
+net/sunrpc/auth_gss/gss_krb5_unseal.c,no spdx
+net/sunrpc/auth_gss/gss_krb5_wrap.c,no spdx
+net/wireless/radiotap.c,no spdx
+net/wireless/reg.c,no spdx
+net/wireless/shipped-certs.c,no spdx
+net/wireless/shipped-certs.c,no spdx
+net/wireless/trace.c,no spdx
+
+security/selinux/flask.h,no spdx
+security/selinux/av_permissions.h,no spdx
+security/selinux/ss/avtab.c,no spdx
+
+lib/glob.c,no spdx
+lib/fonts/fonts.c,no spdx
+lib/bucket_locks.c,no spdx
+lib/crc32.c,no spdx
+lib/crc32table.h,no spdx
+lib/crypto/gf128mul.c,no spdx
+lib/crypto/memneq.c,no spdx
+lib/crypto/mpi/ec.c,no spdx
+lib/crypto/mpi/mpi-add.c,no spdx
+lib/crypto/mpi/mpi-bit.c,no spdx
+lib/crypto/mpi/mpi-cmp.c,no spdx
+lib/crypto/mpi/mpicoder.c,no spdx
+lib/crypto/mpi/mpi-div.c,no spdx
+lib/crypto/mpi/mpi-inv.c,no spdx
+lib/crypto/mpi/mpi-mod.c,no spdx
+lib/crypto/mpi/mpi-mul.c,no spdx
+lib/crypto/mpi/mpiutil.c,no spdx
+lib/decompress_bunzip2.c,no spdx
+lib/decompress_unlzma.c,no spdx
+lib/decompress_unxz.c,no spdx
+lib/generic-radix-tree.c,no spdx
+lib/lz4/lz4_decompress.c,no spdx
+lib/oid_registry_data.c,no spdx
+lib/xxhash.c,no spdx
+lib/xz/xz_dec_bcj.c,no spdx
+lib/xz/xz_dec_lzma2.c,no spdx
+lib/xz/xz_dec_stream.c,no spdx
+lib/xz/xz_dec_syms.c,no spdx
+lib/zlib_deflate/deflate.c,no spdx
+lib/zlib_deflate/deftree.c,no spdx
+lib/zlib_inflate/inffast.c,no spdx
+lib/zlib_inflate/inflate.c,no spdx
+lib/zlib_inflate/inftrees.c,no spdx
+lib/zlib_inflate/infutil.c,no spdx
+lib/zstd/common/debug.c,no spdx
+lib/zstd/common/entropy_common.c,no spdx
+lib/zstd/common/error_private.c,no spdx
+lib/zstd/common/fse_decompress.c,no spdx
+lib/zstd/common/zstd_common.c,no spdx
+lib/zstd/decompress/huf_decompress.c,no spdx
+lib/zstd/decompress/zstd_ddict.c,no spdx
+lib/zstd/decompress/zstd_decompress_block.c,no spdx
+lib/zstd/decompress/zstd_decompress.c,no spdx
+
+crypto/md5.c,no spdx
+crypto/drbg.c,no spdx
+crypto/aes_generic.c,no spdx
+crypto/asymmetric_keys/pkcs7.asn1.c,no spdx
+crypto/asymmetric_keys/pkcs7.asn1.h,no spdx
+crypto/asymmetric_keys/x509_akid.asn1.c,no spdx
+crypto/asymmetric_keys/x509_akid.asn1.h,no spdx
+crypto/asymmetric_keys/x509.asn1.c,no spdx
+crypto/asymmetric_keys/x509.asn1.h,no spdx
+crypto/jitterentropy.c,no spdx
+crypto/jitterentropy-kcapi.c,no spdx
+crypto/rsaprivkey.asn1.c,no spdx
+crypto/rsaprivkey.asn1.h,no spdx
+crypto/rsapubkey.asn1.c,no spdx
+crypto/rsapubkey.asn1.h,no spdx
+
+arch/x86/entry/vdso/vdso-image-32.c,no spdx
+arch/x86/entry/vdso/vdso-image-32.c,no spdx
+arch/x86/entry/vdso/vdso-image-64.c,no spdx
+arch/x86/entry/vdso/vdso-image-64.c,no spdx
+arch/x86/entry/vdso/vdso-note.S,no spdx
+arch/x86/events/amd/ibs.c,no spdx
+arch/x86/events/core.c,no spdx
+arch/x86/events/intel/cstate.c,no spdx
+arch/x86/events/intel/p4.c,no spdx
+arch/x86/include/generated/asm/orc_hash.h,no spdx
+arch/x86/include/generated/asm/syscalls_32.h,no spdx
+arch/x86/include/generated/asm/syscalls_64.h,no spdx
+arch/x86/include/generated/asm/unistd_32_ia32.h,no spdx
+arch/x86/include/generated/asm/unistd_64_x32.h,no spdx
+arch/x86/include/generated/uapi/asm/unistd_32.h,no spdx
+arch/x86/include/generated/uapi/asm/unistd_64.h,no spdx
+arch/x86/include/generated/uapi/asm/unistd_x32.h,no spdx
+arch/x86/kernel/cpu/capflags.c,no spdx
+arch/x86/kernel/cpu/capflags.c,no spdx
+arch/x86/kernel/cpu/cpuid-deps.c,no spdx
+arch/x86/kernel/cpu/hypervisor.c,no spdx
+arch/x86/kernel/cpu/mtrr/cleanup.c,no spdx
+arch/x86/kernel/cpu/mtrr/mtrr.c,no spdx
+arch/x86/kernel/cpu/scattered.c,no spdx
+arch/x86/kernel/cpu/vmware.c,no spdx
+arch/x86/kernel/dumpstack.c,no spdx
+arch/x86/kernel/stacktrace.c,no spdx
+arch/x86/kernel/topology.c,no spdx
+arch/x86/kernel/trace.c,no spdx
+arch/x86/kernel/traps.c,no spdx
+arch/x86/kernel/umip.c,no spdx
+arch/x86/kernel/x86_init.c,no spdx
+arch/x86/lib/csum-copy_64.S,no spdx
+arch/x86/lib/inat-tables.c,no spdx
+arch/x86/lib/insn-eval.c,no spdx
+arch/x86/lib/iomem.c,no spdx
+arch/x86/lib/usercopy.c,no spdx
+arch/x86/mm/init.c,no spdx
+arch/x86/realmode/rm/bioscall.S,no spdx
+arch/x86/realmode/rm/copy.S,no spdx
+arch/x86/realmode/rm/pasyms.h,no spdx
+arch/x86/realmode/rm/regs.c,no spdx
+arch/x86/realmode/rm/video-bios.c,no spdx
+arch/x86/realmode/rm/video-mode.c,no spdx
+arch/x86/realmode/rm/video-vesa.c,no spdx
+arch/x86/realmode/rm/video-vga.c,no spdx
+
+sound/core/pcm_misc.c,no spdx
+sound/hda/trace.c,no spdx
+
+drivers/char/hw_random/core.c,no spdx
+drivers/acpi/video_detect.c,no spdx
+drivers/cdrom/cdrom.c,no spdx
+drivers/char/agp/backend.c,no spdx
+drivers/char/agp/generic.c,no spdx
+drivers/char/agp/intel-agp.c,no spdx
+drivers/char/agp/intel-gtt.c,no spdx
+drivers/char/hw_random/via-rng.c,no spdx
+drivers/cpuidle/cpuidle.c,no spdx
+drivers/cpuidle/driver.c,no spdx
+drivers/cpuidle/governor.c,no spdx
+drivers/cpuidle/sysfs.c,no spdx
+drivers/gpu/drm/display/drm_dp_dual_mode_helper.c,no spdx
+drivers/gpu/drm/display/drm_dp_helper.c,no spdx
+drivers/gpu/drm/display/drm_dp_mst_topology.c,no spdx
+drivers/gpu/drm/display/drm_scdc_helper.c,no spdx
+drivers/gpu/drm/drm_atomic.c,no spdx
+drivers/gpu/drm/drm_atomic_helper.c,no spdx
+drivers/gpu/drm/drm_atomic_state_helper.c,no spdx
+drivers/gpu/drm/drm_atomic_uapi.c,no spdx
+drivers/gpu/drm/drm_auth.c,no spdx
+drivers/gpu/drm/drm_blend.c,no spdx
+drivers/gpu/drm/drm_bridge.c,no spdx
+drivers/gpu/drm/drm_cache.c,no spdx
+drivers/gpu/drm/drm_color_mgmt.c,no spdx
+drivers/gpu/drm/drm_connector.c,no spdx
+drivers/gpu/drm/drm_crtc.c,no spdx
+drivers/gpu/drm/drm_crtc_helper.c,no spdx
+drivers/gpu/drm/drm_debugfs.c,no spdx
+drivers/gpu/drm/drm_debugfs_crc.c,no spdx
+drivers/gpu/drm/drm_drv.c,no spdx
+drivers/gpu/drm/drm_dumb_buffers.c,no spdx
+drivers/gpu/drm/drm_edid.c,no spdx
+drivers/gpu/drm/drm_encoder.c,no spdx
+drivers/gpu/drm/drm_encoder_slave.c,no spdx
+drivers/gpu/drm/drm_file.c,no spdx
+drivers/gpu/drm/drm_flip_work.c,no spdx
+drivers/gpu/drm/drm_fourcc.c,no spdx
+drivers/gpu/drm/drm_framebuffer.c,no spdx
+drivers/gpu/drm/drm_gem.c,no spdx
+drivers/gpu/drm/drm_ioc32.c,no spdx
+drivers/gpu/drm/drm_ioctl.c,no spdx
+drivers/gpu/drm/drm_kms_helper_common.c,no spdx
+drivers/gpu/drm/drm_mipi_dsi.c,no spdx
+drivers/gpu/drm/drm_mm.c,no spdx
+drivers/gpu/drm/drm_mode_config.c,no spdx
+drivers/gpu/drm/drm_mode_object.c,no spdx
+drivers/gpu/drm/drm_modes.c,no spdx
+drivers/gpu/drm/drm_modeset_helper.c,no spdx
+drivers/gpu/drm/drm_modeset_lock.c,no spdx
+drivers/gpu/drm/drm_panel.c,no spdx
+drivers/gpu/drm/drm_pci.c,no spdx
+drivers/gpu/drm/drm_plane.c,no spdx
+drivers/gpu/drm/drm_plane_helper.c,no spdx
+drivers/gpu/drm/drm_prime.c,no spdx
+drivers/gpu/drm/drm_print.c,no spdx
+drivers/gpu/drm/drm_probe_helper.c,no spdx
+drivers/gpu/drm/drm_property.c,no spdx
+drivers/gpu/drm/drm_rect.c,no spdx
+drivers/gpu/drm/drm_syncobj.c,no spdx
+drivers/gpu/drm/drm_trace_points.c,no spdx
+drivers/gpu/drm/drm_vblank.c,no spdx
+drivers/gpu/drm/i915/display/dvo_ch7017.c,no spdx
+drivers/gpu/drm/i915/display/dvo_ch7xxx.c,no spdx
+drivers/gpu/drm/i915/display/dvo_ivch.c,no spdx
+drivers/gpu/drm/i915/display/dvo_ns2501.c,no spdx
+drivers/gpu/drm/i915/display/dvo_sil164.c,no spdx
+drivers/gpu/drm/i915/display/dvo_tfp410.c,no spdx
+drivers/gpu/drm/i915/display/icl_dsi.c,no spdx
+drivers/gpu/drm/i915/display/intel_atomic.c,no spdx
+drivers/gpu/drm/i915/display/intel_atomic_plane.c,no spdx
+drivers/gpu/drm/i915/display/intel_audio.c,no spdx
+drivers/gpu/drm/i915/display/intel_bios.c,no spdx
+drivers/gpu/drm/i915/display/intel_cdclk.c,no spdx
+drivers/gpu/drm/i915/display/intel_color.c,no spdx
+drivers/gpu/drm/i915/display/intel_connector.c,no spdx
+drivers/gpu/drm/i915/display/intel_crt.c,no spdx
+drivers/gpu/drm/i915/display/intel_ddi.c,no spdx
+drivers/gpu/drm/i915/display/intel_display.c,no spdx
+drivers/gpu/drm/i915/display/intel_dmc.c,no spdx
+drivers/gpu/drm/i915/display/intel_dp_aux_backlight.c,no spdx
+drivers/gpu/drm/i915/display/intel_dp.c,no spdx
+drivers/gpu/drm/i915/display/intel_dpio_phy.c,no spdx
+drivers/gpu/drm/i915/display/intel_dp_link_training.c,no spdx
+drivers/gpu/drm/i915/display/intel_dpll_mgr.c,no spdx
+drivers/gpu/drm/i915/display/intel_dp_mst.c,no spdx
+drivers/gpu/drm/i915/display/intel_dsi_dcs_backlight.c,no spdx
+drivers/gpu/drm/i915/display/intel_dsi_vbt.c,no spdx
+drivers/gpu/drm/i915/display/intel_dvo.c,no spdx
+drivers/gpu/drm/i915/display/intel_fbc.c,no spdx
+drivers/gpu/drm/i915/display/intel_fifo_underrun.c,no spdx
+drivers/gpu/drm/i915/display/intel_frontbuffer.c,no spdx
+drivers/gpu/drm/i915/display/intel_gmbus.c,no spdx
+drivers/gpu/drm/i915/display/intel_hdmi.c,no spdx
+drivers/gpu/drm/i915/display/intel_hotplug.c,no spdx
+drivers/gpu/drm/i915/display/intel_lpe_audio.c,no spdx
+drivers/gpu/drm/i915/display/intel_lspcon.c,no spdx
+drivers/gpu/drm/i915/display/intel_lvds.c,no spdx
+drivers/gpu/drm/i915/display/intel_opregion.c,no spdx
+drivers/gpu/drm/i915/display/intel_overlay.c,no spdx
+drivers/gpu/drm/i915/display/intel_panel.c,no spdx
+drivers/gpu/drm/i915/display/intel_pipe_crc.c,no spdx
+drivers/gpu/drm/i915/display/intel_psr.c,no spdx
+drivers/gpu/drm/i915/display/intel_sdvo.c,no spdx
+drivers/gpu/drm/i915/display/intel_sprite.c,no spdx
+drivers/gpu/drm/i915/display/intel_tv.c,no spdx
+drivers/gpu/drm/i915/display/vlv_dsi.c,no spdx
+drivers/gpu/drm/i915/display/vlv_dsi_pll.c,no spdx
+drivers/gpu/drm/i915/gem/i915_gem_object.c,no spdx
+drivers/gpu/drm/i915/i915_cmd_parser.c,no spdx
+drivers/gpu/drm/i915/i915_debugfs.c,no spdx
+drivers/gpu/drm/i915/i915_driver.c,no spdx
+drivers/gpu/drm/i915/i915_gem.c,no spdx
+drivers/gpu/drm/i915/i915_gem_evict.c,no spdx
+drivers/gpu/drm/i915/i915_gpu_error.c,no spdx
+drivers/gpu/drm/i915/i915_ioc32.c,no spdx
+drivers/gpu/drm/i915/i915_irq.c,no spdx
+drivers/gpu/drm/i915/i915_memcpy.c,no spdx
+drivers/gpu/drm/i915/i915_mm.c,no spdx
+drivers/gpu/drm/i915/i915_params.c,no spdx
+drivers/gpu/drm/i915/i915_pci.c,no spdx
+drivers/gpu/drm/i915/i915_perf.c,no spdx
+drivers/gpu/drm/i915/i915_request.c,no spdx
+drivers/gpu/drm/i915/i915_suspend.c,no spdx
+drivers/gpu/drm/i915/i915_syncmap.c,no spdx
+drivers/gpu/drm/i915/i915_sysfs.c,no spdx
+drivers/gpu/drm/i915/i915_vgpu.c,no spdx
+drivers/gpu/drm/i915/i915_vma.c,no spdx
+drivers/gpu/drm/i915/intel_clock_gating.c,no spdx
+drivers/gpu/drm/i915/intel_device_info.c,no spdx
+drivers/gpu/drm/i915/intel_runtime_pm.c,no spdx
+drivers/gpu/drm/i915/intel_uncore.c,no spdx
+drivers/gpu/drm/ttm/ttm_resource.c,no spdx
+drivers/gpu/drm/virtio/virtgpu_debugfs.c,no spdx
+drivers/gpu/drm/virtio/virtgpu_display.c,no spdx
+drivers/gpu/drm/virtio/virtgpu_drv.c,no spdx
+drivers/gpu/drm/virtio/virtgpu_fence.c,no spdx
+drivers/gpu/drm/virtio/virtgpu_gem.c,no spdx
+drivers/gpu/drm/virtio/virtgpu_ioctl.c,no spdx
+drivers/gpu/drm/virtio/virtgpu_kms.c,no spdx
+drivers/gpu/drm/virtio/virtgpu_object.c,no spdx
+drivers/gpu/drm/virtio/virtgpu_plane.c,no spdx
+drivers/gpu/drm/virtio/virtgpu_prime.c,no spdx
+drivers/gpu/drm/virtio/virtgpu_vq.c,no spdx
+drivers/net/ethernet/broadcom/tg3.c,no spdx
+drivers/net/ethernet/realtek/8139too.c,no spdx
+drivers/net/mii.c,no spdx
+drivers/scsi/scsi_devinfo_tbl.c,no spdx
+drivers/tty/vt/consolemap_deftbl.c,no spdx
+drivers/tty/vt/consolemap_deftbl.c,no spdx
+drivers/video/console/vgacon.c,no spdx
+drivers/video/hdmi.c,no spdx
+
+certs/extract-cert.c,no spdx
+
+io_uring/notif.c,no spdx
+
+scripts/basic/fixdep.c,no spdx,"GPL but with confusing history"
+
+scripts/kallsyms.c,no spdx
+scripts/mod/devicetable-offsets.h,no spdx
+scripts/mod/elfconfig.h,no spdx
+scripts/mod/empty.c,no spdx
+scripts/mod/file2alias.c,no spdx
+scripts/mod/modpost.c,no spdx
+scripts/mod/sumversion.c,no spdx

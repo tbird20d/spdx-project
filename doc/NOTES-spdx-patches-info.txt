@@ -1,0 +1,511 @@
+Tip: Run spdx-next.sh for a list of files to work on
+
+----------------------------------
+== = net/wireless/radiotap.c: 
+  introduced: Tue Jul 10 2007
+  commit: 179f831bc331
+  original author: Andy Green <andy@warmcat.com>
+  version: v2.6.22-699-g179f831bc331
+  other authors or sign-offers:
+   - Jiri Benc - jbenc@suse.cz
+   - John W. Linville - linville@tuxdriver.com
+  other copyright holders:
+   - Johannes Berg - johannes@sipsolutions.net
+  - the first commit did NOT have any license info
+  - license header was added by Johannes Berg,
+    indicating GPL-2.0 OR BSD (unqualified)
+    - was this code ever anywhere else?
+  - the radiotap library  (by Andy green and Johannes Berg)
+    has an explicit ISC license, here:
+    - https://github.com/radiotap/radiotap-library
+  - I choose BSD-2-Clause because that's the preferred license for OpenBSD
+    and some of this code appears there, and ISC is very close to
+    BSD-2-Clause
+
+== net/wireless/reg.c: 
+  introduced: Thu Jan 24 2008
+  commit: 8318d78a44d4
+  original author: Johannes Berg <johannes@sipsolutions.net>
+  version: v2.6.25-rc3-137-g8318d78a44d4
+   - ISC license
+
+== net/wireless/reg.h: 
+  introduced: Tue Sep 09 2008
+  commit: b2e1b3029053
+  original author: Luis R. Rodriguez <lrodriguez@atheros.com>
+  version: v2.6.27-rc5-873-gb2e1b3029053
+== net/wireless/trace.c: 
+  introduced: Tue Jul 31 2012
+  commit: 14e8a3c47e80
+  original author: Beni Lev <beni.lev@intel.com>
+  version: v3.7-rc1-35-g14e8a3c47e80
+
+----------------------------------
+(re-run for all the net files)
+== net/core/fib_notifier.c: 
+  introduced: Thu Aug 03 2017
+  commit: 04b1d4e50e82
+  original author: Ido Schimmel <idosch@mellanox.com>
+  version: v4.13-rc3-588-g04b1d4e50e82
+== net/core/request_sock.c: 
+  introduced: Sat Jun 18 2005
+  commit: 0e87506fcc73
+  original author: Arnaldo Carvalho de Melo <acme@ghostprotocols.net>
+  version: v2.6.12-226-g0e87506fcc73
+== is: 
+  'is' does not exist, no data
+== missing: 
+  'missing' does not exist, no data
+== net/core/sock_diag.c: 
+  introduced: Tue Dec 06 2011
+  commit: 8ef874bfc729
+  original author: Pavel Emelyanov <xemul@parallels.com>
+  version: v3.2-rc4-1090-g8ef874bfc729
+== net/dns_resolver/dns_key.c: 
+  introduced: Wed Aug 04 2010
+  commit: 1a4240f4764a
+  original author: Wang Lei <wang840925@gmail.com>
+  version: v2.6.35-3376-g1a4240f4764a
+== net/dns_resolver/dns_query.c: 
+  introduced: Wed Aug 04 2010
+  commit: 1a4240f4764a
+  original author: Wang Lei <wang840925@gmail.com>
+  version: v2.6.35-3376-g1a4240f4764a
+== net/dns_resolver/internal.h: 
+  introduced: Sun Mar 13 2005
+  commit: 87c66775f781
+  original author: Steve French <stevef@smf-t23.(none)>
+  version: v2.6.8-14795-g87c66775f781
+== net/ipv4/inetpeer.c: 
+  introduced: Tue Jan 04 2000
+  commit: c171b7e4cb75
+  original author: linus1 <torvalds@linuxfoundation.org>
+  version: v2.3.1-154-gc171b7e4cb75
+== net/ipv4/ipmr_base.c: 
+  introduced: Wed Feb 28 2018
+  commit: 6853f21f764b
+  original author: Yuval Mintz <yuvalm@mellanox.com>
+  version: v4.16-rc2-881-g6853f21f764b
+== net/ipv4/netfilter.c: 
+  introduced: Tue Aug 09 2005
+  commit: 020b4c12dbe3
+  original author: Harald Welte <laforge@netfilter.org>
+  version: v2.6.13-166-g020b4c12dbe3
+== net/ipv4/tcp_plb.c: 
+  introduced: Wed Oct 26 2022
+  commit: 1a91bb7c3ebf
+  original author: Mubashir Adnan Qureshi <mubashirq@google.com>
+  version: v6.1-rc2-458-g1a91bb7c3ebf
+== net/ipv4/tcp_rate.c: 
+  introduced: Mon Sep 19 2016
+  commit: b9f64820fb22
+  original author: Yuchung Cheng <ycheng@google.com>
+  version: v4.8-rc6-1457-gb9f64820fb22
+== is: 
+  'is' does not exist, no data
+== missing: 
+  'missing' does not exist, no data
+== net/ipv6/fib6_notifier.c: 
+  introduced: Thu Aug 03 2017
+  commit: 16ab6d7d4d8c
+  original author: Ido Schimmel <idosch@mellanox.com>
+  version: v4.13-rc3-593-g16ab6d7d4d8c
+== net/ipv6/netfilter.c: 
+  introduced: Tue Aug 09 2005
+  commit: 020b4c12dbe3
+  original author: Harald Welte <laforge@netfilter.org>
+  version: v2.6.13-166-g020b4c12dbe3
+== net/netfilter/core.c: 
+  introduced: Tue Aug 09 2005
+  commit: f6ebe77f955d
+  original author: Harald Welte <laforge@netfilter.org>
+  version: v2.6.13-228-gf6ebe77f955d
+== net/netfilter/nf_conntrack_netlink.c: 
+  introduced: Tue Aug 09 2005
+  commit: 080774a243f5
+  original author: Harald Welte <laforge@netfilter.org>
+  version: v2.6.13-158-g080774a243f5
+== net/netfilter/nfnetlink.c: 
+  introduced: Tue Aug 09 2005
+  commit: f9e815b376dc
+  original author: Harald Welte <laforge@netfilter.org>
+  version: v2.6.13-155-gf9e815b376dc
+== net/netfilter/nf_queue.c: 
+  introduced: Tue Aug 09 2005
+  commit: f6ebe77f955d
+  original author: Harald Welte <laforge@netfilter.org>
+  version: v2.6.13-228-gf6ebe77f955d
+== net/sunrpc/auth_gss/gss_krb5_crypto.c: 
+  introduced: Sun Jan 12 2003
+  commit: 7e3b11303578
+  original author: Trond Myklebust <trond.myklebust@fys.uio.no>
+  version: v2.4.0-16246-g7e3b11303578
+== net/sunrpc/auth_gss/gss_krb5_keys.c: 
+  introduced: Wed Mar 17 2010
+  commit: 4891f2d008e4
+  original author: Kevin Coffman <kwc@citi.umich.edu>
+  version: v2.6.34-rc7-134-g4891f2d008e4
+== net/sunrpc/auth_gss/gss_krb5_seal.c: 
+  introduced: Sun Jan 12 2003
+  commit: 7e3b11303578
+  original author: Trond Myklebust <trond.myklebust@fys.uio.no>
+  version: v2.4.0-16246-g7e3b11303578
+== net/sunrpc/auth_gss/gss_krb5_unseal.c: 
+  introduced: Sun Jan 12 2003
+  commit: 7e3b11303578
+  original author: Trond Myklebust <trond.myklebust@fys.uio.no>
+  version: v2.4.0-16246-g7e3b11303578
+== net/sunrpc/auth_gss/gss_krb5_wrap.c: 
+  introduced: Thu Oct 13 2005
+  commit: 14ae162c24d9
+  original author: J. Bruce Fields <bfields@fieldses.org>
+  version: v2.6.14-rc4-201-g14ae162c24d9
+
+
+
+
+----------------------------------
+== sound/hda/core/trace.c: 
+  introduced: Tue Mar 10 2015
+  commit: e311782acd19
+  original author: Takashi Iwai <tiwai@suse.de>
+  version: v4.0-rc5-191-ge311782acd19
+== sound/isa/gus/interwave-stb.c: 
+  introduced: Tue Feb 12 2002
+  commit: 5b78cfd125eb
+  original author: Jaroslav Kysela <perex@perex.cz>
+  version: v2.4.0-427-g5b78cfd125eb
+== sound/isa/msnd/msnd_classic.c: 
+  introduced: Wed May 20 1998
+  commit: 04c253358402
+  original author: linus1 <torvalds@linuxfoundation.org>
+  version: v2.1.105-2-g04c253358402
+----------------------------------
+== sound/drivers/opl4/opl4_local.h: 
+  introduced: Mon Jun 02 2003
+  commit: 0d88ffc44db7
+  original author: Jaroslav Kysela <perex@suse.cz>
+  version: v2.4.0-24216-g0d88ffc44db7
+== sound/drivers/opl4/opl4_seq.c: 
+  introduced: Mon Jun 02 2003
+  commit: 0d88ffc44db7
+  original author: Jaroslav Kysela <perex@suse.cz>
+  version: v2.4.0-24216-g0d88ffc44db7
+== sound/drivers/opl4/opl4_synth.c: 
+  introduced: Mon Jun 02 2003
+  commit: 0d88ffc44db7
+  original author: Jaroslav Kysela <perex@suse.cz>
+  version: v2.4.0-24216-g0d88ffc44db7
+== sound/drivers/opl4/yrw801.c: 
+  introduced: Mon Jun 02 2003
+  commit: 0d88ffc44db7
+  original author: Jaroslav Kysela <perex@suse.cz>
+  version: v2.4.0-24216-g0d88ffc44db7
+----------------------------------
+== sound/core/oss/copy.c: 
+  introduced: Tue Feb 12 2002
+  commit: 5b78cfd125eb
+  original author: Jaroslav Kysela <perex@perex.cz>
+  version: v2.4.0-427-g5b78cfd125eb
+== sound/core/oss/io.c: 
+  introduced: Tue Feb 12 2002
+  commit: 5b78cfd125eb
+  original author: Jaroslav Kysela <perex@perex.cz>
+  version: v2.4.0-427-g5b78cfd125eb
+== sound/core/oss/linear.c: 
+  introduced: Tue Feb 12 2002
+  commit: 5b78cfd125eb
+  original author: Jaroslav Kysela <perex@perex.cz>
+  version: v2.4.0-427-g5b78cfd125eb
+== sounds/core/oss/mulaw.c: 
+  'sounds/core/oss/mulaw.c' does not exist, no data
+== sound/core/oss/pcm_plugin.c: 
+  introduced: Tue Feb 12 2002
+  commit: 5b78cfd125eb
+  original author: Jaroslav Kysela <perex@perex.cz>
+  version: v2.4.0-427-g5b78cfd125eb
+== sound/core/oss/rate.c: 
+  introduced: Tue Feb 12 2002
+  commit: 5b78cfd125eb
+  original author: Jaroslav Kysela <perex@perex.cz>
+  version: v2.4.0-427-g5b78cfd125eb
+== sound/core/oss/route.c: 
+  introduced: Tue Feb 12 2002
+  commit: 5b78cfd125eb
+  original author: Jaroslav Kysela <perex@perex.cz>
+  version: v2.4.0-427-g5b78cfd125eb
+== sound/core/pcm_misc.c: 
+  introduced: Tue Feb 12 2002
+  commit: 5b78cfd125eb
+  original author: Jaroslav Kysela <perex@perex.cz>
+  version: v2.4.0-427-g5b78cfd125eb
+----------------------------------
+ git-when-introduced.sh mm/dmapool_test.c mm/folio-compat.c mm/gup_test.c mm/hugetlb_cgroup.c mm/memfd.c mm/mmu_gather.c mm/rmap.c mm/shmem.c
+== mm/dmapool_test.c: 
+  introduced: Thu Jan 26 2023
+  commit: def8574308ed
+  original author: Keith Busch <kbusch@kernel.org>
+  version: v6.3-rc4-82-gdef8574308ed
+== mm/folio-compat.c: 
+  introduced: Thu Dec 10 2020
+  commit: 2f52578f9c64
+  original author: Matthew Wilcox (Oracle) <willy@infradead.org>
+  version: v5.15-rc3-16-g2f52578f9c64
+== mm/gup_test.c: 
+  introduced: Fri Nov 17 2017
+  commit: 64c349f4ae78
+  original author: Kirill A. Shutemov <kirill.shutemov@linux.intel.com>
+  version: v4.14-11005-g64c349f4ae78
+== mm/hugetlb_cgroup.c: 
+  introduced: Tue Jul 31 2012
+  commit: 2bc64a204697
+  original author: Aneesh Kumar K.V <aneesh.kumar@linux.vnet.ibm.com>
+  version: v3.5-8218-g2bc64a204697
+== mm/memfd.c: 
+  introduced: Thu Jun 07 2018
+  commit: 5d752600a8c3
+  original author: Mike Kravetz <mike.kravetz@oracle.com>
+  version: v4.17-7424-g5d752600a8c3
+== mm/mmu_gather.c: 
+  introduced: Mon Sep 03 2018
+  commit: 196d9d8bb71d
+  original author: Peter Zijlstra <peterz@infradead.org>
+  version: v4.19-rc2-4-g196d9d8bb71d
+== mm/rmap.c: 
+  introduced: Thu Jul 18 2002
+  commit: e13be7b01af6
+  original author: Andrew Morton <akpm@zip.com.au>
+  version: v2.4.0-5231-ge13be7b01af6
+== mm/shmem.c: 
+  introduced: Tue Oct 03 2000
+  commit: ea6df39bd204
+  original author: linus1 <torvalds@linuxfoundation.org>
+  version: v2.3.1-382-gea6df39bd204
+
+----------------------------------
+== ipc/mqueue.c: 
+  introduced: Sun Apr 11 2004
+  commit: b81d081bd366
+  original submitter: Andrew Morton <akpm@osdl.org>
+  original authors:
+   - Manfred Spraul <manfred@colorfullife.com>
+   - Krzysztof Benedyczak <golbi@mat.uni.torun.pl>
+   - Michal Wronski <michal.wronski@gmail.com>
+  notes: adds Krzysztof and Michal to the CREDITS file
+  version: v2.6.5-71-gb81d081bd366
+  current maintainers:
+   - Christian Brauner <brauner@kernel.org>
+   - Al Viro <viro@zeniv.linux.org.uk>
+   - NeilBrown <neil@brown.name>
+  lists:
+   - linux-kernel@vger.kernel.org
+
+----------------------------------
+== kernel/debug
+== kernel/debug/debug_core.h: 
+== kernel/debug/kdb/kdb_bp.c: 
+== kernel/debug/kdb/kdb_bt.c: 
+== kernel/debug/kdb/kdb_debugger.c: 
+== kernel/debug/kdb/kdb_io.c: 
+== kernel/debug/kdb/kdb_main.c: 
+== kernel/debug/kdb/kdb_private.h: 
+== kernel/debug/kdb/kdb_support.c: 
+  introduced: Fri Apr 02 2010
+  commit: 53197fc49549
+  original author: Jason Wessel <jason.wessel@windriver.com>
+  version: v2.6.34-2643-g53197fc49549
+  current maintainers:
+    - Jason Wessel <jason.wessel@windriver.com>
+    - Daniel Thompson <danielt@kernel.org>
+  lists:
+    - kgdb-bugreport@lists.sourceforge.net (open list:KGDB / KDB /debug_core)
+    - linux-kernel@vger.kernel.org (open list)
+  related files:
+    - include/linux/kdb.h
+    - include/linux/kgdb.h (different commit)
+    - drivers/tty/serial/kgdboc.c (already has SPDX id)
+    - drivers/misc/kgdbts.c (already has SPDX id)
+
+== include/linux/kgdb.h:
+  introduced: Thu Apr 17 2008
+  commit: dc7d55270521
+  original author: Jason Wessel <jason.wessel@windriver.com>
+  version: v2.6.25-2-gdc7d55270521
+
+
+
+== kernel/debug/kdb/kdb_keyboard.c: 
+  introduced: Thu May 20 2010
+  commit: ada64e4c98eb
+  original author: Jason Wessel <jason.wessel@windriver.com>
+  version: v2.6.34-2655-gada64e4c98eb
+  related files:
+    drivers/serial/kgdboc.c (already has one)
+----------------------------------
+== kernel/locking/lockdep_states.h, mutex-debug.c, spinlock_debug.c
+== kernel/locking/lockdep_states.h: 
+  introduced: Thu Jan 22 2009
+  commit: 9fe51abf7a1c
+  original author: Peter Zijlstra <a.p.zijlstra@chello.nl>
+  version: v2.6.29-rc3-708-g9fe51abf7a1c
+  current maintainers: same as spinlock_debug.c
+
+== kernel/locking/mutex-debug.c: 
+  introduced: Mon Jan 09 2006
+  commit: 408894ee4dd4
+  original author: Ingo Molnar <mingo@elte.hu>
+  version: v2.6.15-2029-g408894ee4dd4
+  current maintainers: same as spinlock_debug.c
+  related files:
+   - include/linux/mutex_api.h
+
+== kernel/locking/spinlock_debug.c: 
+  introduced: Sat Sep 10 2005
+  commit: fb1c8f93d869
+  original author: Ingo Molnar <mingo@redhat.com> (was <mingo@elte.hu>)
+  version: v2.6.13-2309-gfb1c8f93d869
+  current maintainers:
+   - Peter Zijlstra <peterz@infradead.org> (maintainer:LOCKING PRIMITIVES)
+   - Ingo Molnar <mingo@redhat.com> (maintainer:LOCKING PRIMITIVES)
+   - Will Deacon <will@kernel.org> (maintainer:LOCKING PRIMITIVES)
+   - Boqun Feng <boqun.feng@gmail.com> (maintainer:LOCKING PRIMITIVES)
+  lists:
+   - linux-kernel@vger.kernel.org (open list:LOCKING PRIMITIVES)
+
+  related files (from same commit)
+  - include/asm-generic/spinlock_types.h (already has SPDX header)
+  - include/linux/spinlock_types.h (added)
+include/linux/spinlock_api.h       |    1+     0- (1 hunk)
+ include/linux/spinlock_api_smp.h   |    1+     1- (2 hunks)
+ include/linux/spinlock_api_up.h    |    1+     1- (2 hunks)
+ include/linux/spinlock_types.h     |    1+     1- (2 hunks)
+ include/linux/spinlock_types_raw.h |    1+     0- (1 hunk)
+ include/linux/spinlock_types_up.h  |    1+     1- (2 hunks)
+ include/linux/spinlock_up.h        |    1+     1- (2 hunks)
+ kernel/locking/spinlock_debug.c    |    1+     1- (1 hunk)
+
+
+
+----------------------------------
+== kernel/module/kmod.c: 
+  introduced: Fri Feb 20 1998
+  commit: 2e2d67a0849d
+  original author: linus1 <torvalds@linuxfoundation.org>
+    - probably Kirk Peterson
+  version: v2.1.89-1-g2e2d67a0849d
+  current maintainer:
+
+----------------------------------
+kernel/bpf/offload.c, ringbuf.c, token.c
+== kernel/bpf/offload.c: 
+  introduced: Fri Nov 03 2017
+  commit: ab3f0063c48c
+  original author: Jakub Kicinski <kuba@kernel.org> (was <jakub.kicinski@netronome.com>)
+  version: v4.14-rc7-2120-gab3f0063c48c
+  current maintainers: same as token.c
+  lists: same as token.c
+
+== kernel/bpf/ringbuf.c: 
+  introduced: Fri May 29 2020
+  commit: 457f44363a88
+  original author: Andrii Nakryiko <andrii@kernel.org> (was <andriin@fb.com>)
+  version: v5.7-rc7-2894-g457f44363a88
+  current maintainers: same as token.c
+  lists: same as token.c
+
+== kernel/bpf/token.c: 
+  introduced: Thu Nov 30 2023
+  commit: 4527358b7686
+  original author: Andrii Nakryiko <andrii@kernel.org>
+  version: v6.7-rc3-725-g4527358b7686
+  current maintainers:
+    - Alexei Starovoitov <ast@kernel.org>
+    - Daniel Borkmann <daniel@iogearbox.net>
+    - Andrii Nakryiko <andrii@kernel.org>
+  lists:
+   - linux-kernel@vger.kernel.org
+   - bpf@vger.kernel.org
+
+----------------------------------
+== kernel/cgroup/legacy_freezer.c
+  original filename: kernel/cgroup_freezer.c
+  introduced: Sat Oct 18 2008
+  commit: dc52ddc0e6f4
+  original author: Cedric Le Goater <clg@redhat.com> (was <clg@fr.ibm.com>)
+  original author and submitter: Matt Helsley <matthltc@us.ibm.com>
+  version: v2.6.27-5630-gdc52ddc0e6f4
+  maintainers:
+    - Waiman Long <longman@redhat.com> (maintainer:CONTROL GROUP - CPUSET)
+    - Tejun Heo <tj@kernel.org> (maintainer:CONTROL GROUP (CGROUP))
+    - Johannes Weiner <hannes@cmpxchg.org> (maintainer:CONTROL GROUP (CGROUP))
+    - "Michal Koutný" <mkoutny@suse.com> (maintainer:CONTROL GROUP (CGROUP))
+
+  lists:
+    - linux-spdx@vger.kernel.org
+    - cgroups@vger.kernel.org (open list:CONTROL GROUP - CPUSET)
+    - linux-kernel@vger.kernel.org (open list)
+
+
+----------------------------------
+== cgroup.c: 
+  introduced: Thu Oct 18 2007
+  commit: ddbcc7e8e50a
+  original author:
+   - submitter: Paul Menage <menage@google.com>
+   - Simon Derr <simon.derr@bull.net>
+  version: v2.6.23-6077-gddbcc7e8e50a
+  maintainers:
+    - Waiman Long <longman@redhat.com> (maintainer:CONTROL GROUP - CPUSET)
+    - Tejun Heo <tj@kernel.org> (maintainer:CONTROL GROUP (CGROUP))
+    - Johannes Weiner <hannes@cmpxchg.org> (maintainer:CONTROL GROUP (CGROUP))
+    - "Michal Koutný" <mkoutny@suse.com> (maintainer:CONTROL GROUP (CGROUP))
+
+  lists:
+    - linux-spdx@vger.kernel.org
+    - cgroups@vger.kernel.org (open list:CONTROL GROUP - CPUSET)
+    - linux-kernel@vger.kernel.org (open list)
+
+== cpuset.c: 
+  introduced: Wed Mar 09 2005
+  commit: f2057d3ed2d8
+  original author: Paul Jackson <pj@sgi.com>
+  maintainers:
+    - Waiman Long <longman@redhat.com> (maintainer:CONTROL GROUP - CPUSET)
+    - Tejun Heo <tj@kernel.org> (maintainer:CONTROL GROUP (CGROUP))
+    - Johannes Weiner <hannes@cmpxchg.org> (maintainer:CONTROL GROUP (CGROUP))
+    - "Michal Koutný" <mkoutny@suse.com> (maintainer:CONTROL GROUP (CGROUP))
+
+  lists:
+    - linux-spdx@vger.kernel.org
+    - cgroups@vger.kernel.org (open list:CONTROL GROUP - CPUSET)
+    - linux-kernel@vger.kernel.org (open list)
+  version: v2.6.8-14050-gf2057d3ed2d8
+
+== include/linux/cpuset.h
+ - already has an SPDX line
+
+
+
+
+----------------------------------
+kernel/relay.c:
+ - original authors: karim@opersys.com, tom.zanussi@linux.intel.com
+ - current maintainer: Andrew Morton - akpm@linux-foundation.org
+ - recent work: Jason Xing - kernelxing@tencent.com
+ - lists:
+   - linux-spdx@vger.kernel.org
+   - linux-kernel@vger.kernel.org
+
+kernel/cpu.c:
+ - original author: Rusty Russell - rusty@rustcorp.com.au
+ - when introduced: Jul 26 2002
+   - commit: d57545f328b
+ - current maintainers:
+    - tglx@kernel.org
+    - perterz@infradead.org
+ - list:
+   - linux-spdx@vger.kernel.org
+   - linux-kernel@vger.kernel.org
+
+----------------------------------
+

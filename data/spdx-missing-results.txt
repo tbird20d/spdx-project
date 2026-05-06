@@ -1,0 +1,29 @@
+{{{
+Here is a summary of the top-level Linux kernel source tree directories
+and how many source files are missing SPDX headers
+==================================================
+KERNEL_SRC=/home/tbird/work/torvalds/linux
+KERNEL_VERSION=v6.15-rc3-94-g02ddfb981de8
+TEST_DATE=2025-04-25_12:21:13
+==================================================
+Directory '    arch'- Files without SPDX:        2231  12%
+Directory '   block'- Files without SPDX:           0   0%
+Directory '   certs'- Files without SPDX:           3  25%
+Directory '  crypto'- Files without SPDX:          19   9%
+Directory ' drivers'- Files without SPDX:        5895  16%
+Directory '      fs'- Files without SPDX:         185   7%
+Directory ' include'- Files without SPDX:         512   8%
+Directory '    init'- Files without SPDX:           1   5%
+Directory 'io_uring'- Files without SPDX:           8  10%
+Directory '     ipc'- Files without SPDX:           1   7%
+Directory '  kernel'- Files without SPDX:          27   4%
+Directory '     lib'- Files without SPDX:          74  12%
+Directory '      mm'- Files without SPDX:          10   5%
+Directory '     net'- Files without SPDX:         182   9%
+Directory 'security'- Files without SPDX:          10   3%
+Directory '   sound'- Files without SPDX:          66   2%
+Directory '     usr'- Files without SPDX:           1   8%
+Directory '    virt'- Files without SPDX:           0   0%
+Total                 Files without SPDX:        9225
+==================================================
+}}}

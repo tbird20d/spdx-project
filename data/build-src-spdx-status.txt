@@ -1,0 +1,2892 @@
+arch/x86/decode.c,0
+arch/x86/entry/common.c,0
+arch/x86/entry/entry_64_compat.S,0
+arch/x86/entry/entry_64.S,0
+arch/x86/entry/entry.S,0
+arch/x86/entry/syscall_32.c,0
+arch/x86/entry/syscall_64.c,0
+arch/x86/entry/thunk_64.S,0
+arch/x86/entry/vdso/extable.c,0
+arch/x86/entry/vdso/vclock_gettime.c,0
+arch/x86/entry/vdso/vdso2c.c,0
+arch/x86/entry/vdso/vdso32/note.S,0
+arch/x86/entry/vdso/vdso32-setup.c,0
+arch/x86/entry/vdso/vdso32/sigreturn.S,0
+arch/x86/entry/vdso/vdso32/system_call.S,0
+arch/x86/entry/vdso/vdso32/vclock_gettime.c,0
+arch/x86/entry/vdso/vdso32/vdso32.lds.S,0
+arch/x86/entry/vdso/vdso32/vgetcpu.c,0
+arch/x86/entry/vdso/vdso-image-32.c,no spdx
+arch/x86/entry/vdso/vdso-image-32.c,no spdx
+arch/x86/entry/vdso/vdso-image-64.c,no spdx
+arch/x86/entry/vdso/vdso-image-64.c,no spdx
+arch/x86/entry/vdso/vdso.lds.S,0
+arch/x86/entry/vdso/vdso-note.S,no spdx
+arch/x86/entry/vdso/vgetcpu.c,0
+arch/x86/entry/vdso/vma.c,0
+arch/x86/entry/vsyscall/vsyscall_64.c,0
+arch/x86/entry/vsyscall/vsyscall_emu_64.S,0
+arch/x86/events/amd/core.c,0
+arch/x86/events/amd/ibs.c,no spdx
+arch/x86/events/amd/iommu.c,0
+arch/x86/events/amd/lbr.c,0
+arch/x86/events/amd/uncore.c,0
+arch/x86/events/core.c,no spdx
+arch/x86/events/intel/bts.c,0
+arch/x86/events/intel/core.c,0
+arch/x86/events/intel/cstate.c,no spdx
+arch/x86/events/intel/ds.c,0
+arch/x86/events/intel/knc.c,0
+arch/x86/events/intel/lbr.c,0
+arch/x86/events/intel/p4.c,no spdx
+arch/x86/events/intel/p6.c,0
+arch/x86/events/intel/pt.c,0
+arch/x86/events/intel/uncore.c,0
+arch/x86/events/intel/uncore_discovery.c,0
+arch/x86/events/intel/uncore_nhmex.c,0
+arch/x86/events/intel/uncore_snb.c,0
+arch/x86/events/intel/uncore_snbep.c,0
+arch/x86/events/msr.c,0
+arch/x86/events/probe.c,0
+arch/x86/events/rapl.c,0
+arch/x86/events/utils.c,0
+arch/x86/events/zhaoxin/core.c,0
+arch/x86/ia32/audit.c,0
+arch/x86/include/asm/orc_types.h,0
+arch/x86/include/generated/asm/orc_hash.h,no spdx
+arch/x86/include/generated/asm/syscalls_32.h,no spdx
+arch/x86/include/generated/asm/syscalls_64.h,no spdx
+arch/x86/include/generated/asm/unistd_32_ia32.h,no spdx
+arch/x86/include/generated/asm/unistd_64_x32.h,no spdx
+arch/x86/include/generated/uapi/asm/unistd_32.h,no spdx
+arch/x86/include/generated/uapi/asm/unistd_64.h,no spdx
+arch/x86/include/generated/uapi/asm/unistd_x32.h,no spdx
+arch/x86/kernel/acpi/boot.c,0
+arch/x86/kernel/acpi/cppc.c,0
+arch/x86/kernel/acpi/cstate.c,0
+arch/x86/kernel/acpi/sleep.c,0
+arch/x86/kernel/acpi/wakeup_64.S,0
+arch/x86/kernel/alternative.c,0
+arch/x86/kernel/amd_nb.c,0
+arch/x86/kernel/apic/apic.c,0
+arch/x86/kernel/apic/apic_common.c,0
+arch/x86/kernel/apic/apic_flat_64.c,0
+arch/x86/kernel/apic/apic_noop.c,0
+arch/x86/kernel/apic/hw_nmi.c,0
+arch/x86/kernel/apic/init.c,0
+arch/x86/kernel/apic/io_apic.c,0
+arch/x86/kernel/apic/ipi.c,0
+arch/x86/kernel/apic/msi.c,0
+arch/x86/kernel/apic/probe_64.c,0
+arch/x86/kernel/apic/vector.c,0
+arch/x86/kernel/asm-offsets.c,0
+arch/x86/kernel/asm-offsets.c,0
+arch/x86/kernel/audit_64.c,0
+arch/x86/kernel/bootflag.c,0
+arch/x86/kernel/callthunks.c,0
+arch/x86/kernel/cet.c,0
+arch/x86/kernel/check.c,0
+arch/x86/kernel/cpu/amd.c,0
+arch/x86/kernel/cpu/aperfmperf.c,0
+arch/x86/kernel/cpu/bugs.c,0
+arch/x86/kernel/cpu/cacheinfo.c,0
+arch/x86/kernel/cpu/capflags.c,no spdx
+arch/x86/kernel/cpu/capflags.c,no spdx
+arch/x86/kernel/cpu/centaur.c,0
+arch/x86/kernel/cpu/common.c,0
+arch/x86/kernel/cpu/cpuid-deps.c,no spdx
+arch/x86/kernel/cpu/debugfs.c,0
+arch/x86/kernel/cpu/feat_ctl.c,0
+arch/x86/kernel/cpu/hygon.c,0
+arch/x86/kernel/cpu/hypervisor.c,no spdx
+arch/x86/kernel/cpuid.c,0
+arch/x86/kernel/cpu/../../include/asm/cpufeatures.h,0
+arch/x86/kernel/cpu/../../include/asm/vmxfeatures.h,0
+arch/x86/kernel/cpu/intel.c,0
+arch/x86/kernel/cpu/intel_epb.c,0
+arch/x86/kernel/cpu/intel_pconfig.c,0
+arch/x86/kernel/cpu/match.c,0
+arch/x86/kernel/cpu/mce/amd.c,0
+arch/x86/kernel/cpu/mce/core.c,0
+arch/x86/kernel/cpu/mce/genpool.c,0
+arch/x86/kernel/cpu/mce/intel.c,0
+arch/x86/kernel/cpu/mce/severity.c,0
+arch/x86/kernel/cpu/mce/threshold.c,0
+arch/x86/kernel/cpu/microcode/amd.c,0
+arch/x86/kernel/cpu/microcode/core.c,0
+arch/x86/kernel/cpu/microcode/intel.c,0
+arch/x86/kernel/cpu/mshyperv.c,0
+arch/x86/kernel/cpu/mtrr/cleanup.c,no spdx
+arch/x86/kernel/cpu/mtrr/generic.c,0
+arch/x86/kernel/cpu/mtrr/if.c,0
+arch/x86/kernel/cpu/mtrr/mtrr.c,no spdx
+arch/x86/kernel/cpu/perfctr-watchdog.c,0
+arch/x86/kernel/cpu/powerflags.c,0
+arch/x86/kernel/cpu/proc.c,0
+arch/x86/kernel/cpu/rdrand.c,0
+arch/x86/kernel/cpu/scattered.c,no spdx
+arch/x86/kernel/cpu/topology.c,0
+arch/x86/kernel/cpu/tsx.c,0
+arch/x86/kernel/cpu/umwait.c,0
+arch/x86/kernel/cpu/vmware.c,no spdx
+arch/x86/kernel/cpu/zhaoxin.c,0
+arch/x86/kernel/crash.c,0
+arch/x86/kernel/crash_core_64.c,0
+arch/x86/kernel/crash_dump_64.c,0
+arch/x86/kernel/dumpstack_64.c,0
+arch/x86/kernel/dumpstack.c,no spdx
+arch/x86/kernel/e820.c,0
+arch/x86/kernel/early_printk.c,0
+arch/x86/kernel/early-quirks.c,0
+arch/x86/kernel/ebda.c,0
+arch/x86/kernel/espfix_64.c,0
+arch/x86/kernel/fpu/bugs.c,0
+arch/x86/kernel/fpu/core.c,0
+arch/x86/kernel/fpu/init.c,0
+arch/x86/kernel/fpu/regset.c,0
+arch/x86/kernel/fpu/signal.c,0
+arch/x86/kernel/fpu/xstate.c,0
+arch/x86/kernel/head64.c,0
+arch/x86/kernel/head_64.S,0
+arch/x86/kernel/hpet.c,0
+arch/x86/kernel/hw_breakpoint.c,0
+arch/x86/kernel/i8237.c,0
+arch/x86/kernel/i8253.c,0
+arch/x86/kernel/i8259.c,0
+arch/x86/kernel/ibt_selftest.S,0
+arch/x86/kernel/idt.c,0
+arch/x86/kernel/io_delay.c,0
+arch/x86/kernel/ioport.c,0
+arch/x86/kernel/irq_64.c,0
+arch/x86/kernel/irq.c,0
+arch/x86/kernel/irqflags.S,0
+arch/x86/kernel/irqinit.c,0
+arch/x86/kernel/irq_work.c,0
+arch/x86/kernel/itmt.c,0
+arch/x86/kernel/jump_label.c,0
+arch/x86/kernel/kdebugfs.c,0
+arch/x86/kernel/kprobes/core.c,0
+arch/x86/kernel/kprobes/opt.c,0
+arch/x86/kernel/ksysfs.c,0
+arch/x86/kernel/kvm.c,0
+arch/x86/kernel/kvmclock.c,0
+arch/x86/kernel/ldt.c,0
+arch/x86/kernel/machine_kexec_64.c,0
+arch/x86/kernel/mmconf-fam10h_64.c,0
+arch/x86/kernel/module.c,0
+arch/x86/kernel/mpparse.c,0
+arch/x86/kernel/msr.c,0
+arch/x86/kernel/nmi.c,0
+arch/x86/kernel/paravirt.c,0
+arch/x86/kernel/pci-dma.c,0
+arch/x86/kernel/pcspeaker.c,0
+arch/x86/kernel/perf_regs.c,0
+arch/x86/kernel/platform-quirks.c,0
+arch/x86/kernel/probe_roms.c,0
+arch/x86/kernel/process_64.c,0
+arch/x86/kernel/process.c,0
+arch/x86/kernel/ptrace.c,0
+arch/x86/kernel/pvclock.c,0
+arch/x86/kernel/quirks.c,0
+arch/x86/kernel/reboot.c,0
+arch/x86/kernel/relocate_kernel_64.S,0
+arch/x86/kernel/resource.c,0
+arch/x86/kernel/rethook.c,0
+arch/x86/kernel/rtc.c,0
+arch/x86/kernel/setup.c,0
+arch/x86/kernel/setup_percpu.c,0
+arch/x86/kernel/signal_32.c,0
+arch/x86/kernel/signal_64.c,0
+arch/x86/kernel/signal.c,0
+arch/x86/kernel/smpboot.c,0
+arch/x86/kernel/smp.c,0
+arch/x86/kernel/stacktrace.c,no spdx
+arch/x86/kernel/static_call.c,0
+arch/x86/kernel/step.c,0
+arch/x86/kernel/sys_ia32.c,0
+arch/x86/kernel/sys_x86_64.c,0
+arch/x86/kernel/time.c,0
+arch/x86/kernel/tls.c,0
+arch/x86/kernel/topology.c,no spdx
+arch/x86/kernel/trace.c,no spdx
+arch/x86/kernel/trace_clock.c,0
+arch/x86/kernel/tracepoint.c,0
+arch/x86/kernel/traps.c,no spdx
+arch/x86/kernel/tsc.c,0
+arch/x86/kernel/tsc_msr.c,0
+arch/x86/kernel/tsc_sync.c,0
+arch/x86/kernel/umip.c,no spdx
+arch/x86/kernel/unwind_orc.c,0
+arch/x86/kernel/uprobes.c,0
+arch/x86/kernel/vmlinux.lds.S,0
+arch/x86/kernel/vsmp_64.c,0
+arch/x86/kernel/x86_init.c,no spdx
+arch/x86/lib/cache-smp.c,0
+arch/x86/lib/clear_page_64.S,0
+arch/x86/lib/cmdline.c,0
+arch/x86/lib/cmpxchg16b_emu.S,0
+arch/x86/lib/copy_mc_64.S,0
+arch/x86/lib/copy_mc.c,0
+arch/x86/lib/copy_page_64.S,0
+arch/x86/lib/copy_user_64.S,0
+arch/x86/lib/copy_user_uncached_64.S,0
+arch/x86/lib/cpu.c,0
+arch/x86/lib/csum-copy_64.S,no spdx
+arch/x86/lib/csum-partial_64.c,0
+arch/x86/lib/csum-wrappers_64.c,0
+arch/x86/lib/delay.c,0
+arch/x86/lib/getuser.S,0
+arch/x86/lib/hweight.S,0
+arch/x86/lib/inat.c,0
+arch/x86/lib/inat-tables.c,no spdx
+arch/x86/lib/insn.c,0
+arch/x86/lib/insn-eval.c,no spdx
+arch/x86/lib/iomap_copy_64.S,0
+arch/x86/lib/iomem.c,no spdx
+arch/x86/lib/kaslr.c,0
+arch/x86/lib/memcpy_64.S,0
+arch/x86/lib/memmove_64.S,0
+arch/x86/lib/memset_64.S,0
+arch/x86/lib/misc.c,0
+arch/x86/lib/msr.c,0
+arch/x86/lib/msr-reg-export.c,0
+arch/x86/lib/msr-reg.S,0
+arch/x86/lib/msr-smp.c,0
+arch/x86/lib/pc-conf-reg.c,0
+arch/x86/lib/putuser.S,0
+arch/x86/lib/retpoline.S,0
+arch/x86/lib/usercopy_64.c,0
+arch/x86/lib/usercopy.c,no spdx
+arch/x86/mm/amdtopology.c,0
+arch/x86/mm/cpu_entry_area.c,0
+arch/x86/mm/dump_pagetables.c,0
+arch/x86/mm/extable.c,0
+arch/x86/mm/fault.c,0
+arch/x86/mm/hugetlbpage.c,0
+arch/x86/mm/init_64.c,0
+arch/x86/mm/init.c,no spdx
+arch/x86/mm/ioremap.c,0
+arch/x86/mm/kaslr.c,0
+arch/x86/mm/maccess.c,0
+arch/x86/mm/mmap.c,0
+arch/x86/mm/numa_64.c,0
+arch/x86/mm/numa.c,0
+arch/x86/mm/pat/memtype.c,0
+arch/x86/mm/pat/memtype_interval.c,0
+arch/x86/mm/pat/set_memory.c,0
+arch/x86/mm/pgprot.c,0
+arch/x86/mm/pgtable.c,0
+arch/x86/mm/physaddr.c,0
+arch/x86/mm/pkeys.c,0
+arch/x86/mm/pti.c,0
+arch/x86/mm/srat.c,0
+arch/x86/mm/tlb.c,0
+arch/x86/pci/acpi.c,0
+arch/x86/pci/amd_bus.c,0
+arch/x86/pci/bus_numa.c,0
+arch/x86/pci/common.c,0
+arch/x86/pci/direct.c,0
+arch/x86/pci/early.c,0
+arch/x86/pci/fixup.c,0
+arch/x86/pci/i386.c,0
+arch/x86/pci/init.c,0
+arch/x86/pci/irq.c,0
+arch/x86/pci/legacy.c,0
+arch/x86/pci/mmconfig_64.c,0
+arch/x86/pci/mmconfig-shared.c,0
+arch/x86/platform/efi/efi_64.c,0
+arch/x86/platform/efi/efi.c,0
+arch/x86/platform/efi/efi_stub_64.S,0
+arch/x86/platform/efi/efi_thunk_64.S,0
+arch/x86/platform/efi/memmap.c,0
+arch/x86/platform/efi/quirks.c,0
+arch/x86/platform/efi/runtime-map.c,0
+arch/x86/platform/intel/iosf_mbi.c,0
+arch/x86/power/cpu.c,0
+arch/x86/power/hibernate_64.c,0
+arch/x86/realmode/init.c,0
+arch/x86/realmode/rm/bioscall.S,no spdx
+arch/x86/realmode/rm/copy.S,no spdx
+arch/x86/realmode/rm/header.S,0
+arch/x86/realmode/rm/pasyms.h,no spdx
+arch/x86/realmode/rmpiggy.S,0
+arch/x86/realmode/rm/realmode.lds.S,0
+arch/x86/realmode/rm/reboot.S,0
+arch/x86/realmode/rm/regs.c,no spdx
+arch/x86/realmode/rm/stack.S,0
+arch/x86/realmode/rm/trampoline_64.S,0
+arch/x86/realmode/rm/video-bios.c,no spdx
+arch/x86/realmode/rm/video-mode.c,no spdx
+arch/x86/realmode/rm/video-vesa.c,no spdx
+arch/x86/realmode/rm/video-vga.c,no spdx
+arch/x86/realmode/rm/wakemain.c,0
+arch/x86/realmode/rm/wakeup_asm.S,0
+arch/x86/special.c,0
+arch/x86/tools/relocs_32.c,0
+arch/x86/tools/relocs_64.c,0
+arch/x86/tools/relocs_common.c,0
+Binary,0
+file,0
+/tmp/build.log,no spdx
+matches,0
+block/badblocks.c,0
+block/bdev.c,0
+block/bio.c,0
+block/blk-cgroup.c,0
+block/blk-core.c,0
+block/blk-flush.c,0
+block/blk-ia-ranges.c,0
+block/blk-ioc.c,0
+block/blk-iocost.c,0
+block/blk-iolatency.c,0
+block/blk-ioprio.c,0
+block/blk-lib.c,0
+block/blk-map.c,0
+block/blk-merge.c,0
+block/blk-mq.c,0
+block/blk-mq-cpumap.c,0
+block/blk-mq-debugfs.c,0
+block/blk-mq-pci.c,0
+block/blk-mq-sched.c,0
+block/blk-mq-sysfs.c,0
+block/blk-mq-tag.c,0
+block/blk-mq-virtio.c,0
+block/blk-pm.c,0
+block/blk-rq-qos.c,0
+block/blk-settings.c,0
+block/blk-stat.c,0
+block/blk-sysfs.c,0
+block/blk-timeout.c,0
+block/bsg.c,0
+block/disk-events.c,0
+block/early-lookup.c,0
+block/elevator.c,0
+block/fops.c,0
+block/genhd.c,0
+block/holder.c,0
+block/ioctl.c,0
+block/ioprio.c,0
+block/kyber-iosched.c,0
+block/mq-deadline.c,0
+block/partitions/core.c,0
+block/partitions/efi.c,0
+block/partitions/msdos.c,0
+certs/extract-cert.c,no spdx
+certs/system_certificates.S,0
+certs/system_keyring.c,0
+crypto/acompress.c,0
+crypto/aead.c,0
+crypto/aes_generic.c,no spdx
+crypto/ahash.c,0
+crypto/akcipher.c,0
+crypto/algapi.c,0
+crypto/algboss.c,0
+crypto/api.c,0
+crypto/asymmetric_keys/asymmetric_type.c,0
+crypto/asymmetric_keys/pkcs7.asn1.c,no spdx
+crypto/asymmetric_keys/pkcs7.asn1.h,no spdx
+crypto/asymmetric_keys/pkcs7_parser.c,0
+crypto/asymmetric_keys/pkcs7_trust.c,0
+crypto/asymmetric_keys/pkcs7_verify.c,0
+crypto/asymmetric_keys/public_key.c,0
+crypto/asymmetric_keys/restrict.c,0
+crypto/asymmetric_keys/signature.c,0
+crypto/asymmetric_keys/x509_akid.asn1.c,no spdx
+crypto/asymmetric_keys/x509_akid.asn1.h,no spdx
+crypto/asymmetric_keys/x509.asn1.c,no spdx
+crypto/asymmetric_keys/x509.asn1.h,no spdx
+crypto/asymmetric_keys/x509_cert_parser.c,0
+crypto/asymmetric_keys/x509_loader.c,0
+crypto/asymmetric_keys/x509_public_key.c,0
+crypto/authenc.c,0
+crypto/authencesn.c,0
+crypto/cbc.c,0
+crypto/ccm.c,0
+crypto/cipher.c,0
+crypto/cmac.c,0
+crypto/compress.c,0
+crypto/crc32c_generic.c,0
+crypto/crypto_null.c,0
+crypto/ctr.c,0
+crypto/drbg.c,no spdx
+crypto/echainiv.c,0
+crypto/gcm.c,0
+crypto/geniv.c,0
+crypto/ghash-generic.c,0
+crypto/hash_info.c,0
+crypto/hmac.c,0
+crypto/jitterentropy.c,no spdx
+crypto/jitterentropy-kcapi.c,no spdx
+crypto/kpp.c,0
+crypto/md5.c,no spdx
+crypto/proc.c,0
+crypto/rng.c,0
+crypto/rsa.c,0
+crypto/rsa_helper.c,0
+crypto/rsa-pkcs1pad.c,0
+crypto/rsaprivkey.asn1.c,no spdx
+crypto/rsaprivkey.asn1.h,no spdx
+crypto/rsapubkey.asn1.c,no spdx
+crypto/rsapubkey.asn1.h,no spdx
+crypto/scatterwalk.c,0
+crypto/scompress.c,0
+crypto/seqiv.c,0
+crypto/sha256_generic.c,0
+crypto/sha3_generic.c,0
+crypto/sha512_generic.c,0
+crypto/shash.c,0
+crypto/sig.c,0
+crypto/skcipher.c,0
+crypto/testmgr.c,0
+drivers/acpi/ac.c,0
+drivers/acpi/acpi_apd.c,0
+drivers/acpi/acpica/dsargs.c,0
+drivers/acpi/acpica/dscontrol.c,0
+drivers/acpi/acpica/dsdebug.c,0
+drivers/acpi/acpica/dsfield.c,0
+drivers/acpi/acpica/dsinit.c,0
+drivers/acpi/acpica/dsmethod.c,0
+drivers/acpi/acpica/dsmthdat.c,0
+drivers/acpi/acpica/dsobject.c,0
+drivers/acpi/acpica/dsopcode.c,0
+drivers/acpi/acpica/dspkginit.c,0
+drivers/acpi/acpica/dsutils.c,0
+drivers/acpi/acpica/dswexec.c,0
+drivers/acpi/acpica/dswload2.c,0
+drivers/acpi/acpica/dswload.c,0
+drivers/acpi/acpica/dswscope.c,0
+drivers/acpi/acpica/dswstate.c,0
+drivers/acpi/acpica/evevent.c,0
+drivers/acpi/acpica/evglock.c,0
+drivers/acpi/acpica/evgpeblk.c,0
+drivers/acpi/acpica/evgpe.c,0
+drivers/acpi/acpica/evgpeinit.c,0
+drivers/acpi/acpica/evgpeutil.c,0
+drivers/acpi/acpica/evhandler.c,0
+drivers/acpi/acpica/evmisc.c,0
+drivers/acpi/acpica/evregion.c,0
+drivers/acpi/acpica/evrgnini.c,0
+drivers/acpi/acpica/evsci.c,0
+drivers/acpi/acpica/evxface.c,0
+drivers/acpi/acpica/evxfevnt.c,0
+drivers/acpi/acpica/evxfgpe.c,0
+drivers/acpi/acpica/evxfregn.c,0
+drivers/acpi/acpica/exconcat.c,0
+drivers/acpi/acpica/exconfig.c,0
+drivers/acpi/acpica/exconvrt.c,0
+drivers/acpi/acpica/excreate.c,0
+drivers/acpi/acpica/exdebug.c,0
+drivers/acpi/acpica/exdump.c,0
+drivers/acpi/acpica/exfield.c,0
+drivers/acpi/acpica/exfldio.c,0
+drivers/acpi/acpica/exmisc.c,0
+drivers/acpi/acpica/exmutex.c,0
+drivers/acpi/acpica/exnames.c,0
+drivers/acpi/acpica/exoparg1.c,0
+drivers/acpi/acpica/exoparg2.c,0
+drivers/acpi/acpica/exoparg3.c,0
+drivers/acpi/acpica/exoparg6.c,0
+drivers/acpi/acpica/exprep.c,0
+drivers/acpi/acpica/exregion.c,0
+drivers/acpi/acpica/exresnte.c,0
+drivers/acpi/acpica/exresolv.c,0
+drivers/acpi/acpica/exresop.c,0
+drivers/acpi/acpica/exserial.c,0
+drivers/acpi/acpica/exstore.c,0
+drivers/acpi/acpica/exstoren.c,0
+drivers/acpi/acpica/exstorob.c,0
+drivers/acpi/acpica/exsystem.c,0
+drivers/acpi/acpica/extrace.c,0
+drivers/acpi/acpica/exutils.c,0
+drivers/acpi/acpica/hwacpi.c,0
+drivers/acpi/acpica/hwesleep.c,0
+drivers/acpi/acpica/hwgpe.c,0
+drivers/acpi/acpica/hwpci.c,0
+drivers/acpi/acpica/hwregs.c,0
+drivers/acpi/acpica/hwsleep.c,0
+drivers/acpi/acpica/hwvalid.c,0
+drivers/acpi/acpica/hwxface.c,0
+drivers/acpi/acpica/hwxfsleep.c,0
+drivers/acpi/acpica/nsaccess.c,0
+drivers/acpi/acpica/nsalloc.c,0
+drivers/acpi/acpica/nsarguments.c,0
+drivers/acpi/acpica/nsconvert.c,0
+drivers/acpi/acpica/nsdump.c,0
+drivers/acpi/acpica/nseval.c,0
+drivers/acpi/acpica/nsinit.c,0
+drivers/acpi/acpica/nsload.c,0
+drivers/acpi/acpica/nsnames.c,0
+drivers/acpi/acpica/nsobject.c,0
+drivers/acpi/acpica/nsparse.c,0
+drivers/acpi/acpica/nspredef.c,0
+drivers/acpi/acpica/nsprepkg.c,0
+drivers/acpi/acpica/nsrepair2.c,0
+drivers/acpi/acpica/nsrepair.c,0
+drivers/acpi/acpica/nssearch.c,0
+drivers/acpi/acpica/nsutils.c,0
+drivers/acpi/acpica/nswalk.c,0
+drivers/acpi/acpica/nsxfeval.c,0
+drivers/acpi/acpica/nsxfname.c,0
+drivers/acpi/acpica/nsxfobj.c,0
+drivers/acpi/acpica/psargs.c,0
+drivers/acpi/acpica/psloop.c,0
+drivers/acpi/acpica/psobject.c,0
+drivers/acpi/acpica/psopcode.c,0
+drivers/acpi/acpica/psopinfo.c,0
+drivers/acpi/acpica/psparse.c,0
+drivers/acpi/acpica/psscope.c,0
+drivers/acpi/acpica/pstree.c,0
+drivers/acpi/acpica/psutils.c,0
+drivers/acpi/acpica/pswalk.c,0
+drivers/acpi/acpica/psxface.c,0
+drivers/acpi/acpica/rsaddr.c,0
+drivers/acpi/acpica/rscalc.c,0
+drivers/acpi/acpica/rscreate.c,0
+drivers/acpi/acpica/rsdumpinfo.c,0
+drivers/acpi/acpica/rsinfo.c,0
+drivers/acpi/acpica/rsio.c,0
+drivers/acpi/acpica/rsirq.c,0
+drivers/acpi/acpica/rslist.c,0
+drivers/acpi/acpica/rsmemory.c,0
+drivers/acpi/acpica/rsmisc.c,0
+drivers/acpi/acpica/rsserial.c,0
+drivers/acpi/acpica/rsutils.c,0
+drivers/acpi/acpica/rsxface.c,0
+drivers/acpi/acpica/tbdata.c,0
+drivers/acpi/acpica/tbfadt.c,0
+drivers/acpi/acpica/tbfind.c,0
+drivers/acpi/acpica/tbinstal.c,0
+drivers/acpi/acpica/tbprint.c,0
+drivers/acpi/acpica/tbutils.c,0
+drivers/acpi/acpica/tbxface.c,0
+drivers/acpi/acpica/tbxfload.c,0
+drivers/acpi/acpica/tbxfroot.c,0
+drivers/acpi/acpica/utaddress.c,0
+drivers/acpi/acpica/utalloc.c,0
+drivers/acpi/acpica/utascii.c,0
+drivers/acpi/acpica/utbuffer.c,0
+drivers/acpi/acpica/utcksum.c,0
+drivers/acpi/acpica/utcopy.c,0
+drivers/acpi/acpica/utdebug.c,0
+drivers/acpi/acpica/utdecode.c,0
+drivers/acpi/acpica/utdelete.c,0
+drivers/acpi/acpica/uterror.c,0
+drivers/acpi/acpica/uteval.c,0
+drivers/acpi/acpica/utexcep.c,0
+drivers/acpi/acpica/utglobal.c,0
+drivers/acpi/acpica/uthex.c,0
+drivers/acpi/acpica/utids.c,0
+drivers/acpi/acpica/utinit.c,0
+drivers/acpi/acpica/utlock.c,0
+drivers/acpi/acpica/utmath.c,0
+drivers/acpi/acpica/utmisc.c,0
+drivers/acpi/acpica/utmutex.c,0
+drivers/acpi/acpica/utnonansi.c,0
+drivers/acpi/acpica/utobject.c,0
+drivers/acpi/acpica/utosi.c,0
+drivers/acpi/acpica/utownerid.c,0
+drivers/acpi/acpica/utpredef.c,0
+drivers/acpi/acpica/utresdecode.c,0
+drivers/acpi/acpica/utresrc.c,0
+drivers/acpi/acpica/utstate.c,0
+drivers/acpi/acpica/utstring.c,0
+drivers/acpi/acpica/utstrsuppt.c,0
+drivers/acpi/acpica/utstrtoul64.c,0
+drivers/acpi/acpica/utxface.c,0
+drivers/acpi/acpica/utxferror.c,0
+drivers/acpi/acpica/utxfinit.c,0
+drivers/acpi/acpica/utxfmutex.c,0
+drivers/acpi/acpi_cmos_rtc.c,0
+drivers/acpi/acpi_lpat.c,0
+drivers/acpi/acpi_lpit.c,0
+drivers/acpi/acpi_lpss.c,0
+drivers/acpi/acpi_memhotplug.c,0
+drivers/acpi/acpi_pcc.c,0
+drivers/acpi/acpi_platform.c,0
+drivers/acpi/acpi_pnp.c,0
+drivers/acpi/acpi_processor.c,0
+drivers/acpi/acpi_video.c,0
+drivers/acpi/battery.c,0
+drivers/acpi/bgrt.c,0
+drivers/acpi/blacklist.c,0
+drivers/acpi/bus.c,0
+drivers/acpi/button.c,0
+drivers/acpi/container.c,0
+drivers/acpi/cppc_acpi.c,0
+drivers/acpi/debugfs.c,0
+drivers/acpi/device_pm.c,0
+drivers/acpi/device_sysfs.c,0
+drivers/acpi/dock.c,0
+drivers/acpi/dptf/int340x_thermal.c,0
+drivers/acpi/ec.c,0
+drivers/acpi/event.c,0
+drivers/acpi/evged.c,0
+drivers/acpi/fan_attr.c,0
+drivers/acpi/fan_core.c,0
+drivers/acpi/glue.c,0
+drivers/acpi/ioapic.c,0
+drivers/acpi/numa/srat.c,0
+drivers/acpi/nvs.c,0
+drivers/acpi/osi.c,0
+drivers/acpi/osl.c,0
+drivers/acpi/pci_irq.c,0
+drivers/acpi/pci_link.c,0
+drivers/acpi/pci_root.c,0
+drivers/acpi/power.c,0
+drivers/acpi/prmt.c,0
+drivers/acpi/proc.c,0
+drivers/acpi/processor_core.c,0
+drivers/acpi/processor_driver.c,0
+drivers/acpi/processor_idle.c,0
+drivers/acpi/processor_pdc.c,0
+drivers/acpi/processor_perflib.c,0
+drivers/acpi/processor_thermal.c,0
+drivers/acpi/processor_throttling.c,0
+drivers/acpi/property.c,0
+drivers/acpi/reboot.c,0
+drivers/acpi/resource.c,0
+drivers/acpi/scan.c,0
+drivers/acpi/sleep.c,0
+drivers/acpi/spcr.c,0
+drivers/acpi/sysfs.c,0
+drivers/acpi/tables.c,0
+drivers/acpi/thermal.c,0
+drivers/acpi/utils.c,0
+drivers/acpi/video_detect.c,no spdx
+drivers/acpi/wakeup.c,0
+drivers/acpi/x86/apple.c,0
+drivers/acpi/x86/s2idle.c,0
+drivers/acpi/x86/utils.c,0
+drivers/ata/ahci.c,0
+drivers/ata/ata_piix.c,0
+drivers/ata/libahci.c,0
+drivers/ata/libata-acpi.c,0
+drivers/ata/libata-core.c,0
+drivers/ata/libata-eh.c,0
+drivers/ata/libata-pata-timings.c,0
+drivers/ata/libata-pmp.c,0
+drivers/ata/libata-sata.c,0
+drivers/ata/libata-scsi.c,0
+drivers/ata/libata-sff.c,0
+drivers/ata/libata-trace.c,0
+drivers/ata/libata-transport.c,0
+drivers/ata/pata_amd.c,0
+drivers/ata/pata_oldpiix.c,0
+drivers/ata/pata_sch.c,0
+drivers/base/attribute_container.c,0
+drivers/base/auxiliary.c,0
+drivers/base/bus.c,0
+drivers/base/cacheinfo.c,0
+drivers/base/class.c,0
+drivers/base/component.c,0
+drivers/base/container.c,0
+drivers/base/core.c,0
+drivers/base/cpu.c,0
+drivers/base/dd.c,0
+drivers/base/devres.c,0
+drivers/base/devtmpfs.c,0
+drivers/base/driver.c,0
+drivers/base/firmware.c,0
+drivers/base/firmware_loader/builtin/main.c,0
+drivers/base/firmware_loader/main.c,0
+drivers/base/init.c,0
+drivers/base/map.c,0
+drivers/base/module.c,0
+drivers/base/node.c,0
+drivers/base/physical_location.c,0
+drivers/base/platform.c,0
+drivers/base/platform-msi.c,0
+drivers/base/power/common.c,0
+drivers/base/power/generic_ops.c,0
+drivers/base/power/main.c,0
+drivers/base/power/qos.c,0
+drivers/base/power/runtime.c,0
+drivers/base/power/sysfs.c,0
+drivers/base/power/trace.c,0
+drivers/base/power/wakeirq.c,0
+drivers/base/power/wakeup.c,0
+drivers/base/power/wakeup_stats.c,0
+drivers/base/property.c,0
+drivers/base/regmap/regcache.c,0
+drivers/base/regmap/regcache-flat.c,0
+drivers/base/regmap/regcache-maple.c,0
+drivers/base/regmap/regcache-rbtree.c,0
+drivers/base/regmap/regmap.c,0
+drivers/base/regmap/regmap-debugfs.c,0
+drivers/base/swnode.c,0
+drivers/base/syscore.c,0
+drivers/base/topology.c,0
+drivers/base/trace.c,0
+drivers/base/transport_class.c,0
+drivers/block/loop.c,0
+drivers/block/virtio_blk.c,0
+drivers/cdrom/cdrom.c,no spdx
+drivers/char/agp/amd64-agp.c,0
+drivers/char/agp/backend.c,no spdx
+drivers/char/agp/generic.c,no spdx
+drivers/char/agp/intel-agp.c,no spdx
+drivers/char/agp/intel-gtt.c,no spdx
+drivers/char/agp/isoch.c,0
+drivers/char/hpet.c,0
+drivers/char/hw_random/core.c,no spdx
+drivers/char/hw_random/via-rng.c,no spdx
+drivers/char/mem.c,0
+drivers/char/misc.c,0
+drivers/char/nvram.c,0
+drivers/char/random.c,0
+drivers/char/virtio_console.c,0
+drivers/clocksource/acpi_pm.c,0
+drivers/clocksource/i8253.c,0
+drivers/connector/cn_proc.c,0
+drivers/connector/cn_queue.c,0
+drivers/connector/connector.c,0
+drivers/cpufreq/acpi-cpufreq.c,0
+drivers/cpufreq/cpufreq.c,0
+drivers/cpufreq/cpufreq_governor_attr_set.c,0
+drivers/cpufreq/cpufreq_governor.c,0
+drivers/cpufreq/cpufreq_ondemand.c,0
+drivers/cpufreq/cpufreq_performance.c,0
+drivers/cpufreq/cpufreq_userspace.c,0
+drivers/cpufreq/freq_table.c,0
+drivers/cpufreq/intel_pstate.c,0
+drivers/cpuidle/cpuidle.c,no spdx
+drivers/cpuidle/cpuidle-haltpoll.c,0
+drivers/cpuidle/driver.c,no spdx
+drivers/cpuidle/governor.c,no spdx
+drivers/cpuidle/governors/haltpoll.c,0
+drivers/cpuidle/governors/menu.c,0
+drivers/cpuidle/poll_state.c,0
+drivers/cpuidle/sysfs.c,no spdx
+drivers/dma/acpi-dma.c,0
+drivers/dma-buf/dma-buf.c,0
+drivers/dma-buf/dma-fence-array.c,0
+drivers/dma-buf/dma-fence.c,0
+drivers/dma-buf/dma-fence-chain.c,0
+drivers/dma-buf/dma-fence-unwrap.c,0
+drivers/dma-buf/dma-resv.c,0
+drivers/dma-buf/sync_file.c,0
+drivers/dma/dmaengine.c,0
+drivers/dma/dw/acpi.c,0
+drivers/dma/dw/core.c,0
+drivers/dma/dw/dw.c,0
+drivers/dma/dw/idma32.c,0
+drivers/dma/hsu/hsu.c,0
+drivers/dma/virt-dma.c,0
+drivers/firewire/init_ohci1394_dma.c,0
+drivers/firmware/dmi-id.c,0
+drivers/firmware/dmi_scan.c,0
+drivers/firmware/efi/earlycon.c,0
+drivers/firmware/efi/efi-bgrt.c,0
+drivers/firmware/efi/efi.c,0
+drivers/firmware/efi/esrt.c,0
+drivers/firmware/efi/libstub/alignedmem.c,0
+drivers/firmware/efi/libstub/efi-stub-helper.c,0
+drivers/firmware/efi/libstub/file.c,0
+drivers/firmware/efi/libstub/gop.c,0
+drivers/firmware/efi/libstub/mem.c,0
+drivers/firmware/efi/libstub/pci.c,0
+drivers/firmware/efi/libstub/printk.c,0
+drivers/firmware/efi/libstub/randomalloc.c,0
+drivers/firmware/efi/libstub/random.c,0
+drivers/firmware/efi/libstub/relocate.c,0
+drivers/firmware/efi/libstub/secureboot.c,0
+drivers/firmware/efi/libstub/skip_spaces.c,0
+drivers/firmware/efi/libstub/tpm.c,0
+drivers/firmware/efi/libstub/vsprintf.c,0
+drivers/firmware/efi/libstub/x86-5lvl.c,0
+drivers/firmware/efi/libstub/x86-stub.c,0
+drivers/firmware/efi/memattr.c,0
+drivers/firmware/efi/memmap.c,0
+drivers/firmware/efi/reboot.c,0
+drivers/firmware/efi/runtime-wrappers.c,0
+drivers/firmware/efi/tpm.c,0
+drivers/firmware/efi/vars.c,0
+drivers/firmware/memmap.c,0
+drivers/gpu/drm/bridge/panel.c,0
+drivers/gpu/drm/display/drm_display_helper_mod.c,0
+drivers/gpu/drm/display/drm_dp_dual_mode_helper.c,no spdx
+drivers/gpu/drm/display/drm_dp_helper.c,no spdx
+drivers/gpu/drm/display/drm_dp_mst_topology.c,no spdx
+drivers/gpu/drm/display/drm_dsc_helper.c,0
+drivers/gpu/drm/display/drm_hdcp_helper.c,0
+drivers/gpu/drm/display/drm_hdmi_helper.c,0
+drivers/gpu/drm/display/drm_scdc_helper.c,no spdx
+drivers/gpu/drm/drm_aperture.c,0
+drivers/gpu/drm/drm_atomic.c,no spdx
+drivers/gpu/drm/drm_atomic_helper.c,no spdx
+drivers/gpu/drm/drm_atomic_state_helper.c,no spdx
+drivers/gpu/drm/drm_atomic_uapi.c,no spdx
+drivers/gpu/drm/drm_auth.c,no spdx
+drivers/gpu/drm/drm_blend.c,no spdx
+drivers/gpu/drm/drm_bridge.c,no spdx
+drivers/gpu/drm/drm_bridge_connector.c,0
+drivers/gpu/drm/drm_buddy.c,0
+drivers/gpu/drm/drm_cache.c,no spdx
+drivers/gpu/drm/drm_client.c,0
+drivers/gpu/drm/drm_client_modeset.c,0
+drivers/gpu/drm/drm_color_mgmt.c,no spdx
+drivers/gpu/drm/drm_connector.c,no spdx
+drivers/gpu/drm/drm_crtc.c,no spdx
+drivers/gpu/drm/drm_crtc_helper.c,no spdx
+drivers/gpu/drm/drm_damage_helper.c,0
+drivers/gpu/drm/drm_debugfs.c,no spdx
+drivers/gpu/drm/drm_debugfs_crc.c,no spdx
+drivers/gpu/drm/drm_displayid.c,0
+drivers/gpu/drm/drm_drv.c,no spdx
+drivers/gpu/drm/drm_dumb_buffers.c,no spdx
+drivers/gpu/drm/drm_edid.c,no spdx
+drivers/gpu/drm/drm_encoder.c,no spdx
+drivers/gpu/drm/drm_encoder_slave.c,no spdx
+drivers/gpu/drm/drm_file.c,no spdx
+drivers/gpu/drm/drm_flip_work.c,no spdx
+drivers/gpu/drm/drm_format_helper.c,0
+drivers/gpu/drm/drm_fourcc.c,no spdx
+drivers/gpu/drm/drm_framebuffer.c,no spdx
+drivers/gpu/drm/drm_gem_atomic_helper.c,0
+drivers/gpu/drm/drm_gem.c,no spdx
+drivers/gpu/drm/drm_gem_framebuffer_helper.c,0
+drivers/gpu/drm/drm_gem_shmem_helper.c,0
+drivers/gpu/drm/drm_ioc32.c,no spdx
+drivers/gpu/drm/drm_ioctl.c,no spdx
+drivers/gpu/drm/drm_kms_helper_common.c,no spdx
+drivers/gpu/drm/drm_lease.c,0
+drivers/gpu/drm/drm_managed.c,0
+drivers/gpu/drm/drm_mipi_dsi.c,no spdx
+drivers/gpu/drm/drm_mm.c,no spdx
+drivers/gpu/drm/drm_mode_config.c,no spdx
+drivers/gpu/drm/drm_mode_object.c,no spdx
+drivers/gpu/drm/drm_modes.c,no spdx
+drivers/gpu/drm/drm_modeset_helper.c,no spdx
+drivers/gpu/drm/drm_modeset_lock.c,no spdx
+drivers/gpu/drm/drm_panel.c,no spdx
+drivers/gpu/drm/drm_panel_orientation_quirks.c,0
+drivers/gpu/drm/drm_pci.c,no spdx
+drivers/gpu/drm/drm_plane.c,no spdx
+drivers/gpu/drm/drm_plane_helper.c,no spdx
+drivers/gpu/drm/drm_prime.c,no spdx
+drivers/gpu/drm/drm_print.c,no spdx
+drivers/gpu/drm/drm_probe_helper.c,no spdx
+drivers/gpu/drm/drm_property.c,no spdx
+drivers/gpu/drm/drm_rect.c,no spdx
+drivers/gpu/drm/drm_self_refresh_helper.c,0
+drivers/gpu/drm/drm_simple_kms_helper.c,0
+drivers/gpu/drm/drm_syncobj.c,no spdx
+drivers/gpu/drm/drm_sysfs.c,0
+drivers/gpu/drm/drm_trace_points.c,no spdx
+drivers/gpu/drm/drm_vblank.c,no spdx
+drivers/gpu/drm/drm_vblank_work.c,0
+drivers/gpu/drm/drm_vma_manager.c,0
+drivers/gpu/drm/drm_writeback.c,0
+drivers/gpu/drm/i915/display/dvo_ch7017.c,no spdx
+drivers/gpu/drm/i915/display/dvo_ch7xxx.c,no spdx
+drivers/gpu/drm/i915/display/dvo_ivch.c,no spdx
+drivers/gpu/drm/i915/display/dvo_ns2501.c,no spdx
+drivers/gpu/drm/i915/display/dvo_sil164.c,no spdx
+drivers/gpu/drm/i915/display/dvo_tfp410.c,no spdx
+drivers/gpu/drm/i915/display/g4x_dp.c,0
+drivers/gpu/drm/i915/display/g4x_hdmi.c,0
+drivers/gpu/drm/i915/display/hsw_ips.c,0
+drivers/gpu/drm/i915/display/i9xx_plane.c,0
+drivers/gpu/drm/i915/display/i9xx_wm.c,0
+drivers/gpu/drm/i915/display/icl_dsi.c,no spdx
+drivers/gpu/drm/i915/display/intel_acpi.c,0
+drivers/gpu/drm/i915/display/intel_atomic.c,no spdx
+drivers/gpu/drm/i915/display/intel_atomic_plane.c,no spdx
+drivers/gpu/drm/i915/display/intel_audio.c,no spdx
+drivers/gpu/drm/i915/display/intel_backlight.c,0
+drivers/gpu/drm/i915/display/intel_bios.c,no spdx
+drivers/gpu/drm/i915/display/intel_bw.c,0
+drivers/gpu/drm/i915/display/intel_cdclk.c,no spdx
+drivers/gpu/drm/i915/display/intel_color.c,no spdx
+drivers/gpu/drm/i915/display/intel_combo_phy.c,0
+drivers/gpu/drm/i915/display/intel_connector.c,no spdx
+drivers/gpu/drm/i915/display/intel_crt.c,no spdx
+drivers/gpu/drm/i915/display/intel_crtc.c,0
+drivers/gpu/drm/i915/display/intel_crtc_state_dump.c,0
+drivers/gpu/drm/i915/display/intel_cursor.c,0
+drivers/gpu/drm/i915/display/intel_cx0_phy.c,0
+drivers/gpu/drm/i915/display/intel_ddi_buf_trans.c,0
+drivers/gpu/drm/i915/display/intel_ddi.c,no spdx
+drivers/gpu/drm/i915/display/intel_display.c,no spdx
+drivers/gpu/drm/i915/display/intel_display_debugfs.c,0
+drivers/gpu/drm/i915/display/intel_display_device.c,0
+drivers/gpu/drm/i915/display/intel_display_driver.c,0
+drivers/gpu/drm/i915/display/intel_display_irq.c,0
+drivers/gpu/drm/i915/display/intel_display_power.c,0
+drivers/gpu/drm/i915/display/intel_display_power_map.c,0
+drivers/gpu/drm/i915/display/intel_display_power_well.c,0
+drivers/gpu/drm/i915/display/intel_display_reset.c,0
+drivers/gpu/drm/i915/display/intel_display_rps.c,0
+drivers/gpu/drm/i915/display/intel_display_trace.c,0
+drivers/gpu/drm/i915/display/intel_display_wa.c,0
+drivers/gpu/drm/i915/display/intel_dkl_phy.c,0
+drivers/gpu/drm/i915/display/intel_dmc.c,no spdx
+drivers/gpu/drm/i915/display/intel_dp_aux_backlight.c,no spdx
+drivers/gpu/drm/i915/display/intel_dp_aux.c,0
+drivers/gpu/drm/i915/display/intel_dp.c,no spdx
+drivers/gpu/drm/i915/display/intel_dp_hdcp.c,0
+drivers/gpu/drm/i915/display/intel_dpio_phy.c,no spdx
+drivers/gpu/drm/i915/display/intel_dp_link_training.c,no spdx
+drivers/gpu/drm/i915/display/intel_dpll.c,0
+drivers/gpu/drm/i915/display/intel_dpll_mgr.c,no spdx
+drivers/gpu/drm/i915/display/intel_dp_mst.c,no spdx
+drivers/gpu/drm/i915/display/intel_dpt.c,0
+drivers/gpu/drm/i915/display/intel_drrs.c,0
+drivers/gpu/drm/i915/display/intel_dsb.c,0
+drivers/gpu/drm/i915/display/intel_dsi.c,0
+drivers/gpu/drm/i915/display/intel_dsi_dcs_backlight.c,no spdx
+drivers/gpu/drm/i915/display/intel_dsi_vbt.c,no spdx
+drivers/gpu/drm/i915/display/intel_dvo.c,no spdx
+drivers/gpu/drm/i915/display/intel_fb.c,0
+drivers/gpu/drm/i915/display/intel_fbc.c,no spdx
+drivers/gpu/drm/i915/display/intel_fb_pin.c,0
+drivers/gpu/drm/i915/display/intel_fdi.c,0
+drivers/gpu/drm/i915/display/intel_fifo_underrun.c,no spdx
+drivers/gpu/drm/i915/display/intel_frontbuffer.c,no spdx
+drivers/gpu/drm/i915/display/intel_global_state.c,0
+drivers/gpu/drm/i915/display/intel_gmbus.c,no spdx
+drivers/gpu/drm/i915/display/intel_hdcp.c,0
+drivers/gpu/drm/i915/display/intel_hdcp_gsc.c,0
+drivers/gpu/drm/i915/display/intel_hdcp_gsc_message.c,0
+drivers/gpu/drm/i915/display/intel_hdmi.c,no spdx
+drivers/gpu/drm/i915/display/intel_hotplug.c,no spdx
+drivers/gpu/drm/i915/display/intel_hotplug_irq.c,0
+drivers/gpu/drm/i915/display/intel_hti.c,0
+drivers/gpu/drm/i915/display/intel_link_bw.c,0
+drivers/gpu/drm/i915/display/intel_load_detect.c,0
+drivers/gpu/drm/i915/display/intel_lpe_audio.c,no spdx
+drivers/gpu/drm/i915/display/intel_lspcon.c,no spdx
+drivers/gpu/drm/i915/display/intel_lvds.c,no spdx
+drivers/gpu/drm/i915/display/intel_modeset_lock.c,0
+drivers/gpu/drm/i915/display/intel_modeset_setup.c,0
+drivers/gpu/drm/i915/display/intel_modeset_verify.c,0
+drivers/gpu/drm/i915/display/intel_opregion.c,no spdx
+drivers/gpu/drm/i915/display/intel_overlay.c,no spdx
+drivers/gpu/drm/i915/display/intel_panel.c,no spdx
+drivers/gpu/drm/i915/display/intel_pch_display.c,0
+drivers/gpu/drm/i915/display/intel_pch_refclk.c,0
+drivers/gpu/drm/i915/display/intel_pipe_crc.c,no spdx
+drivers/gpu/drm/i915/display/intel_plane_initial.c,0
+drivers/gpu/drm/i915/display/intel_pmdemand.c,0
+drivers/gpu/drm/i915/display/intel_pps.c,0
+drivers/gpu/drm/i915/display/intel_psr.c,no spdx
+drivers/gpu/drm/i915/display/intel_qp_tables.c,0
+drivers/gpu/drm/i915/display/intel_quirks.c,0
+drivers/gpu/drm/i915/display/intel_sdvo.c,no spdx
+drivers/gpu/drm/i915/display/intel_snps_phy.c,0
+drivers/gpu/drm/i915/display/intel_sprite.c,no spdx
+drivers/gpu/drm/i915/display/intel_sprite_uapi.c,0
+drivers/gpu/drm/i915/display/intel_tc.c,0
+drivers/gpu/drm/i915/display/intel_tv.c,no spdx
+drivers/gpu/drm/i915/display/intel_vblank.c,0
+drivers/gpu/drm/i915/display/intel_vdsc.c,0
+drivers/gpu/drm/i915/display/intel_vga.c,0
+drivers/gpu/drm/i915/display/intel_vrr.c,0
+drivers/gpu/drm/i915/display/intel_wm.c,0
+drivers/gpu/drm/i915/display/skl_scaler.c,0
+drivers/gpu/drm/i915/display/skl_universal_plane.c,0
+drivers/gpu/drm/i915/display/skl_watermark.c,0
+drivers/gpu/drm/i915/display/vlv_dsi.c,no spdx
+drivers/gpu/drm/i915/display/vlv_dsi_pll.c,no spdx
+drivers/gpu/drm/i915/gem/i915_gem_busy.c,0
+drivers/gpu/drm/i915/gem/i915_gem_clflush.c,0
+drivers/gpu/drm/i915/gem/i915_gem_context.c,0
+drivers/gpu/drm/i915/gem/i915_gem_create.c,0
+drivers/gpu/drm/i915/gem/i915_gem_dmabuf.c,0
+drivers/gpu/drm/i915/gem/i915_gem_domain.c,0
+drivers/gpu/drm/i915/gem/i915_gem_execbuffer.c,0
+drivers/gpu/drm/i915/gem/i915_gemfs.c,0
+drivers/gpu/drm/i915/gem/i915_gem_internal.c,0
+drivers/gpu/drm/i915/gem/i915_gem_lmem.c,0
+drivers/gpu/drm/i915/gem/i915_gem_mman.c,0
+drivers/gpu/drm/i915/gem/i915_gem_object.c,no spdx
+drivers/gpu/drm/i915/gem/i915_gem_pages.c,0
+drivers/gpu/drm/i915/gem/i915_gem_phys.c,0
+drivers/gpu/drm/i915/gem/i915_gem_pm.c,0
+drivers/gpu/drm/i915/gem/i915_gem_region.c,0
+drivers/gpu/drm/i915/gem/i915_gem_shmem.c,0
+drivers/gpu/drm/i915/gem/i915_gem_shrinker.c,0
+drivers/gpu/drm/i915/gem/i915_gem_stolen.c,0
+drivers/gpu/drm/i915/gem/i915_gem_throttle.c,0
+drivers/gpu/drm/i915/gem/i915_gem_tiling.c,0
+drivers/gpu/drm/i915/gem/i915_gem_ttm.c,0
+drivers/gpu/drm/i915/gem/i915_gem_ttm_move.c,0
+drivers/gpu/drm/i915/gem/i915_gem_ttm_pm.c,0
+drivers/gpu/drm/i915/gem/i915_gem_userptr.c,0
+drivers/gpu/drm/i915/gem/i915_gem_wait.c,0
+drivers/gpu/drm/i915/gt/gen2_engine_cs.c,0
+drivers/gpu/drm/i915/gt/gen6_engine_cs.c,0
+drivers/gpu/drm/i915/gt/gen6_ppgtt.c,0
+drivers/gpu/drm/i915/gt/gen6_renderstate.c,0
+drivers/gpu/drm/i915/gt/gen7_renderclear.c,0
+drivers/gpu/drm/i915/gt/gen7_renderstate.c,0
+drivers/gpu/drm/i915/gt/gen8_engine_cs.c,0
+drivers/gpu/drm/i915/gt/gen8_ppgtt.c,0
+drivers/gpu/drm/i915/gt/gen8_renderstate.c,0
+drivers/gpu/drm/i915/gt/gen9_renderstate.c,0
+drivers/gpu/drm/i915/gt/intel_breadcrumbs.c,0
+drivers/gpu/drm/i915/gt/intel_context.c,0
+drivers/gpu/drm/i915/gt/intel_context_sseu.c,0
+drivers/gpu/drm/i915/gt/intel_engine_cs.c,0
+drivers/gpu/drm/i915/gt/intel_engine_heartbeat.c,0
+drivers/gpu/drm/i915/gt/intel_engine_pm.c,0
+drivers/gpu/drm/i915/gt/intel_engine_user.c,0
+drivers/gpu/drm/i915/gt/intel_execlists_submission.c,0
+drivers/gpu/drm/i915/gt/intel_ggtt.c,0
+drivers/gpu/drm/i915/gt/intel_ggtt_fencing.c,0
+drivers/gpu/drm/i915/gt/intel_ggtt_gmch.c,0
+drivers/gpu/drm/i915/gt/intel_gsc.c,0
+drivers/gpu/drm/i915/gt/intel_gt_buffer_pool.c,0
+drivers/gpu/drm/i915/gt/intel_gt.c,0
+drivers/gpu/drm/i915/gt/intel_gt_clock_utils.c,0
+drivers/gpu/drm/i915/gt/intel_gt_debugfs.c,0
+drivers/gpu/drm/i915/gt/intel_gt_engines_debugfs.c,0
+drivers/gpu/drm/i915/gt/intel_gt_irq.c,0
+drivers/gpu/drm/i915/gt/intel_gt_mcr.c,0
+drivers/gpu/drm/i915/gt/intel_gt_pm.c,0
+drivers/gpu/drm/i915/gt/intel_gt_pm_debugfs.c,0
+drivers/gpu/drm/i915/gt/intel_gt_pm_irq.c,0
+drivers/gpu/drm/i915/gt/intel_gt_requests.c,0
+drivers/gpu/drm/i915/gt/intel_gt_sysfs.c,0
+drivers/gpu/drm/i915/gt/intel_gt_sysfs_pm.c,0
+drivers/gpu/drm/i915/gt/intel_gtt.c,0
+drivers/gpu/drm/i915/gt/intel_llc.c,0
+drivers/gpu/drm/i915/gt/intel_lrc.c,0
+drivers/gpu/drm/i915/gt/intel_migrate.c,0
+drivers/gpu/drm/i915/gt/intel_mocs.c,0
+drivers/gpu/drm/i915/gt/intel_ppgtt.c,0
+drivers/gpu/drm/i915/gt/intel_rc6.c,0
+drivers/gpu/drm/i915/gt/intel_region_lmem.c,0
+drivers/gpu/drm/i915/gt/intel_renderstate.c,0
+drivers/gpu/drm/i915/gt/intel_reset.c,0
+drivers/gpu/drm/i915/gt/intel_ring.c,0
+drivers/gpu/drm/i915/gt/intel_ring_submission.c,0
+drivers/gpu/drm/i915/gt/intel_rps.c,0
+drivers/gpu/drm/i915/gt/intel_sa_media.c,0
+drivers/gpu/drm/i915/gt/intel_sseu.c,0
+drivers/gpu/drm/i915/gt/intel_sseu_debugfs.c,0
+drivers/gpu/drm/i915/gt/intel_timeline.c,0
+drivers/gpu/drm/i915/gt/intel_tlb.c,0
+drivers/gpu/drm/i915/gt/intel_wopcm.c,0
+drivers/gpu/drm/i915/gt/intel_workarounds.c,0
+drivers/gpu/drm/i915/gt/shmem_utils.c,0
+drivers/gpu/drm/i915/gt/sysfs_engines.c,0
+drivers/gpu/drm/i915/gt/uc/intel_gsc_fw.c,0
+drivers/gpu/drm/i915/gt/uc/intel_gsc_proxy.c,0
+drivers/gpu/drm/i915/gt/uc/intel_gsc_uc.c,0
+drivers/gpu/drm/i915/gt/uc/intel_gsc_uc_debugfs.c,0
+drivers/gpu/drm/i915/gt/uc/intel_gsc_uc_heci_cmd_submit.c,0
+drivers/gpu/drm/i915/gt/uc/intel_guc_ads.c,0
+drivers/gpu/drm/i915/gt/uc/intel_guc.c,0
+drivers/gpu/drm/i915/gt/uc/intel_guc_capture.c,0
+drivers/gpu/drm/i915/gt/uc/intel_guc_ct.c,0
+drivers/gpu/drm/i915/gt/uc/intel_guc_debugfs.c,0
+drivers/gpu/drm/i915/gt/uc/intel_guc_fw.c,0
+drivers/gpu/drm/i915/gt/uc/intel_guc_hwconfig.c,0
+drivers/gpu/drm/i915/gt/uc/intel_guc_log.c,0
+drivers/gpu/drm/i915/gt/uc/intel_guc_log_debugfs.c,0
+drivers/gpu/drm/i915/gt/uc/intel_guc_rc.c,0
+drivers/gpu/drm/i915/gt/uc/intel_guc_slpc.c,0
+drivers/gpu/drm/i915/gt/uc/intel_guc_submission.c,0
+drivers/gpu/drm/i915/gt/uc/intel_huc.c,0
+drivers/gpu/drm/i915/gt/uc/intel_huc_debugfs.c,0
+drivers/gpu/drm/i915/gt/uc/intel_huc_fw.c,0
+drivers/gpu/drm/i915/gt/uc/intel_uc.c,0
+drivers/gpu/drm/i915/gt/uc/intel_uc_debugfs.c,0
+drivers/gpu/drm/i915/gt/uc/intel_uc_fw.c,0
+drivers/gpu/drm/i915/i915_active.c,0
+drivers/gpu/drm/i915/i915_cmd_parser.c,no spdx
+drivers/gpu/drm/i915/i915_config.c,0
+drivers/gpu/drm/i915/i915_debugfs.c,no spdx
+drivers/gpu/drm/i915/i915_debugfs_params.c,0
+drivers/gpu/drm/i915/i915_deps.c,0
+drivers/gpu/drm/i915/i915_driver.c,no spdx
+drivers/gpu/drm/i915/i915_drm_client.c,0
+drivers/gpu/drm/i915/i915_gem.c,no spdx
+drivers/gpu/drm/i915/i915_gem_evict.c,no spdx
+drivers/gpu/drm/i915/i915_gem_gtt.c,0
+drivers/gpu/drm/i915/i915_gem_ww.c,0
+drivers/gpu/drm/i915/i915_getparam.c,0
+drivers/gpu/drm/i915/i915_gpu_error.c,no spdx
+drivers/gpu/drm/i915/i915_hwmon.c,0
+drivers/gpu/drm/i915/i915_ioc32.c,no spdx
+drivers/gpu/drm/i915/i915_ioctl.c,0
+drivers/gpu/drm/i915/i915_irq.c,no spdx
+drivers/gpu/drm/i915/i915_memcpy.c,no spdx
+drivers/gpu/drm/i915/i915_mitigations.c,0
+drivers/gpu/drm/i915/i915_mm.c,no spdx
+drivers/gpu/drm/i915/i915_module.c,0
+drivers/gpu/drm/i915/i915_params.c,no spdx
+drivers/gpu/drm/i915/i915_pci.c,no spdx
+drivers/gpu/drm/i915/i915_perf.c,no spdx
+drivers/gpu/drm/i915/i915_pmu.c,0
+drivers/gpu/drm/i915/i915_query.c,0
+drivers/gpu/drm/i915/i915_request.c,no spdx
+drivers/gpu/drm/i915/i915_scatterlist.c,0
+drivers/gpu/drm/i915/i915_scheduler.c,0
+drivers/gpu/drm/i915/i915_suspend.c,no spdx
+drivers/gpu/drm/i915/i915_sw_fence.c,0
+drivers/gpu/drm/i915/i915_sw_fence_work.c,0
+drivers/gpu/drm/i915/i915_switcheroo.c,0
+drivers/gpu/drm/i915/i915_syncmap.c,no spdx
+drivers/gpu/drm/i915/i915_sysfs.c,no spdx
+drivers/gpu/drm/i915/i915_trace_points.c,0
+drivers/gpu/drm/i915/i915_ttm_buddy_manager.c,0
+drivers/gpu/drm/i915/i915_user_extensions.c,0
+drivers/gpu/drm/i915/i915_utils.c,0
+drivers/gpu/drm/i915/i915_vgpu.c,no spdx
+drivers/gpu/drm/i915/i915_vma.c,no spdx
+drivers/gpu/drm/i915/i915_vma_resource.c,0
+drivers/gpu/drm/i915/intel_clock_gating.c,no spdx
+drivers/gpu/drm/i915/intel_device_info.c,no spdx
+drivers/gpu/drm/i915/intel_memory_region.c,0
+drivers/gpu/drm/i915/intel_pcode.c,0
+drivers/gpu/drm/i915/intel_region_ttm.c,0
+drivers/gpu/drm/i915/intel_runtime_pm.c,no spdx
+drivers/gpu/drm/i915/intel_sbi.c,0
+drivers/gpu/drm/i915/intel_step.c,0
+drivers/gpu/drm/i915/intel_uncore.c,no spdx
+drivers/gpu/drm/i915/intel_wakeref.c,0
+drivers/gpu/drm/i915/pxp/intel_pxp.c,0
+drivers/gpu/drm/i915/pxp/intel_pxp_huc.c,0
+drivers/gpu/drm/i915/pxp/intel_pxp_tee.c,0
+drivers/gpu/drm/i915/soc/intel_dram.c,0
+drivers/gpu/drm/i915/soc/intel_gmch.c,0
+drivers/gpu/drm/i915/soc/intel_pch.c,0
+drivers/gpu/drm/i915/vlv_sideband.c,0
+drivers/gpu/drm/i915/vlv_suspend.c,0
+drivers/gpu/drm/ttm/ttm_agp_backend.c,0
+drivers/gpu/drm/ttm/ttm_bo.c,0
+drivers/gpu/drm/ttm/ttm_bo_util.c,0
+drivers/gpu/drm/ttm/ttm_bo_vm.c,0
+drivers/gpu/drm/ttm/ttm_device.c,0
+drivers/gpu/drm/ttm/ttm_execbuf_util.c,0
+drivers/gpu/drm/ttm/ttm_module.c,0
+drivers/gpu/drm/ttm/ttm_pool.c,0
+drivers/gpu/drm/ttm/ttm_range_manager.c,0
+drivers/gpu/drm/ttm/ttm_resource.c,no spdx
+drivers/gpu/drm/ttm/ttm_sys_manager.c,0
+drivers/gpu/drm/ttm/ttm_tt.c,0
+drivers/gpu/drm/virtio/virtgpu_debugfs.c,no spdx
+drivers/gpu/drm/virtio/virtgpu_display.c,no spdx
+drivers/gpu/drm/virtio/virtgpu_drv.c,no spdx
+drivers/gpu/drm/virtio/virtgpu_fence.c,no spdx
+drivers/gpu/drm/virtio/virtgpu_gem.c,no spdx
+drivers/gpu/drm/virtio/virtgpu_ioctl.c,no spdx
+drivers/gpu/drm/virtio/virtgpu_kms.c,no spdx
+drivers/gpu/drm/virtio/virtgpu_object.c,no spdx
+drivers/gpu/drm/virtio/virtgpu_plane.c,no spdx
+drivers/gpu/drm/virtio/virtgpu_prime.c,no spdx
+drivers/gpu/drm/virtio/virtgpu_submit.c,0
+drivers/gpu/drm/virtio/virtgpu_trace_points.c,0
+drivers/gpu/drm/virtio/virtgpu_vq.c,no spdx
+drivers/gpu/drm/virtio/virtgpu_vram.c,0
+drivers/hid/hid-a4tech.c,0
+drivers/hid/hid-apple.c,0
+drivers/hid/hid-belkin.c,0
+drivers/hid/hid-cherry.c,0
+drivers/hid/hid-chicony.c,0
+drivers/hid/hid-core.c,0
+drivers/hid/hid-cypress.c,0
+drivers/hid/hid-debug.c,0
+drivers/hid/hid-ezkey.c,0
+drivers/hid/hid-generic.c,0
+drivers/hid/hid-gyration.c,0
+drivers/hid/hid-input.c,0
+drivers/hid/hid-ite.c,0
+drivers/hid/hid-kensington.c,0
+drivers/hid/hid-lg4ff.c,0
+drivers/hid/hid-lg.c,0
+drivers/hid/hid-lgff.c,0
+drivers/hid/hid-lg-g15.c,0
+drivers/hid/hid-microsoft.c,0
+drivers/hid/hid-monterey.c,0
+drivers/hid/hid-ntrig.c,0
+drivers/hid/hid-petalynx.c,0
+drivers/hid/hid-pl.c,0
+drivers/hid/hid-quirks.c,0
+drivers/hid/hidraw.c,0
+drivers/hid/hid-redragon.c,0
+drivers/hid/hid-samsung.c,0
+drivers/hid/hid-sony.c,0
+drivers/hid/hid-sunplus.c,0
+drivers/hid/hid-topseed.c,0
+drivers/hid/usbhid/hid-core.c,0
+drivers/hid/usbhid/hiddev.c,0
+drivers/hid/usbhid/hid-pidff.c,0
+drivers/hwmon/hwmon.c,0
+drivers/i2c/algos/i2c-algo-bit.c,0
+drivers/i2c/busses/i2c-i801.c,0
+drivers/i2c/i2c-boardinfo.c,0
+drivers/i2c/i2c-core-acpi.c,0
+drivers/i2c/i2c-core-base.c,0
+drivers/i2c/i2c-core-smbus.c,0
+drivers/i2c/i2c-smbus.c,0
+drivers/input/evdev.c,0
+drivers/input/ff-core.c,0
+drivers/input/ff-memless.c,0
+drivers/input/input.c,0
+drivers/input/input-compat.c,0
+drivers/input/input-leds.c,0
+drivers/input/input-mt.c,0
+drivers/input/input-poller.c,0
+drivers/input/keyboard/atkbd.c,0
+drivers/input/mouse/alps.c,0
+drivers/input/mouse/byd.c,0
+drivers/input/mouse/cypress_ps2.c,0
+drivers/input/mouse/focaltech.c,0
+drivers/input/mouse/lifebook.c,0
+drivers/input/mouse/logips2pp.c,0
+drivers/input/mouse/psmouse-base.c,0
+drivers/input/mouse/psmouse-smbus.c,0
+drivers/input/mouse/synaptics.c,0
+drivers/input/mouse/trackpoint.c,0
+drivers/input/serio/i8042.c,0
+drivers/input/serio/libps2.c,0
+drivers/input/serio/serio.c,0
+drivers/input/serio/serport.c,0
+drivers/input/sparse-keymap.c,0
+drivers/input/touchscreen.c,0
+drivers/input/vivaldi-fmap.c,0
+drivers/iommu/amd/init.c,0
+drivers/iommu/amd/iommu.c,0
+drivers/iommu/amd/io_pgtable.c,0
+drivers/iommu/amd/io_pgtable_v2.c,0
+drivers/iommu/amd/quirks.c,0
+drivers/iommu/dma-iommu.c,0
+drivers/iommu/intel/cap_audit.c,0
+drivers/iommu/intel/dmar.c,0
+drivers/iommu/intel/iommu.c,0
+drivers/iommu/intel/pasid.c,0
+drivers/iommu/intel/perfmon.c,0
+drivers/iommu/intel/trace.c,0
+drivers/iommu/iommu.c,0
+drivers/iommu/iommu-sysfs.c,0
+drivers/iommu/iommu-traces.c,0
+drivers/iommu/io-pgtable.c,0
+drivers/iommu/iova.c,0
+drivers/leds/led-class.c,0
+drivers/leds/led-core.c,0
+drivers/leds/led-triggers.c,0
+drivers/macintosh/mac_hid.c,0
+drivers/mailbox/mailbox.c,0
+drivers/mailbox/pcc.c,0
+drivers/md/dm-builtin.c,0
+drivers/md/dm.c,0
+drivers/md/dm-io.c,0
+drivers/md/dm-ioctl.c,0
+drivers/md/dm-io-rewind.c,0
+drivers/md/dm-kcopyd.c,0
+drivers/md/dm-linear.c,0
+drivers/md/dm-log.c,0
+drivers/md/dm-raid1.c,0
+drivers/md/dm-region-hash.c,0
+drivers/md/dm-rq.c,0
+drivers/md/dm-stats.c,0
+drivers/md/dm-stripe.c,0
+drivers/md/dm-sysfs.c,0
+drivers/md/dm-table.c,0
+drivers/md/dm-target.c,0
+drivers/md/dm-zero.c,0
+drivers/md/md-autodetect.c,0
+drivers/md/md-bitmap.c,0
+drivers/md/md.c,0
+drivers/net/ethernet/broadcom/tg3.c,no spdx
+drivers/net/ethernet/intel/e1000/e1000_ethtool.c,0
+drivers/net/ethernet/intel/e1000/e1000_hw.c,0
+drivers/net/ethernet/intel/e1000/e1000_main.c,0
+drivers/net/ethernet/intel/e1000/e1000_param.c,0
+drivers/net/ethernet/intel/e1000e/80003es2lan.c,0
+drivers/net/ethernet/intel/e1000e/82571.c,0
+drivers/net/ethernet/intel/e1000e/ethtool.c,0
+drivers/net/ethernet/intel/e1000e/ich8lan.c,0
+drivers/net/ethernet/intel/e1000e/mac.c,0
+drivers/net/ethernet/intel/e1000e/manage.c,0
+drivers/net/ethernet/intel/e1000e/netdev.c,0
+drivers/net/ethernet/intel/e1000e/nvm.c,0
+drivers/net/ethernet/intel/e1000e/param.c,0
+drivers/net/ethernet/intel/e1000e/phy.c,0
+drivers/net/ethernet/intel/e1000e/ptp.c,0
+drivers/net/ethernet/intel/e100.c,0
+drivers/net/ethernet/marvell/sky2.c,0
+drivers/net/ethernet/nvidia/forcedeth.c,0
+drivers/net/ethernet/realtek/8139too.c,no spdx
+drivers/net/ethernet/realtek/r8169_firmware.c,0
+drivers/net/ethernet/realtek/r8169_main.c,0
+drivers/net/ethernet/realtek/r8169_phy_config.c,0
+drivers/net/loopback.c,0
+drivers/net/mdio/acpi_mdio.c,0
+drivers/net/mdio/fwnode_mdio.c,0
+drivers/net/mii.c,no spdx
+drivers/net/netconsole.c,0
+drivers/net/net_failover.c,0
+drivers/net/phy/fixed_phy.c,0
+drivers/net/phy/linkmode.c,0
+drivers/net/phy/mdio-boardinfo.c,0
+drivers/net/phy/mdio_bus.c,0
+drivers/net/phy/mdio_device.c,0
+drivers/net/phy/mdio_devres.c,0
+drivers/net/phy/phy.c,0
+drivers/net/phy/phy-c45.c,0
+drivers/net/phy/phy-core.c,0
+drivers/net/phy/phy_device.c,0
+drivers/net/phy/realtek.c,0
+drivers/net/phy/stubs.c,0
+drivers/net/phy/swphy.c,0
+drivers/net/virtio_net.c,0
+drivers/nvmem/core.c,0
+drivers/pci/access.c,0
+drivers/pci/ats.c,0
+drivers/pci/bus.c,0
+drivers/pci/host-bridge.c,0
+drivers/pci/hotplug/acpi_pcihp.c,0
+drivers/pci/hotplug/pci_hotplug_core.c,0
+drivers/pci/irq.c,0
+drivers/pci/mmap.c,0
+drivers/pci/msi/api.c,0
+drivers/pci/msi/irqdomain.c,0
+drivers/pci/msi/msi.c,0
+drivers/pci/msi/pcidev_msi.c,0
+drivers/pci/pci-acpi.c,0
+drivers/pci/pci.c,0
+drivers/pci/pci-driver.c,0
+drivers/pci/pcie/aspm.c,0
+drivers/pci/pcie/pme.c,0
+drivers/pci/pcie/portdrv.c,0
+drivers/pci/pcie/rcec.c,0
+drivers/pci/pci-label.c,0
+drivers/pci/pci-sysfs.c,0
+drivers/pci/probe.c,0
+drivers/pci/proc.c,0
+drivers/pci/quirks.c,0
+drivers/pci/remove.c,0
+drivers/pci/rom.c,0
+drivers/pci/search.c,0
+drivers/pci/setup-bus.c,0
+drivers/pci/setup-irq.c,0
+drivers/pci/setup-res.c,0
+drivers/pci/slot.c,0
+drivers/pci/vc.c,0
+drivers/pci/vgaarb.c,0
+drivers/pci/vpd.c,0
+drivers/pcmcia/cardbus.c,0
+drivers/pcmcia/cistpl.c,0
+drivers/pcmcia/cs.c,0
+drivers/pcmcia/ds.c,0
+drivers/pcmcia/pcmcia_cis.c,0
+drivers/pcmcia/pcmcia_resource.c,0
+drivers/pcmcia/rsrc_mgr.c,0
+drivers/pcmcia/rsrc_nonstatic.c,0
+drivers/pcmcia/socket_sysfs.c,0
+drivers/pcmcia/yenta_socket.c,0
+drivers/platform/x86/eeepc-laptop.c,0
+drivers/platform/x86/p2sb.c,0
+drivers/platform/x86/wmi-bmof.c,0
+drivers/platform/x86/wmi.c,0
+drivers/pnp/card.c,0
+drivers/pnp/core.c,0
+drivers/pnp/driver.c,0
+drivers/pnp/interface.c,0
+drivers/pnp/manager.c,0
+drivers/pnp/pnpacpi/core.c,0
+drivers/pnp/pnpacpi/rsparser.c,0
+drivers/pnp/quirks.c,0
+drivers/pnp/resource.c,0
+drivers/pnp/support.c,0
+drivers/pnp/system.c,0
+drivers/power/supply/power_supply_core.c,0
+drivers/power/supply/power_supply_hwmon.c,0
+drivers/power/supply/power_supply_leds.c,0
+drivers/power/supply/power_supply_sysfs.c,0
+drivers/pps/kapi.c,0
+drivers/pps/pps.c,0
+drivers/pps/sysfs.c,0
+drivers/ptp/ptp_chardev.c,0
+drivers/ptp/ptp_clock.c,0
+drivers/ptp/ptp_kvm_common.c,0
+drivers/ptp/ptp_kvm_x86.c,0
+drivers/ptp/ptp_sysfs.c,0
+drivers/ptp/ptp_vclock.c,0
+drivers/rtc/class.c,0
+drivers/rtc/dev.c,0
+drivers/rtc/interface.c,0
+drivers/rtc/lib.c,0
+drivers/rtc/nvmem.c,0
+drivers/rtc/proc.c,0
+drivers/rtc/rtc-cmos.c,0
+drivers/rtc/rtc-mc146818-lib.c,0
+drivers/rtc/sysfs.c,0
+drivers/scsi/constants.c,0
+drivers/scsi/hosts.c,0
+drivers/scsi/scsi_bsg.c,0
+drivers/scsi/scsi.c,0
+drivers/scsi/scsicam.c,0
+drivers/scsi/scsi_common.c,0
+drivers/scsi/scsi_debugfs.c,0
+drivers/scsi/scsi_devinfo.c,0
+drivers/scsi/scsi_devinfo_tbl.c,no spdx
+drivers/scsi/scsi_error.c,0
+drivers/scsi/scsi_ioctl.c,0
+drivers/scsi/scsi_lib.c,0
+drivers/scsi/scsi_lib_dma.c,0
+drivers/scsi/scsi_logging.c,0
+drivers/scsi/scsi_pm.c,0
+drivers/scsi/scsi_proc.c,0
+drivers/scsi/scsi_scan.c,0
+drivers/scsi/scsi_sysctl.c,0
+drivers/scsi/scsi_sysfs.c,0
+drivers/scsi/scsi_trace.c,0
+drivers/scsi/scsi_transport_spi.c,0
+drivers/scsi/sd.c,0
+drivers/scsi/sg.c,0
+drivers/scsi/sr.c,0
+drivers/scsi/sr_ioctl.c,0
+drivers/scsi/sr_vendor.c,0
+drivers/scsi/virtio_scsi.c,0
+drivers/thermal/gov_step_wise.c,0
+drivers/thermal/gov_user_space.c,0
+drivers/thermal/intel/intel_tcc.c,0
+drivers/thermal/intel/therm_throt.c,0
+drivers/thermal/thermal_core.c,0
+drivers/thermal/thermal_helpers.c,0
+drivers/thermal/thermal_hwmon.c,0
+drivers/thermal/thermal_sysfs.c,0
+drivers/thermal/thermal_trip.c,0
+drivers/tty/hvc/hvc_console.c,0
+drivers/tty/n_null.c,0
+drivers/tty/n_tty.c,0
+drivers/tty/pty.c,0
+drivers/tty/serial/8250/8250_core.c,0
+drivers/tty/serial/8250/8250_dma.c,0
+drivers/tty/serial/8250/8250_dwlib.c,0
+drivers/tty/serial/8250/8250_early.c,0
+drivers/tty/serial/8250/8250_exar.c,0
+drivers/tty/serial/8250/8250_lpss.c,0
+drivers/tty/serial/8250/8250_mid.c,0
+drivers/tty/serial/8250/8250_pci.c,0
+drivers/tty/serial/8250/8250_pcilib.c,0
+drivers/tty/serial/8250/8250_pericom.c,0
+drivers/tty/serial/8250/8250_pnp.c,0
+drivers/tty/serial/8250/8250_port.c,0
+drivers/tty/serial/earlycon.c,0
+drivers/tty/serial/serial_base_bus.c,0
+drivers/tty/serial/serial_core.c,0
+drivers/tty/serial/serial_ctrl.c,0
+drivers/tty/serial/serial_port.c,0
+drivers/tty/sysrq.c,0
+drivers/tty/tty_audit.c,0
+drivers/tty/tty_baudrate.c,0
+drivers/tty/tty_buffer.c,0
+drivers/tty/tty_io.c,0
+drivers/tty/tty_ioctl.c,0
+drivers/tty/tty_jobctrl.c,0
+drivers/tty/tty_ldisc.c,0
+drivers/tty/tty_ldsem.c,0
+drivers/tty/tty_mutex.c,0
+drivers/tty/tty_port.c,0
+drivers/tty/vt/conmakehash.c,0
+drivers/tty/vt/consolemap.c,0
+drivers/tty/vt/consolemap_deftbl.c,no spdx
+drivers/tty/vt/consolemap_deftbl.c,no spdx
+drivers/tty/vt/defkeymap.c,0
+drivers/tty/vt/defkeymap.c,0
+drivers/tty/vt/keyboard.c,0
+drivers/tty/vt/selection.c,0
+drivers/tty/vt/vc_screen.c,0
+drivers/tty/vt/vt.c,0
+drivers/tty/vt/vt_ioctl.c,0
+drivers/usb/class/usblp.c,0
+drivers/usb/common/common.c,0
+drivers/usb/common/debug.c,0
+drivers/usb/core/buffer.c,0
+drivers/usb/core/config.c,0
+drivers/usb/core/devices.c,0
+drivers/usb/core/devio.c,0
+drivers/usb/core/driver.c,0
+drivers/usb/core/endpoint.c,0
+drivers/usb/core/file.c,0
+drivers/usb/core/generic.c,0
+drivers/usb/core/hcd.c,0
+drivers/usb/core/hcd-pci.c,0
+drivers/usb/core/hub.c,0
+drivers/usb/core/message.c,0
+drivers/usb/core/notify.c,0
+drivers/usb/core/phy.c,0
+drivers/usb/core/port.c,0
+drivers/usb/core/quirks.c,0
+drivers/usb/core/sysfs.c,0
+drivers/usb/core/urb.c,0
+drivers/usb/core/usb-acpi.c,0
+drivers/usb/core/usb.c,0
+drivers/usb/early/ehci-dbgp.c,0
+drivers/usb/host/ehci-hcd.c,0
+drivers/usb/host/ehci-pci.c,0
+drivers/usb/host/ohci-hcd.c,0
+drivers/usb/host/ohci-pci.c,0
+drivers/usb/host/pci-quirks.c,0
+drivers/usb/host/uhci-hcd.c,0
+drivers/usb/host/xhci.c,0
+drivers/usb/host/xhci-dbg.c,0
+drivers/usb/host/xhci-debugfs.c,0
+drivers/usb/host/xhci-ext-caps.c,0
+drivers/usb/host/xhci-hub.c,0
+drivers/usb/host/xhci-mem.c,0
+drivers/usb/host/xhci-pci.c,0
+drivers/usb/host/xhci-ring.c,0
+drivers/usb/host/xhci-trace.c,0
+drivers/usb/mon/mon_bin.c,0
+drivers/usb/mon/mon_main.c,0
+drivers/usb/mon/mon_stat.c,0
+drivers/usb/mon/mon_text.c,0
+drivers/usb/storage/initializers.c,0
+drivers/usb/storage/option_ms.c,0
+drivers/usb/storage/protocol.c,0
+drivers/usb/storage/scsiglue.c,0
+drivers/usb/storage/sierra_ms.c,0
+drivers/usb/storage/transport.c,0
+drivers/usb/storage/usb.c,0
+drivers/usb/storage/usual-tables.c,0
+drivers/video/aperture.c,0
+drivers/video/backlight/backlight.c,0
+drivers/video/cmdline.c,0
+drivers/video/console/dummycon.c,0
+drivers/video/console/vgacon.c,no spdx
+drivers/video/hdmi.c,no spdx
+drivers/video/nomodeset.c,0
+drivers/virtio/virtio_anchor.c,0
+drivers/virtio/virtio.c,0
+drivers/virtio/virtio_dma_buf.c,0
+drivers/virtio/virtio_input.c,0
+drivers/virtio/virtio_pci_common.c,0
+drivers/virtio/virtio_pci_legacy.c,0
+drivers/virtio/virtio_pci_legacy_dev.c,0
+drivers/virtio/virtio_pci_modern.c,0
+drivers/virtio/virtio_pci_modern_dev.c,0
+drivers/virtio/virtio_ring.c,0
+fs/9p/fid.c,0
+fs/9p/v9fs.c,0
+fs/9p/vfs_addr.c,0
+fs/9p/vfs_dentry.c,0
+fs/9p/vfs_dir.c,0
+fs/9p/vfs_file.c,0
+fs/9p/vfs_inode.c,0
+fs/9p/vfs_inode_dotl.c,0
+fs/9p/vfs_super.c,0
+fs/9p/xattr.c,0
+fs/aio.c,no spdx
+fs/anon_inodes.c,0
+fs/attr.c,0
+fs/autofs/dev-ioctl.c,0
+fs/autofs/expire.c,0
+fs/autofs/init.c,0
+fs/autofs/inode.c,0
+fs/autofs/root.c,0
+fs/autofs/symlink.c,0
+fs/autofs/waitq.c,0
+fs/bad_inode.c,0
+fs/binfmt_elf.c,0
+fs/binfmt_misc.c,0
+fs/binfmt_script.c,0
+fs/buffer.c,0
+fs/char_dev.c,0
+fs/compat_binfmt_elf.c,0
+fs/coredump.c,0
+fs/dcache.c,0
+fs/debugfs/file.c,0
+fs/debugfs/inode.c,0
+fs/devpts/inode.c,0
+fs/direct-io.c,0
+fs/d_path.c,0
+fs/drop_caches.c,0
+fs/eventfd.c,0
+fs/eventpoll.c,0
+fs/exec.c,0
+fs/exportfs/expfs.c,0
+fs/ext4/acl.c,0
+fs/ext4/balloc.c,0
+fs/ext4/bitmap.c,0
+fs/ext4/block_validity.c,0
+fs/ext4/dir.c,0
+fs/ext4/ext4_jbd2.c,0
+fs/ext4/extents.c,0
+fs/ext4/extents_status.c,0
+fs/ext4/fast_commit.c,0
+fs/ext4/file.c,0
+fs/ext4/fsmap.c,0
+fs/ext4/fsync.c,0
+fs/ext4/hash.c,0
+fs/ext4/ialloc.c,0
+fs/ext4/indirect.c,0
+fs/ext4/inline.c,0
+fs/ext4/inode.c,0
+fs/ext4/ioctl.c,0
+fs/ext4/mballoc.c,0
+fs/ext4/migrate.c,0
+fs/ext4/mmp.c,0
+fs/ext4/move_extent.c,0
+fs/ext4/namei.c,0
+fs/ext4/orphan.c,no spdx
+fs/ext4/page-io.c,0
+fs/ext4/readpage.c,0
+fs/ext4/resize.c,0
+fs/ext4/super.c,0
+fs/ext4/symlink.c,0
+fs/ext4/sysfs.c,0
+fs/ext4/xattr.c,0
+fs/ext4/xattr_hurd.c,0
+fs/ext4/xattr_security.c,0
+fs/ext4/xattr_trusted.c,0
+fs/ext4/xattr_user.c,0
+fs/fat/cache.c,0
+fs/fat/dir.c,0
+fs/fat/fatent.c,0
+fs/fat/file.c,0
+fs/fat/inode.c,0
+fs/fat/misc.c,0
+fs/fat/namei_msdos.c,0
+fs/fat/namei_vfat.c,0
+fs/fat/nfs.c,0
+fs/fcntl.c,0
+fs/fhandle.c,0
+fs/file.c,0
+fs/filesystems.c,0
+fs/file_table.c,0
+fs/fs_context.c,0
+fs/fsopen.c,0
+fs/fs_parser.c,0
+fs/fs_pin.c,0
+fs/fs_struct.c,0
+fs/fs_types.c,0
+fs/fs-writeback.c,0
+fs/hugetlbfs/inode.c,no spdx
+fs/init.c,0
+fs/inode.c,0
+fs/ioctl.c,0
+fs/iomap/buffered-io.c,0
+fs/iomap/direct-io.c,0
+fs/iomap/fiemap.c,0
+fs/iomap/iter.c,0
+fs/iomap/seek.c,0
+fs/iomap/swapfile.c,0
+fs/iomap/trace.c,0
+fs/isofs/compress.c,0
+fs/isofs/dir.c,0
+fs/isofs/export.c,0
+fs/isofs/inode.c,0
+fs/isofs/joliet.c,0
+fs/isofs/namei.c,0
+fs/isofs/rock.c,0
+fs/isofs/util.c,0
+fs/jbd2/checkpoint.c,0
+fs/jbd2/commit.c,0
+fs/jbd2/journal.c,0
+fs/jbd2/recovery.c,0
+fs/jbd2/revoke.c,0
+fs/jbd2/transaction.c,0
+fs/kernel_read_file.c,0
+fs/kernfs/dir.c,0
+fs/kernfs/file.c,0
+fs/kernfs/inode.c,0
+fs/kernfs/mount.c,0
+fs/kernfs/symlink.c,0
+fs/libfs.c,0
+fs/lockd/clnt4xdr.c,0
+fs/lockd/clntlock.c,0
+fs/lockd/clntproc.c,0
+fs/lockd/clntxdr.c,0
+fs/lockd/host.c,0
+fs/lockd/mon.c,0
+fs/lockd/procfs.c,0
+fs/lockd/svc4proc.c,0
+fs/lockd/svc.c,0
+fs/lockd/svclock.c,0
+fs/lockd/svcproc.c,0
+fs/lockd/svcshare.c,0
+fs/lockd/svcsubs.c,0
+fs/lockd/trace.c,0
+fs/lockd/xdr4.c,0
+fs/lockd/xdr.c,0
+fs/locks.c,0
+fs/mbcache.c,0
+fs/mnt_idmapping.c,0
+fs/mpage.c,0
+fs/namei.c,0
+fs/namespace.c,0
+fs/netfs/buffered_read.c,0
+fs/netfs/io.c,0
+fs/netfs/iterator.c,0
+fs/netfs/main.c,0
+fs/netfs/objects.c,0
+fs/nfs/callback.c,0
+fs/nfs/callback_proc.c,0
+fs/nfs/callback_xdr.c,0
+fs/nfs/client.c,0
+fs/nfs_common/grace.c,0
+fs/nfs_common/nfsacl.c,0
+fs/nfs/delegation.c,0
+fs/nfs/dir.c,0
+fs/nfs/direct.c,0
+fs/nfs/dns_resolve.c,0
+fs/nfs/export.c,0
+fs/nfs/file.c,0
+fs/nfs/fs_context.c,0
+fs/nfs/getroot.c,0
+fs/nfs/inode.c,0
+fs/nfs/io.c,0
+fs/nfs/mount_clnt.c,0
+fs/nfs/namespace.c,0
+fs/nfs/nfs2super.c,0
+fs/nfs/nfs2xdr.c,0
+fs/nfs/nfs3acl.c,0
+fs/nfs/nfs3client.c,0
+fs/nfs/nfs3proc.c,0
+fs/nfs/nfs3super.c,0
+fs/nfs/nfs3xdr.c,0
+fs/nfs/nfs4client.c,0
+fs/nfs/nfs4file.c,0
+fs/nfs/nfs4getroot.c,0
+fs/nfs/nfs4idmap.c,no spdx
+fs/nfs/nfs4namespace.c,0
+fs/nfs/nfs4proc.c,no spdx
+fs/nfs/nfs4renewd.c,no spdx
+fs/nfs/nfs4session.c,0
+fs/nfs/nfs4state.c,no spdx
+fs/nfs/nfs4super.c,0
+fs/nfs/nfs4sysctl.c,0
+fs/nfs/nfs4trace.c,0
+fs/nfs/nfs4xdr.c,no spdx
+fs/nfs/nfsroot.c,0
+fs/nfs/nfstrace.c,0
+fs/nfs/pagelist.c,0
+fs/nfs/proc.c,0
+fs/nfs/read.c,0
+fs/nfs/super.c,0
+fs/nfs/symlink.c,0
+fs/nfs/sysctl.c,0
+fs/nfs/sysfs.c,0
+fs/nfs/unlink.c,0
+fs/nfs/write.c,0
+fs/nls/nls_ascii.c,no spdx
+fs/nls/nls_base.c,no spdx
+fs/nls/nls_cp437.c,no spdx
+fs/nls/nls_iso8859-1.c,no spdx
+fs/nls/nls_utf8.c,no spdx
+fs/notify/dnotify/dnotify.c,0
+fs/notify/fdinfo.c,0
+fs/notify/fsnotify.c,0
+fs/notify/group.c,0
+fs/notify/inotify/inotify_fsnotify.c,0
+fs/notify/inotify/inotify_user.c,0
+fs/notify/mark.c,0
+fs/notify/notification.c,0
+fs/nsfs.c,0
+fs/open.c,0
+fs/pipe.c,0
+fs/pnode.c,0
+fs/posix_acl.c,0
+fs/proc/array.c,0
+fs/proc/base.c,0
+fs/proc/cmdline.c,0
+fs/proc/consoles.c,0
+fs/proc/cpuinfo.c,0
+fs/proc/devices.c,0
+fs/proc/fd.c,0
+fs/proc/generic.c,0
+fs/proc/inode.c,0
+fs/proc/interrupts.c,0
+fs/proc/kcore.c,0
+fs/proc/kmsg.c,0
+fs/proc/loadavg.c,0
+fs/proc/meminfo.c,0
+fs/proc_namespace.c,0
+fs/proc/namespaces.c,0
+fs/proc/page.c,0
+fs/proc/proc_net.c,0
+fs/proc/proc_sysctl.c,0
+fs/proc/proc_tty.c,0
+fs/proc/root.c,0
+fs/proc/self.c,0
+fs/proc/softirqs.c,0
+fs/proc/stat.c,0
+fs/proc/task_mmu.c,0
+fs/proc/thread_self.c,0
+fs/proc/uptime.c,0
+fs/proc/util.c,no spdx
+fs/proc/version.c,0
+fs/proc/vmcore.c,0
+fs/quota/dquot.c,0
+fs/quota/kqid.c,0
+fs/quota/netlink.c,0
+fs/quota/quota.c,0
+fs/quota/quota_tree.c,0
+fs/quota/quota_v2.c,0
+fs/ramfs/file-mmu.c,no spdx
+fs/ramfs/inode.c,no spdx
+fs/readdir.c,0
+fs/read_write.c,0
+fs/remap_range.c,0
+fs/select.c,0
+fs/seq_file.c,0
+fs/signalfd.c,0
+fs/splice.c,0
+fs/stack.c,0
+fs/stat.c,0
+fs/statfs.c,0
+fs/super.c,0
+fs/sync.c,0
+fs/sysctls.c,0
+fs/sysfs/dir.c,0
+fs/sysfs/file.c,0
+fs/sysfs/group.c,0
+fs/sysfs/mount.c,0
+fs/sysfs/symlink.c,0
+fs/timerfd.c,0
+fs/tracefs/event_inode.c,0
+fs/tracefs/inode.c,0
+fs/utimes.c,0
+fs/xattr.c,0
+include/generated/asm-offsets.h,no spdx
+include/generated/bounds.h,no spdx
+include/generated/compile.h,no spdx
+include/generated/timeconst.h,no spdx
+include/generated/.tmp_asm-offsets.h,0
+include/generated/.tmp_bounds.h,0
+include/generated/.tmp_compile.h,0
+include/generated/.tmp_timeconst.h,0
+include/generated/.tmp_utsrelease.h,0
+include/generated/uapi/linux/.tmp_version.h,0
+include/generated/uapi/linux/version.h,no spdx
+include/generated/utsrelease.h,no spdx
+include/linux/atomic/atomic-arch-fallback.h,0
+include/linux/atomic/atomic-arch-fallback.h,0
+include/linux/atomic/atomic-instrumented.h,0
+include/linux/atomic/atomic-instrumented.h,0
+include/linux/atomic/atomic-long.h,0
+include/linux/atomic/atomic-long.h,0
+./include/linux/compiler_types.h,0
+./include/linux/compiler-version.h,0
+./include/linux/hidden.h,0
+./include/linux/kconfig.h,0
+include/linux/oid_registry.h,0
+include/scsi/scsi_devinfo.h,0
+init/calibrate.c,0
+init/do_mounts.c,0
+init/do_mounts_initrd.c,0
+init/initramfs.c,0
+init/init_task.c,0
+init/main.c,0
+init/.tmp_utsversion-tmp.h,0
+init/utsversion-tmp.h,no spdx
+init/version.c,0
+io_uring/advise.c,0
+io_uring/cancel.c,0
+io_uring/epoll.c,0
+io_uring/fdinfo.c,0
+io_uring/filetable.c,0
+io_uring/fs.c,0
+io_uring/io_uring.c,0
+io_uring/io-wq.c,0
+io_uring/kbuf.c,0
+io_uring/msg_ring.c,0
+io_uring/net.c,0
+io_uring/nop.c,0
+io_uring/notif.c,no spdx
+io_uring/opdef.c,0
+io_uring/openclose.c,0
+io_uring/poll.c,0
+io_uring/rsrc.c,0
+io_uring/rw.c,0
+io_uring/splice.c,0
+io_uring/sqpoll.c,0
+io_uring/statx.c,0
+io_uring/sync.c,0
+io_uring/tctx.c,0
+io_uring/timeout.c,0
+io_uring/uring_cmd.c,0
+io_uring/xattr.c,0
+ipc/compat.c,0
+ipc/ipc_sysctl.c,0
+ipc/mq_sysctl.c,0
+ipc/mqueue.c,no spdx
+ipc/msg.c,0
+ipc/msgutil.c,0
+ipc/namespace.c,0
+ipc/sem.c,0
+ipc/shm.c,0
+ipc/syscall.c,0
+ipc/util.c,0
+kernel/acct.c,0
+kernel/async.c,0
+kernel/audit.c,0
+kernel/auditfilter.c,0
+kernel/audit_fsnotify.c,0
+kernel/auditsc.c,0
+kernel/audit_tree.c,0
+kernel/audit_watch.c,0
+kernel/bounds.c,0
+kernel/bounds.c,0
+kernel/bpf/core.c,0
+kernel/capability.c,0
+kernel/cgroup/cgroup.c,no spdx
+kernel/cgroup/cgroup-v1.c,0
+kernel/cgroup/cpuset.c,no spdx
+kernel/cgroup/debug.c,0
+kernel/cgroup/freezer.c,0
+kernel/cgroup/legacy_freezer.c,no spdx
+kernel/cgroup/misc.c,0
+kernel/cgroup/namespace.c,0
+kernel/cgroup/pids.c,0
+kernel/cgroup/rdma.c,0
+kernel/cgroup/rstat.c,0
+kernel/compat.c,0
+kernel/context_tracking.c,0
+kernel/cpu.c,no spdx
+kernel/crash_core.c,0
+kernel/crash_dump.c,0
+kernel/cred.c,0
+kernel/delayacct.c,0
+kernel/dma.c,0
+kernel/dma/direct.c,0
+kernel/dma/dummy.c,0
+kernel/dma/mapping.c,0
+kernel/dma/ops_helpers.c,0
+kernel/dma/remap.c,0
+kernel/dma/swiotlb.c,0
+kernel/entry/common.c,0
+kernel/entry/syscall_user_dispatch.c,0
+kernel/events/callchain.c,0
+kernel/events/core.c,0
+kernel/events/hw_breakpoint.c,0
+kernel/events/ring_buffer.c,0
+kernel/events/uprobes.c,0
+kernel/exec_domain.c,0
+kernel/exit.c,0
+kernel/extable.c,0
+kernel/fork.c,0
+kernel/freezer.c,0
+kernel/futex/core.c,0
+kernel/futex/pi.c,0
+kernel/futex/requeue.c,0
+kernel/futex/syscalls.c,0
+kernel/futex/waitwake.c,0
+kernel/groups.c,0
+kernel/iomem.c,0
+kernel/irq/affinity.c,0
+kernel/irq/autoprobe.c,0
+kernel/irq/chip.c,0
+kernel/irq/cpuhotplug.c,0
+kernel/irq/devres.c,0
+kernel/irq/dummychip.c,0
+kernel/irq/handle.c,0
+kernel/irq/irqdesc.c,0
+kernel/irq/irqdomain.c,0
+kernel/irq/manage.c,0
+kernel/irq/matrix.c,0
+kernel/irq/migration.c,0
+kernel/irq/msi.c,0
+kernel/irq/pm.c,0
+kernel/irq/proc.c,0
+kernel/irq/resend.c,0
+kernel/irq/spurious.c,0
+kernel/irq_work.c,0
+kernel/jump_label.c,0
+kernel/kallsyms.c,0
+kernel/kcmp.c,0
+kernel/kexec.c,0
+kernel/kexec_core.c,0
+kernel/kprobes.c,0
+kernel/ksyms_common.c,0
+kernel/ksysfs.c,0
+kernel/kthread.c,0
+kernel/locking/mutex.c,0
+kernel/locking/osq_lock.c,0
+kernel/locking/percpu-rwsem.c,0
+kernel/locking/qrwlock.c,0
+kernel/locking/qspinlock.c,0
+kernel/locking/rtmutex_api.c,0
+kernel/locking/rwsem.c,0
+kernel/locking/semaphore.c,0
+kernel/locking/spinlock.c,0
+kernel/module/kallsyms.c,0
+kernel/module/kmod.c,no spdx
+kernel/module/main.c,0
+kernel/module/procfs.c,0
+kernel/module/strict_rwx.c,0
+kernel/module/sysfs.c,0
+kernel/module/tree_lookup.c,0
+kernel/notifier.c,0
+kernel/nsproxy.c,0
+kernel/panic.c,0
+kernel/params.c,0
+kernel/pid.c,0
+kernel/pid_namespace.c,0
+kernel/power/console.c,0
+kernel/power/hibernate.c,0
+kernel/power/main.c,0
+kernel/power/poweroff.c,0
+kernel/power/process.c,0
+kernel/power/qos.c,0
+kernel/power/snapshot.c,0
+kernel/power/suspend.c,0
+kernel/power/swap.c,0
+kernel/power/user.c,0
+kernel/printk/printk.c,0
+kernel/printk/printk_ringbuffer.c,0
+kernel/printk/printk_safe.c,0
+kernel/printk/sysctl.c,0
+kernel/profile.c,0
+kernel/ptrace.c,0
+kernel/range.c,0
+kernel/rcu/rcu_segcblist.c,0
+kernel/rcu/srcutree.c,0
+kernel/rcu/sync.c,0
+kernel/rcu/tree.c,0
+kernel/rcu/update.c,0
+kernel/reboot.c,0
+kernel/regset.c,0
+kernel/relay.c,no spdx
+kernel/resource.c,0
+kernel/rseq.c,0
+kernel/sched/build_policy.c,0
+kernel/sched/build_utility.c,0
+kernel/sched/core.c,0
+kernel/sched/fair.c,0
+kernel/seccomp.c,0
+kernel/signal.c,0
+kernel/smpboot.c,0
+kernel/smp.c,0
+kernel/softirq.c,0
+kernel/stacktrace.c,0
+kernel/static_call.c,0
+kernel/static_call_inline.c,0
+kernel/stop_machine.c,0
+kernel/sys.c,0
+kernel/sysctl.c,0
+kernel/sys_ni.c,0
+kernel/taskstats.c,0
+kernel/task_work.c,0
+kernel/time/alarmtimer.c,0
+kernel/time/clockevents.c,0
+kernel/time/clocksource.c,0
+kernel/time/hrtimer.c,0
+kernel/time/itimer.c,0
+kernel/time/jiffies.c,0
+kernel/time/namespace.c,0
+kernel/time/ntp.c,0
+kernel/time/posix-clock.c,0
+kernel/time/posix-cpu-timers.c,0
+kernel/time/posix-timers.c,0
+kernel/time/tick-broadcast.c,0
+kernel/time/tick-broadcast-hrtimer.c,0
+kernel/time/tick-common.c,0
+kernel/time/tick-oneshot.c,0
+kernel/time/tick-sched.c,0
+kernel/time/time.c,0
+kernel/time/timeconv.c,0
+kernel/time/timecounter.c,0
+kernel/time/timekeeping.c,0
+kernel/time/timekeeping_debug.c,0
+kernel/time/timer.c,0
+kernel/time/timer_list.c,0
+kernel/time/vsyscall.c,0
+kernel/trace/blktrace.c,0
+kernel/trace/error_report-traces.c,0
+kernel/trace/pid_list.c,0
+kernel/tracepoint.c,0
+kernel/trace/power-traces.c,0
+kernel/trace/rethook.c,0
+kernel/trace/ring_buffer.c,0
+kernel/trace/rpm-traces.c,0
+kernel/trace/trace.c,0
+kernel/trace/trace_clock.c,0
+kernel/trace/trace_dynevent.c,0
+kernel/trace/trace_eprobe.c,0
+kernel/trace/trace_event_perf.c,0
+kernel/trace/trace_events.c,0
+kernel/trace/trace_events_filter.c,0
+kernel/trace/trace_events_trigger.c,0
+kernel/trace/trace_export.c,0
+kernel/trace/trace_kprobe.c,0
+kernel/trace/trace_nop.c,0
+kernel/trace/trace_output.c,0
+kernel/trace/trace_printk.c,0
+kernel/trace/trace_probe.c,0
+kernel/trace/trace_sched_switch.c,0
+kernel/trace/trace_seq.c,0
+kernel/trace/trace_stat.c,0
+kernel/trace/trace_uprobe.c,0
+kernel/tsacct.c,0
+kernel/ucount.c,0
+kernel/uid16.c,0
+kernel/umh.c,0
+kernel/user.c,0
+kernel/utsname.c,0
+kernel/utsname_sysctl.c,0
+kernel/workqueue.c,0
+lib/argv_split.c,0
+lib/asn1_decoder.c,0
+lib/assoc_array.c,0
+lib/base64.c,0
+lib/bcd.c,0
+lib/bitmap.c,0
+lib/bitrev.c,0
+lib/bsearch.c,0
+lib/bucket_locks.c,no spdx
+lib/bug.c,0
+lib/buildid.c,0
+lib/bust_spinlocks.c,0
+lib/check_signature.c,0
+lib/clz_ctz.c,0
+lib/clz_tab.c,0
+lib/cmdline.c,0
+lib/cpumask.c,0
+lib/cpu_rmap.c,0
+lib/crc16.c,0
+lib/crc32.c,no spdx
+lib/crc32table.h,no spdx
+lib/crc-ccitt.c,0
+lib/crypto/aes.c,0
+lib/crypto/arc4.c,0
+lib/crypto/blake2s.c,0
+lib/crypto/blake2s-generic.c,0
+lib/crypto/chacha.c,0
+lib/crypto/gf128mul.c,no spdx
+lib/crypto/memneq.c,no spdx
+lib/crypto/mpi/ec.c,no spdx
+lib/crypto/mpi/generic_mpih-add1.c,0
+lib/crypto/mpi/generic_mpih-lshift.c,0
+lib/crypto/mpi/generic_mpih-mul1.c,0
+lib/crypto/mpi/generic_mpih-mul2.c,0
+lib/crypto/mpi/generic_mpih-mul3.c,0
+lib/crypto/mpi/generic_mpih-rshift.c,0
+lib/crypto/mpi/generic_mpih-sub1.c,0
+lib/crypto/mpi/mpi-add.c,no spdx
+lib/crypto/mpi/mpi-bit.c,no spdx
+lib/crypto/mpi/mpi-cmp.c,no spdx
+lib/crypto/mpi/mpicoder.c,no spdx
+lib/crypto/mpi/mpi-div.c,no spdx
+lib/crypto/mpi/mpih-cmp.c,0
+lib/crypto/mpi/mpih-div.c,0
+lib/crypto/mpi/mpih-mul.c,0
+lib/crypto/mpi/mpi-inv.c,no spdx
+lib/crypto/mpi/mpi-mod.c,no spdx
+lib/crypto/mpi/mpi-mul.c,no spdx
+lib/crypto/mpi/mpi-pow.c,0
+lib/crypto/mpi/mpi-sub-ui.c,0
+lib/crypto/mpi/mpiutil.c,no spdx
+lib/crypto/sha1.c,0
+lib/crypto/sha256.c,0
+lib/crypto/utils.c,0
+../lib/ctype.c,0
+lib/ctype.c,0
+lib/debug_locks.c,0
+lib/dec_and_lock.c,0
+lib/decompress_bunzip2.c,no spdx
+lib/decompress.c,0
+lib/decompress_inflate.c,0
+lib/decompress_unlz4.c,0
+lib/decompress_unlzma.c,no spdx
+lib/decompress_unlzo.c,0
+lib/decompress_unxz.c,no spdx
+lib/decompress_unzstd.c,0
+lib/devres.c,0
+lib/dump_stack.c,0
+lib/dynamic_queue_limits.c,0
+lib/earlycpio.c,0
+lib/errname.c,0
+lib/errseq.c,0
+lib/extable.c,0
+lib/find_bit.c,0
+lib/flex_proportions.c,0
+lib/fonts/font_8x16.c,0
+lib/fonts/fonts.c,no spdx
+lib/genalloc.c,0
+lib/gen_crc32table.c,0
+lib/generic-radix-tree.c,no spdx
+lib/glob.c,no spdx
+lib/group_cpus.c,0
+lib/hexdump.c,0
+lib/idr.c,0
+lib/interval_tree.c,0
+lib/iomap.c,0
+lib/iomap_copy.c,0
+lib/iov_iter.c,0
+lib/irq_regs.c,0
+lib/is_single_threaded.c,0
+lib/kasprintf.c,0
+lib/kfifo.c,0
+lib/klist.c,0
+lib/kobject.c,0
+lib/kobject_uevent.c,0
+lib/kstrtox.c,0
+lib/list_sort.c,0
+lib/llist.c,0
+lib/lockref.c,0
+lib/logic_pio.c,0
+lib/lwq.c,0
+lib/lz4/lz4_decompress.c,no spdx
+lib/lzo/lzo1x_compress.c,0
+lib/lzo/lzo1x_decompress_safe.c,0
+lib/maple_tree.c,0
+lib/math/div64.c,0
+lib/math/gcd.c,0
+lib/math/int_log.c,0
+lib/math/int_pow.c,0
+lib/math/int_sqrt.c,0
+lib/math/lcm.c,0
+lib/math/rational.c,0
+lib/math/reciprocal_div.c,0
+lib/memcat_p.c,0
+lib/memweight.c,0
+lib/net_utils.c,0
+lib/nlattr.c,0
+lib/nmi_backtrace.c,0
+lib/oid_registry.c,0
+lib/oid_registry_data.c,no spdx
+lib/once.c,0
+lib/parser.c,0
+lib/pci_iomap.c,0
+lib/percpu_counter.c,0
+lib/percpu-refcount.c,0
+lib/plist.c,0
+lib/radix-tree.c,0
+lib/random32.c,0
+lib/ratelimit.c,0
+../lib/rbtree.c,0
+lib/rbtree.c,0
+lib/rcuref.c,0
+lib/refcount.c,0
+lib/rhashtable.c,0
+lib/sbitmap.c,0
+lib/scatterlist.c,0
+lib/seq_buf.c,0
+lib/sg_pool.c,0
+lib/siphash.c,0
+lib/sort.c,0
+lib/stackdepot.c,0
+../lib/str_error_r.c,0
+../lib/string.c,0
+lib/string.c,0
+lib/string_helpers.c,0
+lib/strncpy_from_user.c,0
+lib/strnlen_user.c,0
+lib/syscall.c,0
+lib/timerqueue.c,0
+lib/ucs2_string.c,0
+lib/usercopy.c,0
+lib/uuid.c,0
+lib/vsprintf.c,0
+lib/win_minmax.c,0
+lib/xarray.c,0
+lib/xxhash.c,no spdx
+lib/xz/xz_dec_bcj.c,no spdx
+lib/xz/xz_dec_lzma2.c,no spdx
+lib/xz/xz_dec_stream.c,no spdx
+lib/xz/xz_dec_syms.c,no spdx
+lib/zlib_deflate/deflate.c,no spdx
+lib/zlib_deflate/deflate_syms.c,0
+lib/zlib_deflate/deftree.c,no spdx
+lib/zlib_inflate/inffast.c,no spdx
+lib/zlib_inflate/inflate.c,no spdx
+lib/zlib_inflate/inflate_syms.c,0
+lib/zlib_inflate/inftrees.c,no spdx
+lib/zlib_inflate/infutil.c,no spdx
+lib/zstd/common/debug.c,no spdx
+lib/zstd/common/entropy_common.c,no spdx
+lib/zstd/common/error_private.c,no spdx
+lib/zstd/common/fse_decompress.c,no spdx
+lib/zstd/common/zstd_common.c,no spdx
+lib/zstd/decompress/huf_decompress.c,no spdx
+lib/zstd/decompress/zstd_ddict.c,no spdx
+lib/zstd/decompress/zstd_decompress_block.c,no spdx
+lib/zstd/decompress/zstd_decompress.c,no spdx
+lib/zstd/zstd_common_module.c,0
+lib/zstd/zstd_decompress_module.c,0
+mm/backing-dev.c,0
+mm/compaction.c,0
+mm/debug.c,0
+mm/dmapool.c,0
+mm/early_ioremap.c,0
+mm/fadvise.c,0
+mm/filemap.c,0
+mm/folio-compat.c,no spdx
+mm/gup.c,0
+mm/highmem.c,0
+mm/hugetlb.c,0
+mm/hugetlb_cgroup.c,no spdx
+mm/hugetlb_vmemmap.c,0
+mm/init-mm.c,0
+mm/interval_tree.c,0
+mm/list_lru.c,0
+mm/maccess.c,0
+mm/madvise.c,0
+mm/memblock.c,0
+mm/memfd.c,no spdx
+mm/memory.c,0
+mm/memory-tiers.c,0
+mm/mempolicy.c,0
+mm/mempool.c,0
+mm/migrate.c,0
+mm/mincore.c,0
+mm/mlock.c,0
+mm/mmap.c,0
+mm/mmap_lock.c,0
+mm/mm_init.c,0
+mm/mmu_gather.c,no spdx
+mm/mmu_notifier.c,0
+mm/mmzone.c,0
+mm/mprotect.c,0
+mm/mremap.c,0
+mm/msync.c,0
+mm/oom_kill.c,0
+mm/page_alloc.c,0
+mm/page_counter.c,0
+mm/page_io.c,0
+mm/page_vma_mapped.c,0
+mm/pagewalk.c,0
+mm/page-writeback.c,0
+mm/percpu.c,0
+mm/pgtable-generic.c,0
+mm/process_vm_access.c,0
+mm/ptdump.c,0
+mm/readahead.c,0
+mm/rmap.c,no spdx
+mm/secretmem.c,0
+mm/shmem.c,no spdx
+mm/shmem_quota.c,0
+mm/show_mem.c,0
+mm/slab_common.c,0
+mm/slub.c,0
+mm/sparse.c,0
+mm/sparse-vmemmap.c,0
+mm/swap.c,0
+mm/swapfile.c,0
+mm/swap_slots.c,0
+mm/swap_state.c,0
+mm/truncate.c,0
+mm/util.c,0
+mm/vmalloc.c,0
+mm/vmscan.c,0
+mm/vmstat.c,0
+mm/workingset.c,0
+net/9p/client.c,0
+net/9p/error.c,0
+net/9p/mod.c,0
+net/9p/protocol.c,0
+net/9p/trans_common.c,0
+net/9p/trans_fd.c,0
+net/9p/trans_virtio.c,0
+net/compat.c,0
+net/core/datagram.c,0
+net/core/dev_addr_lists.c,0
+net/core/dev.c,0
+net/core/dev_ioctl.c,0
+net/core/dst.c,0
+net/core/dst_cache.c,0
+net/core/failover.c,0
+net/core/fib_notifier.c,no spdx
+net/core/fib_rules.c,0
+net/core/filter.c,0
+net/core/flow_dissector.c,0
+net/core/flow_offload.c,0
+net/core/gen_estimator.c,0
+net/core/gen_stats.c,0
+net/core/gro.c,0
+net/core/gro_cells.c,0
+net/core/gso.c,0
+net/core/link_watch.c,0
+net/core/neighbour.c,0
+net/core/netclassid_cgroup.c,0
+net/core/netdev-genl.c,0
+net/core/netdev-genl-gen.c,0
+net/core/netevent.c,0
+net/core/net_namespace.c,0
+net/core/netpoll.c,0
+net/core/netprio_cgroup.c,0
+net/core/net-procfs.c,0
+net/core/net-sysfs.c,0
+net/core/net-traces.c,0
+net/core/ptp_classifier.c,0
+net/core/request_sock.c,0
+net/core/rtnetlink.c,0
+net/core/scm.c,0
+net/core/secure_seq.c,0
+net/core/selftests.c,0
+net/core/skbuff.c,0
+net/core/sock.c,0
+net/core/sock_diag.c,no spdx
+net/core/sock_reuseport.c,0
+net/core/stream.c,0
+net/core/sysctl_net_core.c,0
+net/core/tso.c,0
+net/core/utils.c,0
+net/core/xdp.c,0
+net/devres.c,0
+net/dns_resolver/dns_key.c,no spdx
+net/dns_resolver/dns_query.c,no spdx
+net/ethernet/eth.c,0
+net/ethtool/bitset.c,0
+net/ethtool/cabletest.c,0
+net/ethtool/channels.c,0
+net/ethtool/coalesce.c,0
+net/ethtool/common.c,0
+net/ethtool/debug.c,0
+net/ethtool/eee.c,0
+net/ethtool/eeprom.c,0
+net/ethtool/features.c,0
+net/ethtool/fec.c,0
+net/ethtool/ioctl.c,0
+net/ethtool/linkinfo.c,0
+net/ethtool/linkmodes.c,0
+net/ethtool/linkstate.c,0
+net/ethtool/mm.c,0
+net/ethtool/module.c,0
+net/ethtool/netlink.c,0
+net/ethtool/pause.c,0
+net/ethtool/phc_vclocks.c,0
+net/ethtool/plca.c,0
+net/ethtool/privflags.c,0
+net/ethtool/pse-pd.c,0
+net/ethtool/rings.c,0
+net/ethtool/rss.c,0
+net/ethtool/stats.c,0
+net/ethtool/strset.c,0
+net/ethtool/tsinfo.c,0
+net/ethtool/tunnels.c,0
+net/ethtool/wol.c,0
+net/handshake/alert.c,0
+net/handshake/genl.c,0
+net/handshake/netlink.c,0
+net/handshake/request.c,0
+net/handshake/tlshd.c,0
+net/handshake/trace.c,0
+net/ipv4/af_inet.c,0
+net/ipv4/arp.c,0
+net/ipv4/cipso_ipv4.c,0
+net/ipv4/datagram.c,0
+net/ipv4/devinet.c,0
+net/ipv4/fib_frontend.c,0
+net/ipv4/fib_notifier.c,0
+net/ipv4/fib_rules.c,0
+net/ipv4/fib_semantics.c,0
+net/ipv4/fib_trie.c,0
+net/ipv4/gre_offload.c,0
+net/ipv4/icmp.c,0
+net/ipv4/igmp.c,0
+net/ipv4/inet_connection_sock.c,0
+net/ipv4/inet_fragment.c,0
+net/ipv4/inet_hashtables.c,0
+net/ipv4/inetpeer.c,no spdx
+net/ipv4/inet_timewait_sock.c,0
+net/ipv4/ipconfig.c,0
+net/ipv4/ip_forward.c,0
+net/ipv4/ip_fragment.c,0
+net/ipv4/ip_input.c,0
+net/ipv4/ipmr_base.c,no spdx
+net/ipv4/ipmr.c,0
+net/ipv4/ip_options.c,0
+net/ipv4/ip_output.c,0
+net/ipv4/ip_sockglue.c,0
+net/ipv4/ip_tunnel.c,0
+net/ipv4/ip_tunnel_core.c,0
+net/ipv4/metrics.c,0
+net/ipv4/netfilter.c,no spdx
+net/ipv4/netfilter/iptable_filter.c,0
+net/ipv4/netfilter/iptable_mangle.c,0
+net/ipv4/netfilter/ip_tables.c,0
+net/ipv4/netfilter/ipt_REJECT.c,0
+net/ipv4/netfilter/nf_defrag_ipv4.c,0
+net/ipv4/netfilter/nf_reject_ipv4.c,0
+net/ipv4/netlink.c,0
+net/ipv4/nexthop.c,0
+net/ipv4/ping.c,0
+net/ipv4/proc.c,0
+net/ipv4/protocol.c,0
+net/ipv4/raw.c,0
+net/ipv4/route.c,0
+net/ipv4/syncookies.c,0
+net/ipv4/sysctl_net_ipv4.c,0
+net/ipv4/tcp.c,0
+net/ipv4/tcp_cong.c,0
+net/ipv4/tcp_cubic.c,0
+net/ipv4/tcp_fastopen.c,0
+net/ipv4/tcp_input.c,0
+net/ipv4/tcp_ipv4.c,0
+net/ipv4/tcp_metrics.c,0
+net/ipv4/tcp_minisocks.c,0
+net/ipv4/tcp_offload.c,0
+net/ipv4/tcp_output.c,0
+net/ipv4/tcp_plb.c,no spdx
+net/ipv4/tcp_rate.c,0
+net/ipv4/tcp_recovery.c,0
+net/ipv4/tcp_sigpool.c,0
+net/ipv4/tcp_timer.c,0
+net/ipv4/tcp_ulp.c,0
+net/ipv4/tunnel4.c,0
+net/ipv4/udp.c,0
+net/ipv4/udplite.c,0
+net/ipv4/udp_offload.c,0
+net/ipv4/udp_tunnel_stub.c,0
+net/ipv4/xfrm4_input.c,0
+net/ipv4/xfrm4_output.c,0
+net/ipv4/xfrm4_policy.c,0
+net/ipv4/xfrm4_protocol.c,0
+net/ipv4/xfrm4_state.c,0
+net/ipv6/addrconf.c,0
+net/ipv6/addrconf_core.c,0
+net/ipv6/addrlabel.c,0
+net/ipv6/af_inet6.c,0
+net/ipv6/ah6.c,0
+net/ipv6/anycast.c,0
+net/ipv6/calipso.c,0
+net/ipv6/datagram.c,0
+net/ipv6/esp6.c,0
+net/ipv6/exthdrs.c,0
+net/ipv6/exthdrs_core.c,0
+net/ipv6/exthdrs_offload.c,0
+net/ipv6/fib6_notifier.c,no spdx
+net/ipv6/icmp.c,0
+net/ipv6/inet6_connection_sock.c,0
+net/ipv6/inet6_hashtables.c,0
+net/ipv6/ioam6.c,0
+net/ipv6/ip6_checksum.c,0
+net/ipv6/ip6_fib.c,0
+net/ipv6/ip6_flowlabel.c,0
+net/ipv6/ip6_icmp.c,0
+net/ipv6/ip6_input.c,0
+net/ipv6/ip6_offload.c,0
+net/ipv6/ip6_output.c,0
+net/ipv6/ipv6_sockglue.c,0
+net/ipv6/mcast.c,0
+net/ipv6/mcast_snoop.c,0
+net/ipv6/ndisc.c,0
+net/ipv6/netfilter.c,no spdx
+net/ipv6/netfilter/ip6table_filter.c,0
+net/ipv6/netfilter/ip6table_mangle.c,0
+net/ipv6/netfilter/ip6_tables.c,0
+net/ipv6/netfilter/ip6t_ipv6header.c,0
+net/ipv6/netfilter/ip6t_REJECT.c,0
+net/ipv6/netfilter/nf_conntrack_reasm.c,0
+net/ipv6/netfilter/nf_defrag_ipv6_hooks.c,0
+net/ipv6/netfilter/nf_reject_ipv6.c,0
+net/ipv6/output_core.c,0
+net/ipv6/ping.c,0
+net/ipv6/proc.c,0
+net/ipv6/protocol.c,0
+net/ipv6/raw.c,0
+net/ipv6/reassembly.c,0
+net/ipv6/route.c,0
+net/ipv6/rpl.c,0
+net/ipv6/seg6.c,0
+net/ipv6/sit.c,0
+net/ipv6/syncookies.c,0
+net/ipv6/sysctl_net_ipv6.c,0
+net/ipv6/tcp_ipv6.c,0
+net/ipv6/tcpv6_offload.c,0
+net/ipv6/udp.c,0
+net/ipv6/udplite.c,0
+net/ipv6/udp_offload.c,0
+net/ipv6/xfrm6_input.c,0
+net/ipv6/xfrm6_output.c,0
+net/ipv6/xfrm6_policy.c,0
+net/ipv6/xfrm6_protocol.c,0
+net/ipv6/xfrm6_state.c,0
+net/mac80211/aead_api.c,0
+net/mac80211/aes_cmac.c,0
+net/mac80211/aes_gmac.c,0
+net/mac80211/agg-rx.c,0
+net/mac80211/agg-tx.c,0
+net/mac80211/airtime.c,0
+net/mac80211/cfg.c,0
+net/mac80211/chan.c,0
+net/mac80211/driver-ops.c,0
+net/mac80211/eht.c,0
+net/mac80211/ethtool.c,0
+net/mac80211/fils_aead.c,0
+net/mac80211/he.c,0
+net/mac80211/ht.c,0
+net/mac80211/ibss.c,0
+net/mac80211/iface.c,0
+net/mac80211/key.c,0
+net/mac80211/led.c,0
+net/mac80211/link.c,0
+net/mac80211/main.c,0
+net/mac80211/michael.c,0
+net/mac80211/mlme.c,0
+net/mac80211/ocb.c,0
+net/mac80211/offchannel.c,0
+net/mac80211/pm.c,0
+net/mac80211/rate.c,0
+net/mac80211/rc80211_minstrel_ht.c,0
+net/mac80211/rx.c,0
+net/mac80211/s1g.c,0
+net/mac80211/scan.c,0
+net/mac80211/spectmgmt.c,0
+net/mac80211/sta_info.c,0
+net/mac80211/status.c,0
+net/mac80211/tdls.c,0
+net/mac80211/tkip.c,0
+net/mac80211/trace.c,0
+net/mac80211/tx.c,0
+net/mac80211/util.c,0
+net/mac80211/vht.c,0
+net/mac80211/wep.c,0
+net/mac80211/wme.c,0
+net/mac80211/wpa.c,0
+net/netfilter/core.c,no spdx
+net/netfilter/nf_conntrack_acct.c,0
+net/netfilter/nf_conntrack_core.c,0
+net/netfilter/nf_conntrack_expect.c,0
+net/netfilter/nf_conntrack_extend.c,0
+net/netfilter/nf_conntrack_ftp.c,0
+net/netfilter/nf_conntrack_helper.c,0
+net/netfilter/nf_conntrack_irc.c,0
+net/netfilter/nf_conntrack_netlink.c,no spdx
+net/netfilter/nf_conntrack_proto.c,0
+net/netfilter/nf_conntrack_proto_generic.c,0
+net/netfilter/nf_conntrack_proto_icmp.c,0
+net/netfilter/nf_conntrack_proto_icmpv6.c,0
+net/netfilter/nf_conntrack_proto_tcp.c,0
+net/netfilter/nf_conntrack_proto_udp.c,0
+net/netfilter/nf_conntrack_seqadj.c,0
+net/netfilter/nf_conntrack_sip.c,0
+net/netfilter/nf_conntrack_standalone.c,0
+net/netfilter/nf_log.c,0
+net/netfilter/nf_nat_core.c,0
+net/netfilter/nf_nat_ftp.c,0
+net/netfilter/nf_nat_helper.c,0
+net/netfilter/nf_nat_irc.c,0
+net/netfilter/nf_nat_masquerade.c,0
+net/netfilter/nf_nat_proto.c,0
+net/netfilter/nf_nat_sip.c,0
+net/netfilter/nfnetlink.c,no spdx
+net/netfilter/nfnetlink_log.c,0
+net/netfilter/nf_queue.c,no spdx
+net/netfilter/nf_sockopt.c,0
+net/netfilter/utils.c,0
+net/netfilter/x_tables.c,0
+net/netfilter/xt_CONNSECMARK.c,0
+net/netfilter/xt_conntrack.c,0
+net/netfilter/xt_NFLOG.c,0
+net/netfilter/xt_policy.c,0
+net/netfilter/xt_SECMARK.c,0
+net/netfilter/xt_state.c,0
+net/netfilter/xt_TCPMSS.c,0
+net/netfilter/xt_tcpudp.c,0
+net/netlabel/netlabel_addrlist.c,0
+net/netlabel/netlabel_calipso.c,0
+net/netlabel/netlabel_cipso_v4.c,0
+net/netlabel/netlabel_domainhash.c,0
+net/netlabel/netlabel_kapi.c,0
+net/netlabel/netlabel_mgmt.c,0
+net/netlabel/netlabel_unlabeled.c,0
+net/netlabel/netlabel_user.c,0
+net/netlink/af_netlink.c,0
+net/netlink/genetlink.c,0
+net/netlink/policy.c,0
+net/packet/af_packet.c,0
+net/rfkill/core.c,0
+net/rfkill/input.c,0
+net/sched/act_api.c,0
+net/sched/cls_api.c,0
+net/sched/cls_cgroup.c,0
+net/sched/ematch.c,0
+net/sched/sch_api.c,0
+net/sched/sch_blackhole.c,0
+net/sched/sch_fifo.c,0
+net/sched/sch_frag.c,0
+net/sched/sch_generic.c,0
+net/sched/sch_mq.c,0
+net/socket.c,0
+net/sunrpc/addr.c,0
+net/sunrpc/auth.c,0
+net/sunrpc/auth_gss/auth_gss.c,0
+net/sunrpc/auth_gss/gss_generic_token.c,no spdx
+net/sunrpc/auth_gss/gss_krb5_crypto.c,no spdx
+net/sunrpc/auth_gss/gss_krb5_keys.c,no spdx
+net/sunrpc/auth_gss/gss_krb5_mech.c,0
+net/sunrpc/auth_gss/gss_krb5_seal.c,no spdx
+net/sunrpc/auth_gss/gss_krb5_unseal.c,no spdx
+net/sunrpc/auth_gss/gss_krb5_wrap.c,no spdx
+net/sunrpc/auth_gss/gss_mech_switch.c,0
+net/sunrpc/auth_gss/gss_rpc_upcall.c,0
+net/sunrpc/auth_gss/gss_rpc_xdr.c,0
+net/sunrpc/auth_gss/svcauth_gss.c,0
+net/sunrpc/auth_gss/trace.c,0
+net/sunrpc/auth_null.c,0
+net/sunrpc/auth_tls.c,0
+net/sunrpc/auth_unix.c,0
+net/sunrpc/cache.c,0
+net/sunrpc/clnt.c,0
+net/sunrpc/rpcb_clnt.c,0
+net/sunrpc/rpc_pipe.c,0
+net/sunrpc/sched.c,0
+net/sunrpc/socklib.c,0
+net/sunrpc/stats.c,0
+net/sunrpc/sunrpc_syms.c,0
+net/sunrpc/svcauth.c,0
+net/sunrpc/svcauth_unix.c,0
+net/sunrpc/svc.c,0
+net/sunrpc/svcsock.c,0
+net/sunrpc/svc_xprt.c,0
+net/sunrpc/sysctl.c,0
+net/sunrpc/sysfs.c,0
+net/sunrpc/timer.c,0
+net/sunrpc/xdr.c,0
+net/sunrpc/xprt.c,0
+net/sunrpc/xprtmultipath.c,0
+net/sunrpc/xprtsock.c,0
+net/sysctl_net.c,0
+net/unix/af_unix.c,0
+net/unix/garbage.c,0
+net/unix/scm.c,0
+net/unix/sysctl_net_unix.c,0
+net/wireless/ap.c,0
+net/wireless/chan.c,0
+net/wireless/core.c,0
+net/wireless/ethtool.c,0
+net/wireless/ibss.c,0
+net/wireless/mesh.c,0
+net/wireless/mlme.c,0
+net/wireless/nl80211.c,0
+net/wireless/ocb.c,0
+net/wireless/pmsr.c,0
+net/wireless/radiotap.c,no spdx
+net/wireless/reg.c,no spdx
+net/wireless/scan.c,0
+net/wireless/shipped-certs.c,no spdx
+net/wireless/shipped-certs.c,no spdx
+net/wireless/sme.c,0
+net/wireless/sysfs.c,0
+net/wireless/trace.c,no spdx
+net/wireless/util.c,0
+net/xfrm/xfrm_algo.c,0
+net/xfrm/xfrm_device.c,0
+net/xfrm/xfrm_hash.c,0
+net/xfrm/xfrm_input.c,0
+net/xfrm/xfrm_output.c,0
+net/xfrm/xfrm_policy.c,0
+net/xfrm/xfrm_replay.c,0
+net/xfrm/xfrm_state.c,0
+net/xfrm/xfrm_sysctl.c,0
+net/xfrm/xfrm_user.c,0
+scripts/asn1_compiler.c,0
+scripts/basic/fixdep.c,no spdx
+scripts/kallsyms.c,no spdx
+scripts/mod/devicetable-offsets.c,0
+scripts/mod/devicetable-offsets.c,0
+scripts/mod/devicetable-offsets.h,no spdx
+scripts/mod/elfconfig.h,no spdx
+scripts/mod/empty.c,no spdx
+scripts/mod/file2alias.c,no spdx
+scripts/mod/mk_elfconfig.c,0
+scripts/mod/modpost.c,no spdx
+scripts/mod/sumversion.c,no spdx
+scripts/mod/.tmp_devicetable-offsets.h,0
+scripts/selinux/genheaders/genheaders.c,0
+scripts/selinux/mdp/mdp.c,0
+scripts/sorttable.c,0
+security/commoncap.c,0
+security/device_cgroup.c,0
+security/integrity/iint.c,0
+security/integrity/integrity_audit.c,0
+security/keys/compat.c,0
+security/keys/gc.c,0
+security/keys/key.c,0
+security/keys/keyctl.c,0
+security/keys/keyctl_pkey.c,0
+security/keys/keyring.c,0
+security/keys/permission.c,0
+security/keys/proc.c,0
+security/keys/process_keys.c,0
+security/keys/request_key_auth.c,0
+security/keys/request_key.c,0
+security/keys/sysctl.c,0
+security/keys/user_defined.c,0
+security/lsm_audit.c,0
+security/min_addr.c,0
+security/security.c,0
+security/selinux/avc.c,0
+security/selinux/av_permissions.h,no spdx
+security/selinux/flask.h,no spdx
+security/selinux/hooks.c,0
+security/selinux/netif.c,0
+security/selinux/netlabel.c,0
+security/selinux/netlink.c,0
+security/selinux/netnode.c,0
+security/selinux/netport.c,0
+security/selinux/nlmsgtab.c,0
+security/selinux/selinuxfs.c,0
+security/selinux/ss/avtab.c,no spdx
+security/selinux/ss/conditional.c,0
+security/selinux/ss/context.c,0
+security/selinux/ss/ebitmap.c,0
+security/selinux/ss/hashtab.c,0
+security/selinux/ss/mls.c,0
+security/selinux/ss/policydb.c,0
+security/selinux/ss/services.c,0
+security/selinux/ss/sidtab.c,0
+security/selinux/ss/symtab.c,0
+security/selinux/status.c,0
+sound/core/control.c,0
+sound/core/ctljack.c,0
+sound/core/device.c,0
+sound/core/hrtimer.c,0
+sound/core/hwdep.c,0
+sound/core/info.c,0
+sound/core/init.c,0
+sound/core/isadma.c,0
+sound/core/jack.c,0
+sound/core/memalloc.c,0
+sound/core/memory.c,0
+sound/core/misc.c,0
+sound/core/pcm.c,0
+sound/core/pcm_lib.c,0
+sound/core/pcm_memory.c,0
+sound/core/pcm_misc.c,no spdx
+sound/core/pcm_native.c,0
+sound/core/pcm_timer.c,0
+sound/core/seq_device.c,0
+sound/core/seq/seq.c,0
+sound/core/seq/seq_clientmgr.c,0
+sound/core/seq/seq_dummy.c,0
+sound/core/seq/seq_fifo.c,0
+sound/core/seq/seq_info.c,0
+sound/core/seq/seq_lock.c,0
+sound/core/seq/seq_memory.c,0
+sound/core/seq/seq_ports.c,0
+sound/core/seq/seq_prioq.c,0
+sound/core/seq/seq_queue.c,0
+sound/core/seq/seq_system.c,0
+sound/core/seq/seq_timer.c,0
+sound/core/sound.c,0
+sound/core/timer.c,0
+sound/core/vmaster.c,0
+sound/hda/array.c,0
+sound/hda/hda_bus_type.c,0
+sound/hda/hdac_bus.c,0
+sound/hda/hdac_component.c,0
+sound/hda/hdac_controller.c,0
+sound/hda/hdac_device.c,0
+sound/hda/hdac_i915.c,0
+sound/hda/hdac_regmap.c,0
+sound/hda/hdac_stream.c,0
+sound/hda/hdac_sysfs.c,0
+sound/hda/hdmi_chmap.c,0
+sound/hda/intel-dsp-config.c,0
+sound/hda/intel-nhlt.c,0
+sound/hda/intel-sdw-acpi.c,0
+sound/hda/trace.c,no spdx
+sound/last.c,0
+sound/pci/hda/hda_auto_parser.c,0
+sound/pci/hda/hda_bind.c,0
+sound/pci/hda/hda_codec.c,0
+sound/pci/hda/hda_controller.c,0
+sound/pci/hda/hda_hwdep.c,0
+sound/pci/hda/hda_intel.c,0
+sound/pci/hda/hda_jack.c,0
+sound/pci/hda/hda_proc.c,0
+sound/pci/hda/hda_sysfs.c,0
+sound/sound_core.c,0
+usr/gen_init_cpio.c,0
+usr/initramfs_data.S,0

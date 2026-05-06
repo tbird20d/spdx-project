@@ -1,0 +1,233 @@
+--- scan-output-from-sh.txt	2024-01-10 18:03:35.004151679 -0700
++++ scan-with-python.txt	2024-01-12 15:19:31.350829777 -0700
+@@ -1,12 +1,12 @@
+-Source files mentioned in the build log:
++Warning: Rest of build line is a shell construct
++sh ./arch/x86/entry/vdso/checkundef.sh 'nm' 'arch/x86/entry/vdso/vdso64.so.dbg'
++Warning: Rest of build line is a shell construct
++sh ./arch/x86/entry/vdso/checkundef.sh 'nm' 'arch/x86/entry/vdso/vdso32.so.dbg'
+ ../lib/ctype.c
+ ../lib/rbtree.c
+ ../lib/str_error_r.c
+ ../lib/string.c
+-./include/linux/compiler-version.h
+-./include/linux/compiler_types.h
+-./include/linux/hidden.h
+-./include/linux/kconfig.h
++.vmlinux.export.c
+ arch/x86/decode.c
+ arch/x86/entry/common.c
+ arch/x86/entry/entry.S
+@@ -59,15 +59,6 @@ arch/x86/events/rapl.c
+ arch/x86/events/utils.c
+ arch/x86/events/zhaoxin/core.c
+ arch/x86/ia32/audit.c
+-arch/x86/include/asm/orc_types.h
+-arch/x86/include/generated/asm/orc_hash.h
+-arch/x86/include/generated/asm/syscalls_32.h
+-arch/x86/include/generated/asm/syscalls_64.h
+-arch/x86/include/generated/asm/unistd_32_ia32.h
+-arch/x86/include/generated/asm/unistd_64_x32.h
+-arch/x86/include/generated/uapi/asm/unistd_32.h
+-arch/x86/include/generated/uapi/asm/unistd_64.h
+-arch/x86/include/generated/uapi/asm/unistd_x32.h
+ arch/x86/kernel/acpi/boot.c
+ arch/x86/kernel/acpi/cppc.c
+ arch/x86/kernel/acpi/cstate.c
+@@ -92,8 +83,6 @@ arch/x86/kernel/bootflag.c
+ arch/x86/kernel/callthunks.c
+ arch/x86/kernel/cet.c
+ arch/x86/kernel/check.c
+-arch/x86/kernel/cpu/../../include/asm/cpufeatures.h
+-arch/x86/kernel/cpu/../../include/asm/vmxfeatures.h
+ arch/x86/kernel/cpu/amd.c
+ arch/x86/kernel/cpu/aperfmperf.c
+ arch/x86/kernel/cpu/bugs.c
+@@ -242,7 +231,6 @@ arch/x86/lib/csum-wrappers_64.c
+ arch/x86/lib/delay.c
+ arch/x86/lib/getuser.S
+ arch/x86/lib/hweight.S
+-arch/x86/lib/inat-tables.c
+ arch/x86/lib/inat.c
+ arch/x86/lib/insn-eval.c
+ arch/x86/lib/insn.c
+@@ -287,6 +275,7 @@ arch/x86/mm/pti.c
+ arch/x86/mm/srat.c
+ arch/x86/mm/tlb.c
+ arch/x86/pci/acpi.c
++arch/x86/pci/amd_bus.c
+ arch/x86/pci/bus_numa.c
+ arch/x86/pci/common.c
+ arch/x86/pci/direct.c
+@@ -306,11 +295,14 @@ arch/x86/platform/efi/memmap.c
+ arch/x86/platform/efi/quirks.c
+ arch/x86/platform/efi/runtime-map.c
+ arch/x86/platform/intel/iosf_mbi.c
++arch/x86/power/cpu.c
++arch/x86/power/hibernate.c
++arch/x86/power/hibernate_64.c
++arch/x86/power/hibernate_asm_64.S
+ arch/x86/realmode/init.c
+ arch/x86/realmode/rm/bioscall.S
+ arch/x86/realmode/rm/copy.S
+ arch/x86/realmode/rm/header.S
+-arch/x86/realmode/rm/pasyms.h
+ arch/x86/realmode/rm/realmode.lds.S
+ arch/x86/realmode/rm/reboot.S
+ arch/x86/realmode/rm/regs.c
+@@ -369,9 +361,11 @@ block/mq-deadline.c
+ block/partitions/core.c
+ block/partitions/efi.c
+ block/partitions/msdos.c
++builtin-check.c
+ certs/extract-cert.c
+ certs/system_certificates.S
+ certs/system_keyring.c
++check.c
+ crypto/acompress.c
+ crypto/aead.c
+ crypto/aes_generic.c
+@@ -382,7 +376,6 @@ crypto/algboss.c
+ crypto/api.c
+ crypto/asymmetric_keys/asymmetric_type.c
+ crypto/asymmetric_keys/pkcs7.asn1.c
+-crypto/asymmetric_keys/pkcs7.asn1.h
+ crypto/asymmetric_keys/pkcs7_parser.c
+ crypto/asymmetric_keys/pkcs7_trust.c
+ crypto/asymmetric_keys/pkcs7_verify.c
+@@ -390,9 +383,7 @@ crypto/asymmetric_keys/public_key.c
+ crypto/asymmetric_keys/restrict.c
+ crypto/asymmetric_keys/signature.c
+ crypto/asymmetric_keys/x509.asn1.c
+-crypto/asymmetric_keys/x509.asn1.h
+ crypto/asymmetric_keys/x509_akid.asn1.c
+-crypto/asymmetric_keys/x509_akid.asn1.h
+ crypto/asymmetric_keys/x509_cert_parser.c
+ crypto/asymmetric_keys/x509_loader.c
+ crypto/asymmetric_keys/x509_public_key.c
+@@ -423,9 +414,7 @@ crypto/rsa-pkcs1pad.c
+ crypto/rsa.c
+ crypto/rsa_helper.c
+ crypto/rsaprivkey.asn1.c
+-crypto/rsaprivkey.asn1.h
+ crypto/rsapubkey.asn1.c
+-crypto/rsapubkey.asn1.h
+ crypto/scatterwalk.c
+ crypto/scompress.c
+ crypto/seqiv.c
+@@ -1421,7 +1410,6 @@ drivers/scsi/scsi_bsg.c
+ drivers/scsi/scsi_common.c
+ drivers/scsi/scsi_debugfs.c
+ drivers/scsi/scsi_devinfo.c
+-drivers/scsi/scsi_devinfo_tbl.c
+ drivers/scsi/scsi_error.c
+ drivers/scsi/scsi_ioctl.c
+ drivers/scsi/scsi_lib.c
+@@ -1559,6 +1547,9 @@ drivers/virtio/virtio_pci_legacy_dev.c
+ drivers/virtio/virtio_pci_modern.c
+ drivers/virtio/virtio_pci_modern_dev.c
+ drivers/virtio/virtio_ring.c
++elf.c
++exec-cmd.c
++fixdep.c
+ fs/9p/fid.c
+ fs/9p/v9fs.c
+ fs/9p/vfs_addr.c
+@@ -1841,31 +1832,14 @@ fs/tracefs/event_inode.c
+ fs/tracefs/inode.c
+ fs/utimes.c
+ fs/xattr.c
+-include/generated/.tmp_asm-offsets.h
+-include/generated/.tmp_bounds.h
+-include/generated/.tmp_compile.h
+-include/generated/.tmp_timeconst.h
+-include/generated/.tmp_utsrelease.h
+-include/generated/asm-offsets.h
+-include/generated/bounds.h
+-include/generated/compile.h
+-include/generated/timeconst.h
+-include/generated/uapi/linux/.tmp_version.h
+-include/generated/uapi/linux/version.h
+-include/generated/utsrelease.h
+-include/linux/atomic/atomic-arch-fallback.h
+-include/linux/atomic/atomic-instrumented.h
+-include/linux/atomic/atomic-long.h
+-include/linux/oid_registry.h
+-include/scsi/scsi_devinfo.h
+-init/.tmp_utsversion-tmp.h
++help.c
+ init/calibrate.c
+ init/do_mounts.c
+ init/do_mounts_initrd.c
+ init/init_task.c
+ init/initramfs.c
+ init/main.c
+-init/utsversion-tmp.h
++init/version-timestamp.c
+ init/version.c
+ io_uring/advise.c
+ io_uring/cancel.c
+@@ -2132,7 +2106,6 @@ lib/cpumask.c
+ lib/crc-ccitt.c
+ lib/crc16.c
+ lib/crc32.c
+-lib/crc32table.h
+ lib/crypto/aes.c
+ lib/crypto/arc4.c
+ lib/crypto/blake2s-generic.c
+@@ -2229,7 +2202,6 @@ lib/net_utils.c
+ lib/nlattr.c
+ lib/nmi_backtrace.c
+ lib/oid_registry.c
+-lib/oid_registry_data.c
+ lib/once.c
+ lib/parser.c
+ lib/pci_iomap.c
+@@ -2753,13 +2725,16 @@ net/xfrm/xfrm_replay.c
+ net/xfrm/xfrm_state.c
+ net/xfrm/xfrm_sysctl.c
+ net/xfrm/xfrm_user.c
++objtool.c
++orc_dump.c
++orc_gen.c
++pager.c
++parse-options.c
++run-command.c
+ scripts/asn1_compiler.c
+ scripts/basic/fixdep.c
+ scripts/kallsyms.c
+-scripts/mod/.tmp_devicetable-offsets.h
+ scripts/mod/devicetable-offsets.c
+-scripts/mod/devicetable-offsets.h
+-scripts/mod/elfconfig.h
+ scripts/mod/empty.c
+ scripts/mod/file2alias.c
+ scripts/mod/mk_elfconfig.c
+@@ -2788,9 +2763,7 @@ security/keys/user_defined.c
+ security/lsm_audit.c
+ security/min_addr.c
+ security/security.c
+-security/selinux/av_permissions.h
+ security/selinux/avc.c
+-security/selinux/flask.h
+ security/selinux/hooks.c
+ security/selinux/netif.c
+ security/selinux/netlabel.c
+@@ -2810,6 +2783,7 @@ security/selinux/ss/services.c
+ security/selinux/ss/sidtab.c
+ security/selinux/ss/symtab.c
+ security/selinux/status.c
++sigchain.c
+ sound/core/control.c
+ sound/core/ctljack.c
+ sound/core/device.c
+@@ -2870,5 +2844,9 @@ sound/pci/hda/hda_jack.c
+ sound/pci/hda/hda_proc.c
+ sound/pci/hda/hda_sysfs.c
+ sound/sound_core.c
++special.c
++subcmd-config.c
+ usr/gen_init_cpio.c
+ usr/initramfs_data.S
++vmlinux.a
++weak.c

@@ -1,0 +1,33 @@
+Here is the status of the SPDX project:
+
+== where I'm working ==
+ - Currently working in the 'net' subdirectory (2026-05)
+ - working on files-missing-ids from SBOM data from a
+    7.1-rc2 arm64 defconfig build
+
+== Files with issues ==
+ - sound/usb/midi.c - is BSDSource (with author wording)
+   - has BSD part and warranty disclaimer separated by 
+    an "Alternately" sentence, which will cause automated parsers to fail
+    but whose meaning is unambiguous
+   - I was waiting 
+
+ - net/sunrpc/auth_gss/ - 5 files
+	gss_krb5_seal.c - Michigan(OpenVision)+Michigan(FundsXpress)
+	gss_krb5_unseal.c - Michigan(OpenVision)+Michigan(FundsXpress)
+	gss_krb5_wrap.c - Michigan
+	gss_krb5_crypto.c - Michigan(FundsXpress)
+	gss_krb5_keys.c - Michigan+Michigan(FundsXpress)
+    - have a Michigan license, with OpenVision as the providing party
+    - ALSO has a noexport statement,
+      followed by a Michigan license, with FundsXpress as the providing party
+      and the warranty disclaimer is shorter.
+
+ - net/llc/*.c - 17 files, 2 in build source list
+   - only following are in build, source list:
+     - llc_core.c
+     - llc_input.c
+
+ - net/bluetooth - lots of files with clear headers and easy licenses
+
+

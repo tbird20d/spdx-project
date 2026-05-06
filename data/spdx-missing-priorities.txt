@@ -1,0 +1,50 @@
+Here is the list of priorities for adding missing spdx files:
+
+subsystem  is build src  priority  count  next
+=========  ============  ========  =====  ==========
+kernel     yes           10        6      kernel/cgroup/cgroup.c, kernel/cpu.c
+kernel     no            10        22     -
+init       yes           9         1      - (generated init/utsversion-tmp.h?)
+init       no            4         0      -
+mm         yes           9         6      mm/memfd.c, mm/rmap.c, mm/shmem.c
+mm         no            4         4      -
+ipc        yes           8         1      ipc/mqueue.c
+ipc        no            4         0      -
+include    yes           8         7      - (all are generated)
+include    no            3         524    -
+block      yes           7         0      -
+block      no            2         1      -
+fs         yes           7         16     fs/aio.c, fs/proc/util.c
+fs         no            2         188    -
+net        yes           7         25     net/core/fib_notifier.c
+net        no            2         163    -
+security   yes           6         3      security/se_linux/flask.h
+security   no            1         7      -
+lib        yes           6         43     lib/fonts/fonts.c, lib/glob.c
+lib        no            1         88     -
+crypto     yes           6         15     crypto/md5.c, crypto/drbg.c
+crypto     no            1         15     -
+virt       yes           5         0      -
+virt       no            1         0      -
+arch       yes           5         45
+arch       no            1         2244   arch/x86/kernel/dumpstack.c
+sound      yes           4         2      source/core/pcm_misc.c
+sound      no            1         63     -
+drivers    yes           4         151    drivers/char/hw_random/core.c
+drivers    no            1         5638   -
+io_uring   yes           3         1      io_uring/notif.c
+io_uring   no            1         5      -
+certs      yes           3         1      certs/extract-cert.c
+certs      no            3         2      -
+rust       yes           0         0      -
+rust       no            0         1      -
+scripts    yes           5         8      scripts/kallsyms.c
+scripts    no            2         109    -
+
+----------------------------------------------------------
+usr        n/a           5        1       usr/gen_initramfs.sh
+tools      n/a           2        1952    -
+Documentation n/a        0        3951    -
+
+Number of files in build src without SPDX headers = 332
+

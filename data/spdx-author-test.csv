@@ -1,0 +1,8 @@
+"drivers/media/pci/ddbridge/ddbridge-sx8.c",1,"SPDX-License-Identifier: GPL-2.0","2018-06-23 15:36:11 UTC","Daniel Scheller",""
+"drivers/media/pci/ddbridge/ddbridge.h",1,"SPDX-License-Identifier: GPL-2.0 */","2018-06-19 18:50:09 UTC","Daniel Scheller",""
+"drivers/soc/qcom/qmi_interface.c",1,"SPDX-License-Identifier: GPL-2.0","2017-12-05 17:43:07 UTC","Bjorn Andersson",""
+"drivers/soc/qcom/ramp_controller.c",1,"SPDX-License-Identifier: GPL-2.0","2022-11-17 13:29:56 UTC","AngeloGioacchino Del Regno",""
+"drivers/soc/qcom/rmtfs_mem.c",1,"SPDX-License-Identifier: GPL-2.0-only","2019-05-29 14:17:58 UTC","Thomas Gleixner",""
+"drivers/soc/qcom/rpm-proc.c",1,"SPDX-License-Identifier: GPL-2.0-only","2023-06-15 16:50:42 UTC","Stephan Gerhold",""
+"drivers/soc/qcom/rpm_master_stats.c",1,"SPDX-License-Identifier: GPL-2.0-only","2023-04-20 17:36:18 UTC","Konrad Dybcio",""
+"drivers/soc/qcom/rpmh-internal.h",1,"SPDX-License-Identifier: GPL-2.0 */","2018-06-20 13:26:58 UTC","Lina Iyer",""
