@@ -1,0 +1,28 @@
+From 18e07e9b29f8e01106c3164761aa8c3ab44fe79b Mon Sep 17 00:00:00 2001
+From: Tim Bird <tim.bird@sony.com>
+Date: Thu, 15 Jan 2026 16:57:44 -0700
+Subject: [PATCH] kernel: modules: Add SPDX license identifier to kmod.c
+
+Add a GPL-2.0 license identifier line for this file.
+
+kmod.c was originally introduced in the kernel in February
+of 1998 by Linus Torvalds - who was familiar with kernel
+licensing at the time this was introduced.
+
+Signed-off-by: Tim Bird <tim.bird@sony.com>
+---
+ kernel/module/kmod.c | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/kernel/module/kmod.c b/kernel/module/kmod.c
+index 25f253812512..a25dccdf7aa7 100644
+--- a/kernel/module/kmod.c
++++ b/kernel/module/kmod.c
+@@ -1,3 +1,4 @@
++// SPDX-License-Identifier: GPL-2.0
+ /*
+  * kmod - the kernel module loader
+  *
+-- 
+2.43.0
+

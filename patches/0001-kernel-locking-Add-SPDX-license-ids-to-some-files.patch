@@ -1,0 +1,177 @@
+From 000f3361300609d36e50604757b11641e26ba169 Mon Sep 17 00:00:00 2001
+From: Tim Bird <tim.bird@sony.com>
+Date: Fri, 16 Jan 2026 14:44:38 -0700
+Subject: [PATCH] kernel: locking: Add SPDX license ids to some files
+
+Add GPL-2.0 license id to several files related to kernel
+locking and lock debugging.  Remove less formal references
+to the GPL license.
+
+Most of these files (with the exception of some files for
+'fast headers' work) were introduced in the kernel between
+2005 and 2009.
+
+Signed-off-by: Tim Bird <tim.bird@sony.com>
+---
+ include/linux/mutex_api.h          | 1 +
+ include/linux/spinlock_api.h       | 1 +
+ include/linux/spinlock_api_smp.h   | 2 +-
+ include/linux/spinlock_api_up.h    | 2 +-
+ include/linux/spinlock_types.h     | 2 +-
+ include/linux/spinlock_types_raw.h | 1 +
+ include/linux/spinlock_types_up.h  | 2 +-
+ include/linux/spinlock_up.h        | 2 +-
+ kernel/locking/lockdep_states.h    | 1 +
+ kernel/locking/mutex-debug.c       | 2 +-
+ kernel/locking/spinlock_debug.c    | 2 +-
+ 11 files changed, 11 insertions(+), 7 deletions(-)
+
+diff --git a/include/linux/mutex_api.h b/include/linux/mutex_api.h
+index 85ab9491e13e..4d401f60efae 100644
+--- a/include/linux/mutex_api.h
++++ b/include/linux/mutex_api.h
+@@ -1 +1,2 @@
++/* SPDX-License-Identifier: GPL-2.0 */
+ #include <linux/mutex.h>
+diff --git a/include/linux/spinlock_api.h b/include/linux/spinlock_api.h
+index 6338b27f98df..4f5800af7d60 100644
+--- a/include/linux/spinlock_api.h
++++ b/include/linux/spinlock_api.h
+@@ -1 +1,2 @@
++/* SPDX-License-Identifier: GPL-2.0 */
+ #include <linux/spinlock.h>
+diff --git a/include/linux/spinlock_api_smp.h b/include/linux/spinlock_api_smp.h
+index 9ecb0ab504e3..4c20255ae734 100644
+--- a/include/linux/spinlock_api_smp.h
++++ b/include/linux/spinlock_api_smp.h
+@@ -1,3 +1,4 @@
++/* SPDX-License-Identifier: GPL-2.0 */
+ #ifndef __LINUX_SPINLOCK_API_SMP_H
+ #define __LINUX_SPINLOCK_API_SMP_H
+ 
+@@ -12,7 +13,6 @@
+  * (implemented in kernel/spinlock.c)
+  *
+  * portions Copyright 2005, Red Hat, Inc., Ingo Molnar
+- * Released under the General Public License (GPL).
+  */
+ 
+ int in_lock_functions(unsigned long addr);
+diff --git a/include/linux/spinlock_api_up.h b/include/linux/spinlock_api_up.h
+index 819aeba1c87e..2cd248855a3c 100644
+--- a/include/linux/spinlock_api_up.h
++++ b/include/linux/spinlock_api_up.h
+@@ -1,3 +1,4 @@
++/* SPDX-License-Identifier: GPL-2.0 */
+ #ifndef __LINUX_SPINLOCK_API_UP_H
+ #define __LINUX_SPINLOCK_API_UP_H
+ 
+@@ -11,7 +12,6 @@
+  * spinlock API implementation on UP-nondebug (inlined implementation)
+  *
+  * portions Copyright 2005, Red Hat, Inc., Ingo Molnar
+- * Released under the General Public License (GPL).
+  */
+ 
+ #define in_lock_functions(ADDR)		0
+diff --git a/include/linux/spinlock_types.h b/include/linux/spinlock_types.h
+index 2dfa35ffec76..9fd1ad956f9e 100644
+--- a/include/linux/spinlock_types.h
++++ b/include/linux/spinlock_types.h
+@@ -1,3 +1,4 @@
++/* SPDX-License-Identifier: GPL-2.0 */
+ #ifndef __LINUX_SPINLOCK_TYPES_H
+ #define __LINUX_SPINLOCK_TYPES_H
+ 
+@@ -6,7 +7,6 @@
+  *                                  and initializers
+  *
+  * portions Copyright 2005, Red Hat, Inc., Ingo Molnar
+- * Released under the General Public License (GPL).
+  */
+ 
+ #include <linux/spinlock_types_raw.h>
+diff --git a/include/linux/spinlock_types_raw.h b/include/linux/spinlock_types_raw.h
+index 91cb36b65a17..d32c0cf8eaf7 100644
+--- a/include/linux/spinlock_types_raw.h
++++ b/include/linux/spinlock_types_raw.h
+@@ -1,3 +1,4 @@
++/* SPDX-License-Identifier: GPL-2.0 */
+ #ifndef __LINUX_SPINLOCK_TYPES_RAW_H
+ #define __LINUX_SPINLOCK_TYPES_RAW_H
+ 
+diff --git a/include/linux/spinlock_types_up.h b/include/linux/spinlock_types_up.h
+index fc4e2d017c20..9633e7540423 100644
+--- a/include/linux/spinlock_types_up.h
++++ b/include/linux/spinlock_types_up.h
+@@ -1,3 +1,4 @@
++/* SPDX-License-Identifier: GPL-2.0 */
+ #ifndef __LINUX_SPINLOCK_TYPES_UP_H
+ #define __LINUX_SPINLOCK_TYPES_UP_H
+ 
+@@ -9,7 +10,6 @@
+  * include/linux/spinlock_types_up.h - spinlock type definitions for UP
+  *
+  * portions Copyright 2005, Red Hat, Inc., Ingo Molnar
+- * Released under the General Public License (GPL).
+  */
+ 
+ #ifdef CONFIG_DEBUG_SPINLOCK
+diff --git a/include/linux/spinlock_up.h b/include/linux/spinlock_up.h
+index 1e84e71ca495..869828b458b5 100644
+--- a/include/linux/spinlock_up.h
++++ b/include/linux/spinlock_up.h
+@@ -1,3 +1,4 @@
++/* SPDX-License-Identifier: GPL-2.0 */
+ #ifndef __LINUX_SPINLOCK_UP_H
+ #define __LINUX_SPINLOCK_UP_H
+ 
+@@ -12,7 +13,6 @@
+  * include/linux/spinlock_up.h - UP-debug version of spinlocks.
+  *
+  * portions Copyright 2005, Red Hat, Inc., Ingo Molnar
+- * Released under the General Public License (GPL).
+  *
+  * In the debug case, 1 means unlocked, 0 means locked. (the values
+  * are inverted, to catch initialization bugs)
+diff --git a/kernel/locking/lockdep_states.h b/kernel/locking/lockdep_states.h
+index 35ca09f2ed0b..45ff0b6d3172 100644
+--- a/kernel/locking/lockdep_states.h
++++ b/kernel/locking/lockdep_states.h
+@@ -1,3 +1,4 @@
++/* SPDX-License-Identifier: GPL-2.0 */
+ /*
+  * Lockdep states,
+  *
+diff --git a/kernel/locking/mutex-debug.c b/kernel/locking/mutex-debug.c
+index 2c6b02d4699b..3c8ccc8a3af9 100644
+--- a/kernel/locking/mutex-debug.c
++++ b/kernel/locking/mutex-debug.c
+@@ -1,3 +1,4 @@
++// SPDX-License-Identifier: GPL-2.0
+ /*
+  * Debugging code for mutexes
+  *
+@@ -8,7 +9,6 @@
+  * lock debugging, locking tree, deadlock detection started by:
+  *
+  *  Copyright (C) 2004, LynuxWorks, Inc., Igor Manyilov, Bill Huey
+- *  Released under the General Public License (GPL).
+  */
+ #include <linux/mutex.h>
+ #include <linux/delay.h>
+diff --git a/kernel/locking/spinlock_debug.c b/kernel/locking/spinlock_debug.c
+index 2338b3adfb55..c89325903e57 100644
+--- a/kernel/locking/spinlock_debug.c
++++ b/kernel/locking/spinlock_debug.c
+@@ -1,6 +1,6 @@
++// SPDX-License-Identifier: GPL-2.0
+ /*
+  * Copyright 2005, Red Hat, Inc., Ingo Molnar
+- * Released under the General Public License (GPL).
+  *
+  * This file contains the spinlock/rwlock implementations for
+  * DEBUG_SPINLOCK.
+-- 
+2.43.0
+

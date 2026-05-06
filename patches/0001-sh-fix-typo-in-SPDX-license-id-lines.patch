@@ -1,0 +1,37 @@
+From 2f51fc97beb0075a024b4a24488a097c7dd9f8e4 Mon Sep 17 00:00:00 2001
+From: Tim Bird <tim.bird@sony.com>
+Date: Wed, 11 Feb 2026 18:10:49 -0700
+Subject: [PATCH] sh: fix typo in SPDX license id lines
+
+platform_early.[ch] have an extra - in their SPDX-License-Identifier
+lines.  Use the correct (single-dash) syntax for these lines.
+
+Signed-off-by: Tim Bird <tim.bird@sony.com>
+---
+ arch/sh/drivers/platform_early.c     | 2 +-
+ arch/sh/include/asm/platform_early.h | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/arch/sh/drivers/platform_early.c b/arch/sh/drivers/platform_early.c
+index 143747c45206..1c2a571a8ab8 100644
+--- a/arch/sh/drivers/platform_early.c
++++ b/arch/sh/drivers/platform_early.c
+@@ -1,4 +1,4 @@
+-// SPDX--License-Identifier: GPL-2.0
++// SPDX-License-Identifier: GPL-2.0
+ 
+ #include <asm/platform_early.h>
+ #include <linux/mod_devicetable.h>
+diff --git a/arch/sh/include/asm/platform_early.h b/arch/sh/include/asm/platform_early.h
+index fc802137c37d..00b6e6dc4ac4 100644
+--- a/arch/sh/include/asm/platform_early.h
++++ b/arch/sh/include/asm/platform_early.h
+@@ -1,4 +1,4 @@
+-/* SPDX--License-Identifier: GPL-2.0 */
++/* SPDX-License-Identifier: GPL-2.0 */
+ 
+ #ifndef __PLATFORM_EARLY__
+ #define __PLATFORM_EARLY__
+-- 
+2.43.0
+

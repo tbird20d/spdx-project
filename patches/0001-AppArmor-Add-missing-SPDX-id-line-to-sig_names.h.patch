@@ -1,0 +1,26 @@
+From 6364f0dc71ef5f5d91610ff59e03d18639ae1805 Mon Sep 17 00:00:00 2001
+From: Tim Bird <tim.bird@sony.com>
+Date: Wed, 4 Feb 2026 14:50:31 -0700
+Subject: [PATCH] AppArmor: Add missing SPDX id line to sig_names.h
+
+sig_names.h is missing an SPDX-License-Identifier line.
+Add one with the ID of GPL-2.0-only. This matches all
+the other files in AppArmor.
+
+Signed-off-by: Tim Bird <tim.bird@sony.com>
+---
+ security/apparmor/include/sig_names.h | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/security/apparmor/include/sig_names.h b/security/apparmor/include/sig_names.h
+index c772668cdc62..3f617c1a64cd 100644
+--- a/security/apparmor/include/sig_names.h
++++ b/security/apparmor/include/sig_names.h
+@@ -1,3 +1,4 @@
++/* SPDX-License-Identifier: GPL-2.0-only */
+ #include <linux/signal.h>
+ #include "signal.h"
+ 
+-- 
+2.43.0
+

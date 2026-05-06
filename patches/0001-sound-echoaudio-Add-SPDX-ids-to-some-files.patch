@@ -1,0 +1,738 @@
+From dee6d134bba530b6e6c16a3649186f982b8142f2 Mon Sep 17 00:00:00 2001
+From: Tim Bird <tim.bird@sony.com>
+Date: Thu, 12 Feb 2026 16:32:05 -0700
+Subject: [PATCH] sound: echoaudio: Add SPDX ids to some files
+
+Add SPDX-License-Identifier lines to some files in the
+sound subsystem - mostly in the echoaudio drivers.
+Remove boilerplate GPL headers.
+
+Signed-off-by: Tim Bird <tim.bird@sony.com>
+---
+ sound/oss/dmasound/dmasound_core.c       |  5 +----
+ sound/pci/echoaudio/darla20_dsp.c        | 17 +----------------
+ sound/pci/echoaudio/darla24_dsp.c        | 17 +----------------
+ sound/pci/echoaudio/echo3g_dsp.c         | 17 +----------------
+ sound/pci/echoaudio/echoaudio.h          | 17 +----------------
+ sound/pci/echoaudio/echoaudio_3g.c       | 17 +----------------
+ sound/pci/echoaudio/echoaudio_dsp.c      | 17 +----------------
+ sound/pci/echoaudio/echoaudio_dsp.h      | 17 +----------------
+ sound/pci/echoaudio/echoaudio_gml.c      | 17 +----------------
+ sound/pci/echoaudio/gina20_dsp.c         | 17 +----------------
+ sound/pci/echoaudio/gina24_dsp.c         | 17 +----------------
+ sound/pci/echoaudio/indigo_dsp.c         | 17 +----------------
+ sound/pci/echoaudio/indigo_express_dsp.c | 17 +----------------
+ sound/pci/echoaudio/indigodj_dsp.c       | 17 +----------------
+ sound/pci/echoaudio/indigodjx_dsp.c      | 17 +----------------
+ sound/pci/echoaudio/indigoio_dsp.c       | 17 +----------------
+ sound/pci/echoaudio/indigoiox_dsp.c      | 17 +----------------
+ sound/pci/echoaudio/layla20_dsp.c        | 17 +----------------
+ sound/pci/echoaudio/layla24_dsp.c        | 16 +---------------
+ sound/pci/echoaudio/mia_dsp.c            | 17 +----------------
+ sound/pci/echoaudio/midi.c               | 17 +----------------
+ sound/pci/echoaudio/mona_dsp.c           | 17 +----------------
+ sound/pci/ens1371.c                      |  1 +
+ 23 files changed, 23 insertions(+), 339 deletions(-)
+
+diff --git a/sound/oss/dmasound/dmasound_core.c b/sound/oss/dmasound/dmasound_core.c
+index dea2d9b18fc9..a718b75bb6a0 100644
+--- a/sound/oss/dmasound/dmasound_core.c
++++ b/sound/oss/dmasound/dmasound_core.c
+@@ -1,3 +1,4 @@
++// SPDX-License-Identifier: GPL-2.0-only
+ /*
+  *  linux/sound/oss/dmasound/dmasound_core.c
+  *
+@@ -21,10 +22,6 @@
+  *  /dev/sndstat is based on code by Hannu Savolainen, the author of the
+  *  VoxWare family of drivers.
+  *
+- *  This file is subject to the terms and conditions of the GNU General Public
+- *  License.  See the file COPYING in the main directory of this archive
+- *  for more details.
+- *
+  *  History:
+  *
+  *	1995/8/25	First release
+diff --git a/sound/pci/echoaudio/darla20_dsp.c b/sound/pci/echoaudio/darla20_dsp.c
+index 0356efad7528..5a41644b16b0 100644
+--- a/sound/pci/echoaudio/darla20_dsp.c
++++ b/sound/pci/echoaudio/darla20_dsp.c
+@@ -1,3 +1,4 @@
++// SPDX-License-Identifier: GPL-2.0-only
+ /***************************************************************************
+ 
+    Copyright Echo Digital Audio Corporation (c) 1998 - 2004
+@@ -5,22 +6,6 @@
+    www.echoaudio.com
+ 
+    This file is part of Echo Digital Audio's generic driver library.
+-
+-   Echo Digital Audio's generic driver library is free software;
+-   you can redistribute it and/or modify it under the terms of
+-   the GNU General Public License as published by the Free Software
+-   Foundation.
+-
+-   This program is distributed in the hope that it will be useful,
+-   but WITHOUT ANY WARRANTY; without even the implied warranty of
+-   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+-   GNU General Public License for more details.
+-
+-   You should have received a copy of the GNU General Public License
+-   along with this program; if not, write to the Free Software
+-   Foundation, Inc., 59 Temple Place - Suite 330, Boston,
+-   MA  02111-1307, USA.
+-
+    *************************************************************************
+ 
+  Translation from C++ and adaptation for use in ALSA-Driver
+diff --git a/sound/pci/echoaudio/darla24_dsp.c b/sound/pci/echoaudio/darla24_dsp.c
+index b96300772aee..5dc0efaca425 100644
+--- a/sound/pci/echoaudio/darla24_dsp.c
++++ b/sound/pci/echoaudio/darla24_dsp.c
+@@ -1,3 +1,4 @@
++// SPDX-License-Identifier: GPL-2.0-only
+ /***************************************************************************
+ 
+    Copyright Echo Digital Audio Corporation (c) 1998 - 2004
+@@ -5,22 +6,6 @@
+    www.echoaudio.com
+ 
+    This file is part of Echo Digital Audio's generic driver library.
+-
+-   Echo Digital Audio's generic driver library is free software;
+-   you can redistribute it and/or modify it under the terms of
+-   the GNU General Public License as published by the Free Software
+-   Foundation.
+-
+-   This program is distributed in the hope that it will be useful,
+-   but WITHOUT ANY WARRANTY; without even the implied warranty of
+-   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+-   GNU General Public License for more details.
+-
+-   You should have received a copy of the GNU General Public License
+-   along with this program; if not, write to the Free Software
+-   Foundation, Inc., 59 Temple Place - Suite 330, Boston,
+-   MA  02111-1307, USA.
+-
+    *************************************************************************
+ 
+  Translation from C++ and adaptation for use in ALSA-Driver
+diff --git a/sound/pci/echoaudio/echo3g_dsp.c b/sound/pci/echoaudio/echo3g_dsp.c
+index 9e1f2cad0909..38084c2c3f73 100644
+--- a/sound/pci/echoaudio/echo3g_dsp.c
++++ b/sound/pci/echoaudio/echo3g_dsp.c
+@@ -1,3 +1,4 @@
++// SPDX-License-Identifier: GPL-2.0-only
+ /****************************************************************************
+ 
+    Copyright Echo Digital Audio Corporation (c) 1998 - 2004
+@@ -5,22 +6,6 @@
+    www.echoaudio.com
+ 
+    This file is part of Echo Digital Audio's generic driver library.
+-
+-   Echo Digital Audio's generic driver library is free software;
+-   you can redistribute it and/or modify it under the terms of
+-   the GNU General Public License as published by the Free Software
+-   Foundation.
+-
+-   This program is distributed in the hope that it will be useful,
+-   but WITHOUT ANY WARRANTY; without even the implied warranty of
+-   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+-   GNU General Public License for more details.
+-
+-   You should have received a copy of the GNU General Public License
+-   along with this program; if not, write to the Free Software
+-   Foundation, Inc., 59 Temple Place - Suite 330, Boston,
+-   MA  02111-1307, USA.
+-
+    *************************************************************************
+ 
+  Translation from C++ and adaptation for use in ALSA-Driver
+diff --git a/sound/pci/echoaudio/echoaudio.h b/sound/pci/echoaudio/echoaudio.h
+index 511f2fcc0fb9..7a5744bf3155 100644
+--- a/sound/pci/echoaudio/echoaudio.h
++++ b/sound/pci/echoaudio/echoaudio.h
+@@ -1,3 +1,4 @@
++/* SPDX-License-Identifier: GPL-2.0-only */
+ /****************************************************************************
+ 
+    Copyright Echo Digital Audio Corporation (c) 1998 - 2004
+@@ -5,22 +6,6 @@
+    www.echoaudio.com
+ 
+    This file is part of Echo Digital Audio's generic driver library.
+-
+-   Echo Digital Audio's generic driver library is free software;
+-   you can redistribute it and/or modify it under the terms of
+-   the GNU General Public License as published by the Free Software
+-   Foundation.
+-
+-   This program is distributed in the hope that it will be useful,
+-   but WITHOUT ANY WARRANTY; without even the implied warranty of
+-   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+-   GNU General Public License for more details.
+-
+-   You should have received a copy of the GNU General Public License
+-   along with this program; if not, write to the Free Software
+-   Foundation, Inc., 59 Temple Place - Suite 330, Boston,
+-   MA  02111-1307, USA.
+-
+  ****************************************************************************
+ 
+  Translation from C++ and adaptation for use in ALSA-Driver
+diff --git a/sound/pci/echoaudio/echoaudio_3g.c b/sound/pci/echoaudio/echoaudio_3g.c
+index c9ee98ea3c71..4b3c6a8bc66a 100644
+--- a/sound/pci/echoaudio/echoaudio_3g.c
++++ b/sound/pci/echoaudio/echoaudio_3g.c
+@@ -1,3 +1,4 @@
++// SPDX-License-Identifier: GPL-2.0-only
+ /****************************************************************************
+ 
+    Copyright Echo Digital Audio Corporation (c) 1998 - 2004
+@@ -5,22 +6,6 @@
+    www.echoaudio.com
+ 
+    This file is part of Echo Digital Audio's generic driver library.
+-
+-   Echo Digital Audio's generic driver library is free software;
+-   you can redistribute it and/or modify it under the terms of
+-   the GNU General Public License as published by the Free Software
+-   Foundation.
+-
+-   This program is distributed in the hope that it will be useful,
+-   but WITHOUT ANY WARRANTY; without even the implied warranty of
+-   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+-   GNU General Public License for more details.
+-
+-   You should have received a copy of the GNU General Public License
+-   along with this program; if not, write to the Free Software
+-   Foundation, Inc., 59 Temple Place - Suite 330, Boston,
+-   MA  02111-1307, USA.
+-
+    *************************************************************************
+ 
+  Translation from C++ and adaptation for use in ALSA-Driver
+diff --git a/sound/pci/echoaudio/echoaudio_dsp.c b/sound/pci/echoaudio/echoaudio_dsp.c
+index 2a40091d472c..0c07e89e5df3 100644
+--- a/sound/pci/echoaudio/echoaudio_dsp.c
++++ b/sound/pci/echoaudio/echoaudio_dsp.c
+@@ -1,3 +1,4 @@
++// SPDX-License-Identifier: GPL-2.0-only
+ /****************************************************************************
+ 
+    Copyright Echo Digital Audio Corporation (c) 1998 - 2004
+@@ -5,22 +6,6 @@
+    www.echoaudio.com
+ 
+    This file is part of Echo Digital Audio's generic driver library.
+-
+-   Echo Digital Audio's generic driver library is free software;
+-   you can redistribute it and/or modify it under the terms of
+-   the GNU General Public License as published by the Free Software
+-   Foundation.
+-
+-   This program is distributed in the hope that it will be useful,
+-   but WITHOUT ANY WARRANTY; without even the implied warranty of
+-   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+-   GNU General Public License for more details.
+-
+-   You should have received a copy of the GNU General Public License
+-   along with this program; if not, write to the Free Software
+-   Foundation, Inc., 59 Temple Place - Suite 330, Boston,
+-   MA  02111-1307, USA.
+-
+    *************************************************************************
+ 
+  Translation from C++ and adaptation for use in ALSA-Driver
+diff --git a/sound/pci/echoaudio/echoaudio_dsp.h b/sound/pci/echoaudio/echoaudio_dsp.h
+index aa9129519795..4f73bc037f59 100644
+--- a/sound/pci/echoaudio/echoaudio_dsp.h
++++ b/sound/pci/echoaudio/echoaudio_dsp.h
+@@ -1,3 +1,4 @@
++/* SPDX-License-Identifier: GPL-2.0-only */
+ /****************************************************************************
+ 
+    Copyright Echo Digital Audio Corporation (c) 1998 - 2004
+@@ -5,22 +6,6 @@
+    www.echoaudio.com
+ 
+    This file is part of Echo Digital Audio's generic driver library.
+-
+-   Echo Digital Audio's generic driver library is free software;
+-   you can redistribute it and/or modify it under the terms of
+-   the GNU General Public License as published by the Free Software
+-   Foundation.
+-
+-   This program is distributed in the hope that it will be useful,
+-   but WITHOUT ANY WARRANTY; without even the implied warranty of
+-   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+-   GNU General Public License for more details.
+-
+-   You should have received a copy of the GNU General Public License
+-   along with this program; if not, write to the Free Software
+-   Foundation, Inc., 59 Temple Place - Suite 330, Boston,
+-   MA  02111-1307, USA.
+-
+    *************************************************************************
+ 
+  Translation from C++ and adaptation for use in ALSA-Driver
+diff --git a/sound/pci/echoaudio/echoaudio_gml.c b/sound/pci/echoaudio/echoaudio_gml.c
+index 248983fa2959..682a8cc63f0b 100644
+--- a/sound/pci/echoaudio/echoaudio_gml.c
++++ b/sound/pci/echoaudio/echoaudio_gml.c
+@@ -1,3 +1,4 @@
++// SPDX-License-Identifier: GPL-2.0-only
+ /****************************************************************************
+ 
+    Copyright Echo Digital Audio Corporation (c) 1998 - 2004
+@@ -5,22 +6,6 @@
+    www.echoaudio.com
+ 
+    This file is part of Echo Digital Audio's generic driver library.
+-
+-   Echo Digital Audio's generic driver library is free software;
+-   you can redistribute it and/or modify it under the terms of
+-   the GNU General Public License as published by the Free Software
+-   Foundation.
+-
+-   This program is distributed in the hope that it will be useful,
+-   but WITHOUT ANY WARRANTY; without even the implied warranty of
+-   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+-   GNU General Public License for more details.
+-
+-   You should have received a copy of the GNU General Public License
+-   along with this program; if not, write to the Free Software
+-   Foundation, Inc., 59 Temple Place - Suite 330, Boston,
+-   MA  02111-1307, USA.
+-
+    *************************************************************************
+ 
+  Translation from C++ and adaptation for use in ALSA-Driver
+diff --git a/sound/pci/echoaudio/gina20_dsp.c b/sound/pci/echoaudio/gina20_dsp.c
+index c93939850357..ba4c398f8611 100644
+--- a/sound/pci/echoaudio/gina20_dsp.c
++++ b/sound/pci/echoaudio/gina20_dsp.c
+@@ -1,3 +1,4 @@
++// SPDX-License-Identifier: GPL-2.0-only
+ /****************************************************************************
+ 
+    Copyright Echo Digital Audio Corporation (c) 1998 - 2004
+@@ -5,22 +6,6 @@
+    www.echoaudio.com
+ 
+    This file is part of Echo Digital Audio's generic driver library.
+-
+-   Echo Digital Audio's generic driver library is free software;
+-   you can redistribute it and/or modify it under the terms of
+-   the GNU General Public License as published by the Free Software
+-   Foundation.
+-
+-   This program is distributed in the hope that it will be useful,
+-   but WITHOUT ANY WARRANTY; without even the implied warranty of
+-   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+-   GNU General Public License for more details.
+-
+-   You should have received a copy of the GNU General Public License
+-   along with this program; if not, write to the Free Software
+-   Foundation, Inc., 59 Temple Place - Suite 330, Boston,
+-   MA  02111-1307, USA.
+-
+    *************************************************************************
+ 
+  Translation from C++ and adaptation for use in ALSA-Driver
+diff --git a/sound/pci/echoaudio/gina24_dsp.c b/sound/pci/echoaudio/gina24_dsp.c
+index 78fbac9f3eac..fa1d8c06f059 100644
+--- a/sound/pci/echoaudio/gina24_dsp.c
++++ b/sound/pci/echoaudio/gina24_dsp.c
+@@ -1,3 +1,4 @@
++// SPDX-License-Identifier: GPL-2.0-only
+ /****************************************************************************
+ 
+    Copyright Echo Digital Audio Corporation (c) 1998 - 2004
+@@ -5,22 +6,6 @@
+    www.echoaudio.com
+ 
+    This file is part of Echo Digital Audio's generic driver library.
+-
+-   Echo Digital Audio's generic driver library is free software;
+-   you can redistribute it and/or modify it under the terms of
+-   the GNU General Public License as published by the Free Software
+-   Foundation.
+-
+-   This program is distributed in the hope that it will be useful,
+-   but WITHOUT ANY WARRANTY; without even the implied warranty of
+-   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+-   GNU General Public License for more details.
+-
+-   You should have received a copy of the GNU General Public License
+-   along with this program; if not, write to the Free Software
+-   Foundation, Inc., 59 Temple Place - Suite 330, Boston,
+-   MA  02111-1307, USA.
+-
+    *************************************************************************
+ 
+  Translation from C++ and adaptation for use in ALSA-Driver
+diff --git a/sound/pci/echoaudio/indigo_dsp.c b/sound/pci/echoaudio/indigo_dsp.c
+index 16eb082df56a..c53643279cdd 100644
+--- a/sound/pci/echoaudio/indigo_dsp.c
++++ b/sound/pci/echoaudio/indigo_dsp.c
+@@ -1,3 +1,4 @@
++// SPDX-License-Identifier: GPL-2.0-only
+ /****************************************************************************
+ 
+    Copyright Echo Digital Audio Corporation (c) 1998 - 2004
+@@ -5,22 +6,6 @@
+    www.echoaudio.com
+ 
+    This file is part of Echo Digital Audio's generic driver library.
+-
+-   Echo Digital Audio's generic driver library is free software;
+-   you can redistribute it and/or modify it under the terms of
+-   the GNU General Public License as published by the Free Software
+-   Foundation.
+-
+-   This program is distributed in the hope that it will be useful,
+-   but WITHOUT ANY WARRANTY; without even the implied warranty of
+-   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+-   GNU General Public License for more details.
+-
+-   You should have received a copy of the GNU General Public License
+-   along with this program; if not, write to the Free Software
+-   Foundation, Inc., 59 Temple Place - Suite 330, Boston,
+-   MA  02111-1307, USA.
+-
+    *************************************************************************
+ 
+  Translation from C++ and adaptation for use in ALSA-Driver
+diff --git a/sound/pci/echoaudio/indigo_express_dsp.c b/sound/pci/echoaudio/indigo_express_dsp.c
+index ceda2d7046ac..7a032b702498 100644
+--- a/sound/pci/echoaudio/indigo_express_dsp.c
++++ b/sound/pci/echoaudio/indigo_express_dsp.c
+@@ -1,3 +1,4 @@
++// SPDX-License-Identifier: LGPL-2.1-or-later
+ /************************************************************************
+ 
+ This file is part of Echo Digital Audio's generic driver library.
+@@ -5,22 +6,6 @@ Copyright Echo Digital Audio Corporation (c) 1998 - 2005
+ All rights reserved
+ www.echoaudio.com
+ 
+-This library is free software; you can redistribute it and/or
+-modify it under the terms of the GNU Lesser General Public
+-License as published by the Free Software Foundation; either
+-version 2.1 of the License, or (at your option) any later version.
+-
+-This library is distributed in the hope that it will be useful,
+-but WITHOUT ANY WARRANTY; without even the implied warranty of
+-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+-Lesser General Public License for more details.
+-
+-You should have received a copy of the GNU Lesser General Public
+-License along with this library; if not, write to the Free Software
+-Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+-
+-*************************************************************************
+-
+  Translation from C++ and adaptation for use in ALSA-Driver
+  were made by Giuliano Pochini <pochini@shiny.it>
+ 
+diff --git a/sound/pci/echoaudio/indigodj_dsp.c b/sound/pci/echoaudio/indigodj_dsp.c
+index 17a1d888d0b9..0f8299ab123f 100644
+--- a/sound/pci/echoaudio/indigodj_dsp.c
++++ b/sound/pci/echoaudio/indigodj_dsp.c
+@@ -1,3 +1,4 @@
++// SPDX-License-Identifier: GPL-2.0-only
+ /****************************************************************************
+ 
+    Copyright Echo Digital Audio Corporation (c) 1998 - 2004
+@@ -5,22 +6,6 @@
+    www.echoaudio.com
+ 
+    This file is part of Echo Digital Audio's generic driver library.
+-
+-   Echo Digital Audio's generic driver library is free software;
+-   you can redistribute it and/or modify it under the terms of
+-   the GNU General Public License as published by the Free Software
+-   Foundation.
+-
+-   This program is distributed in the hope that it will be useful,
+-   but WITHOUT ANY WARRANTY; without even the implied warranty of
+-   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+-   GNU General Public License for more details.
+-
+-   You should have received a copy of the GNU General Public License
+-   along with this program; if not, write to the Free Software
+-   Foundation, Inc., 59 Temple Place - Suite 330, Boston,
+-   MA  02111-1307, USA.
+-
+    *************************************************************************
+ 
+  Translation from C++ and adaptation for use in ALSA-Driver
+diff --git a/sound/pci/echoaudio/indigodjx_dsp.c b/sound/pci/echoaudio/indigodjx_dsp.c
+index 5fbd4a3a3083..677cd8ed7cc4 100644
+--- a/sound/pci/echoaudio/indigodjx_dsp.c
++++ b/sound/pci/echoaudio/indigodjx_dsp.c
+@@ -1,3 +1,4 @@
++// SPDX-License-Identifier: LGPL-2.1-or-later
+ /************************************************************************
+ 
+ This file is part of Echo Digital Audio's generic driver library.
+@@ -5,22 +6,6 @@ Copyright Echo Digital Audio Corporation (c) 1998 - 2005
+ All rights reserved
+ www.echoaudio.com
+ 
+-This library is free software; you can redistribute it and/or
+-modify it under the terms of the GNU Lesser General Public
+-License as published by the Free Software Foundation; either
+-version 2.1 of the License, or (at your option) any later version.
+-
+-This library is distributed in the hope that it will be useful,
+-but WITHOUT ANY WARRANTY; without even the implied warranty of
+-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+-Lesser General Public License for more details.
+-
+-You should have received a copy of the GNU Lesser General Public
+-License along with this library; if not, write to the Free Software
+-Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+-
+-*************************************************************************
+-
+  Translation from C++ and adaptation for use in ALSA-Driver
+  were made by Giuliano Pochini <pochini@shiny.it>
+ 
+diff --git a/sound/pci/echoaudio/indigoio_dsp.c b/sound/pci/echoaudio/indigoio_dsp.c
+index 791787aa0744..55d6431c8291 100644
+--- a/sound/pci/echoaudio/indigoio_dsp.c
++++ b/sound/pci/echoaudio/indigoio_dsp.c
+@@ -1,3 +1,4 @@
++// SPDX-License-Identifier: GPL-2.0-only
+ /****************************************************************************
+ 
+    Copyright Echo Digital Audio Corporation (c) 1998 - 2004
+@@ -5,22 +6,6 @@
+    www.echoaudio.com
+ 
+    This file is part of Echo Digital Audio's generic driver library.
+-
+-   Echo Digital Audio's generic driver library is free software;
+-   you can redistribute it and/or modify it under the terms of
+-   the GNU General Public License as published by the Free Software
+-   Foundation.
+-
+-   This program is distributed in the hope that it will be useful,
+-   but WITHOUT ANY WARRANTY; without even the implied warranty of
+-   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+-   GNU General Public License for more details.
+-
+-   You should have received a copy of the GNU General Public License
+-   along with this program; if not, write to the Free Software
+-   Foundation, Inc., 59 Temple Place - Suite 330, Boston,
+-   MA  02111-1307, USA.
+-
+    *************************************************************************
+ 
+  Translation from C++ and adaptation for use in ALSA-Driver
+diff --git a/sound/pci/echoaudio/indigoiox_dsp.c b/sound/pci/echoaudio/indigoiox_dsp.c
+index 1ae394ea7c7d..48958e51d414 100644
+--- a/sound/pci/echoaudio/indigoiox_dsp.c
++++ b/sound/pci/echoaudio/indigoiox_dsp.c
+@@ -1,3 +1,4 @@
++// SPDX-License-Identifier: LGPL-2.1-or-later
+ /************************************************************************
+ 
+ This file is part of Echo Digital Audio's generic driver library.
+@@ -5,22 +6,6 @@ Copyright Echo Digital Audio Corporation (c) 1998 - 2005
+ All rights reserved
+ www.echoaudio.com
+ 
+-This library is free software; you can redistribute it and/or
+-modify it under the terms of the GNU Lesser General Public
+-License as published by the Free Software Foundation; either
+-version 2.1 of the License, or (at your option) any later version.
+-
+-This library is distributed in the hope that it will be useful,
+-but WITHOUT ANY WARRANTY; without even the implied warranty of
+-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+-Lesser General Public License for more details.
+-
+-You should have received a copy of the GNU Lesser General Public
+-License along with this library; if not, write to the Free Software
+-Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+-
+-*************************************************************************
+-
+  Translation from C++ and adaptation for use in ALSA-Driver
+  were made by Giuliano Pochini <pochini@shiny.it>
+ 
+diff --git a/sound/pci/echoaudio/layla20_dsp.c b/sound/pci/echoaudio/layla20_dsp.c
+index 5fb5c4a4598b..e0349a3c20e4 100644
+--- a/sound/pci/echoaudio/layla20_dsp.c
++++ b/sound/pci/echoaudio/layla20_dsp.c
+@@ -1,3 +1,4 @@
++// SPDX-License-Identifier: GPL-2.0-only
+ /****************************************************************************
+ 
+    Copyright Echo Digital Audio Corporation (c) 1998 - 2004
+@@ -5,22 +6,6 @@
+    www.echoaudio.com
+ 
+    This file is part of Echo Digital Audio's generic driver library.
+-
+-   Echo Digital Audio's generic driver library is free software;
+-   you can redistribute it and/or modify it under the terms of
+-   the GNU General Public License as published by the Free Software
+-   Foundation.
+-
+-   This program is distributed in the hope that it will be useful,
+-   but WITHOUT ANY WARRANTY; without even the implied warranty of
+-   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+-   GNU General Public License for more details.
+-
+-   You should have received a copy of the GNU General Public License
+-   along with this program; if not, write to the Free Software
+-   Foundation, Inc., 59 Temple Place - Suite 330, Boston,
+-   MA  02111-1307, USA.
+-
+    *************************************************************************
+ 
+  Translation from C++ and adaptation for use in ALSA-Driver
+diff --git a/sound/pci/echoaudio/layla24_dsp.c b/sound/pci/echoaudio/layla24_dsp.c
+index decfccb1e803..e7b8f5fe7753 100644
+--- a/sound/pci/echoaudio/layla24_dsp.c
++++ b/sound/pci/echoaudio/layla24_dsp.c
+@@ -1,3 +1,4 @@
++// SPDX-License-Identifier: GPL-2.0-only
+ /****************************************************************************
+ 
+    Copyright Echo Digital Audio Corporation (c) 1998 - 2004
+@@ -5,21 +6,6 @@
+    www.echoaudio.com
+ 
+    This file is part of Echo Digital Audio's generic driver library.
+-
+-   Echo Digital Audio's generic driver library is free software;
+-   you can redistribute it and/or modify it under the terms of
+-   the GNU General Public License as published by the Free Software Foundation.
+-
+-   This program is distributed in the hope that it will be useful,
+-   but WITHOUT ANY WARRANTY; without even the implied warranty of
+-   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+-   GNU General Public License for more details.
+-
+-   You should have received a copy of the GNU General Public License
+-   along with this program; if not, write to the Free Software
+-   Foundation, Inc., 59 Temple Place - Suite 330, Boston,
+-   MA  02111-1307, USA.
+-
+    *************************************************************************
+ 
+  Translation from C++ and adaptation for use in ALSA-Driver
+diff --git a/sound/pci/echoaudio/mia_dsp.c b/sound/pci/echoaudio/mia_dsp.c
+index 8a4dffc68889..f040a09f3191 100644
+--- a/sound/pci/echoaudio/mia_dsp.c
++++ b/sound/pci/echoaudio/mia_dsp.c
+@@ -1,3 +1,4 @@
++// SPDX-License-Identifier: GPL-2.0-only
+ /****************************************************************************
+ 
+    Copyright Echo Digital Audio Corporation (c) 1998 - 2004
+@@ -5,22 +6,6 @@
+    www.echoaudio.com
+ 
+    This file is part of Echo Digital Audio's generic driver library.
+-
+-   Echo Digital Audio's generic driver library is free software;
+-   you can redistribute it and/or modify it under the terms of
+-   the GNU General Public License as published by the Free Software
+-   Foundation.
+-
+-   This program is distributed in the hope that it will be useful,
+-   but WITHOUT ANY WARRANTY; without even the implied warranty of
+-   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+-   GNU General Public License for more details.
+-
+-   You should have received a copy of the GNU General Public License
+-   along with this program; if not, write to the Free Software
+-   Foundation, Inc., 59 Temple Place - Suite 330, Boston,
+-   MA  02111-1307, USA.
+-
+    *************************************************************************
+ 
+  Translation from C++ and adaptation for use in ALSA-Driver
+diff --git a/sound/pci/echoaudio/midi.c b/sound/pci/echoaudio/midi.c
+index dd5212644844..4d66163a6bb0 100644
+--- a/sound/pci/echoaudio/midi.c
++++ b/sound/pci/echoaudio/midi.c
+@@ -1,3 +1,4 @@
++// SPDX-License-Identifier: GPL-2.0-only
+ /****************************************************************************
+ 
+    Copyright Echo Digital Audio Corporation (c) 1998 - 2004
+@@ -5,22 +6,6 @@
+    www.echoaudio.com
+ 
+    This file is part of Echo Digital Audio's generic driver library.
+-
+-   Echo Digital Audio's generic driver library is free software;
+-   you can redistribute it and/or modify it under the terms of
+-   the GNU General Public License as published by the Free Software
+-   Foundation.
+-
+-   This program is distributed in the hope that it will be useful,
+-   but WITHOUT ANY WARRANTY; without even the implied warranty of
+-   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+-   GNU General Public License for more details.
+-
+-   You should have received a copy of the GNU General Public License
+-   along with this program; if not, write to the Free Software
+-   Foundation, Inc., 59 Temple Place - Suite 330, Boston,
+-   MA  02111-1307, USA.
+-
+    *************************************************************************
+ 
+  Translation from C++ and adaptation for use in ALSA-Driver
+diff --git a/sound/pci/echoaudio/mona_dsp.c b/sound/pci/echoaudio/mona_dsp.c
+index 9bb6a174745c..6089152eb246 100644
+--- a/sound/pci/echoaudio/mona_dsp.c
++++ b/sound/pci/echoaudio/mona_dsp.c
+@@ -1,3 +1,4 @@
++// SPDX-License-Identifier: GPL-2.0-only
+ /****************************************************************************
+ 
+    Copyright Echo Digital Audio Corporation (c) 1998 - 2004
+@@ -5,22 +6,6 @@
+    www.echoaudio.com
+ 
+    This file is part of Echo Digital Audio's generic driver library.
+-
+-   Echo Digital Audio's generic driver library is free software;
+-   you can redistribute it and/or modify it under the terms of
+-   the GNU General Public License as published by the Free Software
+-   Foundation.
+-
+-   This program is distributed in the hope that it will be useful,
+-   but WITHOUT ANY WARRANTY; without even the implied warranty of
+-   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+-   GNU General Public License for more details.
+-
+-   You should have received a copy of the GNU General Public License
+-   along with this program; if not, write to the Free Software
+-   Foundation, Inc., 59 Temple Place - Suite 330, Boston,
+-   MA  02111-1307, USA.
+-
+    *************************************************************************
+ 
+  Translation from C++ and adaptation for use in ALSA-Driver
+diff --git a/sound/pci/ens1371.c b/sound/pci/ens1371.c
+index ca0da0ab40b6..694978c4b22d 100644
+--- a/sound/pci/ens1371.c
++++ b/sound/pci/ens1371.c
+@@ -1,2 +1,3 @@
++// SPDX-License-Identifier: GPL-2.0
+ #define CHIP1371
+ #include "ens1370.c"
+-- 
+2.43.0
+

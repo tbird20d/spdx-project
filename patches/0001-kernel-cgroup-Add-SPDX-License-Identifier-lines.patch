@@ -1,0 +1,61 @@
+From 85cfc1597c9ba7101a3493796528d3e19992cc42 Mon Sep 17 00:00:00 2001
+From: Tim Bird <tim.bird@sony.com>
+Date: Wed, 14 Jan 2026 13:05:47 -0700
+Subject: [PATCH] kernel: cgroup: Add SPDX-License-Identifier lines
+
+Add GPL-2.0 SPDX license id lines to a few old
+files, replacing the reference to the COPYING file.
+
+The COPYING file at the time of creation of these files
+(2007 and 2005) was GPL-v2.0, with an additional clause
+indicating that only v2 applied.
+
+Signed-off-by: Tim Bird <tim.bird@sony.com>
+---
+ kernel/cgroup/cgroup.c | 5 +----
+ kernel/cgroup/cpuset.c | 5 +----
+ 2 files changed, 2 insertions(+), 8 deletions(-)
+
+diff --git a/kernel/cgroup/cgroup.c b/kernel/cgroup/cgroup.c
+index 554a02ee298b..5f0d33b04910 100644
+--- a/kernel/cgroup/cgroup.c
++++ b/kernel/cgroup/cgroup.c
+@@ -1,3 +1,4 @@
++// SPDX-License-Identifier: GPL-2.0
+ /*
+  *  Generic process-grouping system.
+  *
+@@ -20,10 +21,6 @@
+  *  2003-10-22 Updates by Stephen Hemminger.
+  *  2004 May-July Rework by Paul Jackson.
+  *  ---------------------------------------------------
+- *
+- *  This file is subject to the terms and conditions of the GNU General Public
+- *  License.  See the file COPYING in the main directory of the Linux
+- *  distribution for more details.
+  */
+ 
+ #define pr_fmt(fmt) KBUILD_MODNAME ": " fmt
+diff --git a/kernel/cgroup/cpuset.c b/kernel/cgroup/cpuset.c
+index 3e8cc34d8d50..c06e2e96f79d 100644
+--- a/kernel/cgroup/cpuset.c
++++ b/kernel/cgroup/cpuset.c
+@@ -1,3 +1,4 @@
++// SPDX-License-Identifier: GPL-2.0
+ /*
+  *  kernel/cpuset.c
+  *
+@@ -16,10 +17,6 @@
+  *  2006 Rework by Paul Menage to use generic cgroups
+  *  2008 Rework of the scheduler domains and CPU hotplug handling
+  *       by Max Krasnyansky
+- *
+- *  This file is subject to the terms and conditions of the GNU General Public
+- *  License.  See the file COPYING in the main directory of the Linux
+- *  distribution for more details.
+  */
+ #include "cpuset-internal.h"
+ 
+-- 
+2.43.0
+

@@ -1,0 +1,28 @@
+From 693df25dbab42f24e9897430e8b878af6d2531cb Mon Sep 17 00:00:00 2001
+From: Tim Bird <tbird20d@yahoo.com>
+Date: Wed, 28 Jan 2026 12:28:24 -0700
+Subject: [PATCH] kernel: adjust cpu.c SPDX id
+
+Rusty Russell's intent was to have his files licensed as
+GPL-2.0-or-later.  Reflect that intent by adjusting the
+SPDX-License-Identifier line for cpu.c
+
+Signed-off-by: Tim Bird <tbird20d@yahoo.com>
+Link: https://lore.kernel.org/linux-spdx/875x8yw4n6.fsf@rustcorp.com.au/
+---
+ kernel/cpu.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/kernel/cpu.c b/kernel/cpu.c
+index 5185c0be847a0..a7a1cf8ea8e08 100644
+--- a/kernel/cpu.c
++++ b/kernel/cpu.c
+@@ -1,4 +1,4 @@
+-// SPDX-License-Identifier: GPL-2.0
++// SPDX-License-Identifier: GPL-2.0-or-later
+ /* CPU control.
+  * (C) 2001, 2002, 2003, 2004 Rusty Russell
+  */
+-- 
+2.21.0
+

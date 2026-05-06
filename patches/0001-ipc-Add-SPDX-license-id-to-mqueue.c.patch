@@ -1,0 +1,34 @@
+From e3cfdde09d4d81ae6d4258a38a0045b1df739235 Mon Sep 17 00:00:00 2001
+From: Tim Bird <tim.bird@sony.com>
+Date: Sat, 17 Jan 2026 13:13:04 -0700
+Subject: [PATCH] ipc: Add SPDX license id to mqueue.c
+
+Add GPL-2.0 license id to file, replacing reference to
+GPL in the header comment.
+
+Signed-off-by: Tim Bird <tim.bird@sony.com>
+---
+ ipc/mqueue.c | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+
+diff --git a/ipc/mqueue.c b/ipc/mqueue.c
+index c4f6d65596cf..da2f6a289cc8 100644
+--- a/ipc/mqueue.c
++++ b/ipc/mqueue.c
+@@ -1,3 +1,4 @@
++// SPDX-License-Identifier: GPL-2.0
+ /*
+  * POSIX message queues filesystem for Linux.
+  *
+@@ -9,8 +10,6 @@
+  *			    Manfred Spraul	    (manfred@colorfullife.com)
+  *
+  * Audit:                   George Wilson           (ltcgcw@us.ibm.com)
+- *
+- * This file is released under the GPL.
+  */
+ 
+ #include <linux/capability.h>
+-- 
+2.43.0
+

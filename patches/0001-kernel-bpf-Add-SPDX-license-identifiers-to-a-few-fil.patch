@@ -1,0 +1,59 @@
+From e55e9f6df615319fa30fa8bc14d93febff358da8 Mon Sep 17 00:00:00 2001
+From: Tim Bird <tim.bird@sony.com>
+Date: Wed, 14 Jan 2026 18:16:22 -0700
+Subject: [PATCH] kernel: bpf: Add SPDX license identifiers to a few files
+
+Add GPL-2.0 SPDX-License-Identifier lines to some files,
+and remove a reference to COPYING, and boilerplate warranty
+text, from offload.c.
+
+Signed-off-by: Tim Bird <tim.bird@sony.com>
+---
+ kernel/bpf/offload.c | 12 +-----------
+ kernel/bpf/ringbuf.c |  1 +
+ kernel/bpf/token.c   |  1 +
+ 3 files changed, 3 insertions(+), 11 deletions(-)
+
+diff --git a/kernel/bpf/offload.c b/kernel/bpf/offload.c
+index 42ae8d595c2c..227f9b5f388b 100644
+--- a/kernel/bpf/offload.c
++++ b/kernel/bpf/offload.c
+@@ -1,16 +1,6 @@
++// SPDX-License-Identifier: GPL-2.0
+ /*
+  * Copyright (C) 2017-2018 Netronome Systems, Inc.
+- *
+- * This software is licensed under the GNU General License Version 2,
+- * June 1991 as shown in the file COPYING in the top-level directory of this
+- * source tree.
+- *
+- * THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM "AS IS"
+- * WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING,
+- * BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+- * FOR A PARTICULAR PURPOSE. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE
+- * OF THE PROGRAM IS WITH YOU. SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME
+- * THE COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION.
+  */
+ 
+ #include <linux/bpf.h>
+diff --git a/kernel/bpf/ringbuf.c b/kernel/bpf/ringbuf.c
+index f6a075ffac63..35ae64ade36b 100644
+--- a/kernel/bpf/ringbuf.c
++++ b/kernel/bpf/ringbuf.c
+@@ -1,3 +1,4 @@
++// SPDX-License-Identifier: GPL-2.0
+ #include <linux/bpf.h>
+ #include <linux/btf.h>
+ #include <linux/err.h>
+diff --git a/kernel/bpf/token.c b/kernel/bpf/token.c
+index feecd8f4dbf9..7e4aa1e44b50 100644
+--- a/kernel/bpf/token.c
++++ b/kernel/bpf/token.c
+@@ -1,3 +1,4 @@
++// SPDX-License-Identifier: GPL-2.0
+ #include <linux/bpf.h>
+ #include <linux/vmalloc.h>
+ #include <linux/file.h>
+-- 
+2.43.0
+

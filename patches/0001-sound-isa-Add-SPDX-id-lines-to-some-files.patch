@@ -1,0 +1,94 @@
+From fe1da19e232337150ed2023cf4085cdd6a430546 Mon Sep 17 00:00:00 2001
+From: Tim Bird <tim.bird@sony.com>
+Date: Thu, 12 Feb 2026 12:39:58 -0700
+Subject: [PATCH] sound: isa: Add SPDX id lines to some files
+
+Add SPDX-License-Identifier lines to several files where
+they are missing, mostly in the sound/isa subdir.
+Use GPL-2.0 as the id.
+
+Signed-off-by: Tim Bird <tim.bird@sony.com>
+---
+ sound/hda/core/trace.c             | 1 +
+ sound/isa/gus/interwave-stb.c      | 1 +
+ sound/isa/msnd/msnd_classic.c      | 1 +
+ sound/isa/opti9xx/opti92x-cs4231.c | 1 +
+ sound/isa/opti9xx/opti93x.c        | 1 +
+ sound/isa/sb/jazz16.c              | 7 +------
+ sound/isa/sb/sbawe.c               | 1 +
+ 7 files changed, 7 insertions(+), 6 deletions(-)
+
+diff --git a/sound/hda/core/trace.c b/sound/hda/core/trace.c
+index ca2d6bd94518..c18759ca48ea 100644
+--- a/sound/hda/core/trace.c
++++ b/sound/hda/core/trace.c
+@@ -1,3 +1,4 @@
++// SPDX-License-Identifier: GPL-2.0
+ /*
+  * tracepoint definitions for HD-audio core drivers
+  */
+diff --git a/sound/isa/gus/interwave-stb.c b/sound/isa/gus/interwave-stb.c
+index dbe4f48a9846..9b3468c8bc43 100644
+--- a/sound/isa/gus/interwave-stb.c
++++ b/sound/isa/gus/interwave-stb.c
+@@ -1,2 +1,3 @@
++// SPDX-License-Identifier: GPL-2.0
+ #define SNDRV_STB
+ #include "interwave.c"
+diff --git a/sound/isa/msnd/msnd_classic.c b/sound/isa/msnd/msnd_classic.c
+index 3b23a096fa4e..9c37c9fb94ab 100644
+--- a/sound/isa/msnd/msnd_classic.c
++++ b/sound/isa/msnd/msnd_classic.c
+@@ -1,3 +1,4 @@
++// SPDX-License-Identifier: GPL-2.0
+ /* The work is in msnd_pinnacle.c, just define MSND_CLASSIC before it. */
+ #define MSND_CLASSIC
+ #include "msnd_pinnacle.c"
+diff --git a/sound/isa/opti9xx/opti92x-cs4231.c b/sound/isa/opti9xx/opti92x-cs4231.c
+index b17ab19f6d81..e27dc9093c02 100644
+--- a/sound/isa/opti9xx/opti92x-cs4231.c
++++ b/sound/isa/opti9xx/opti92x-cs4231.c
+@@ -1,2 +1,3 @@
++// SPDX-License-Identifier: GPL-2.0
+ #define CS4231
+ #include "opti92x-ad1848.c"
+diff --git a/sound/isa/opti9xx/opti93x.c b/sound/isa/opti9xx/opti93x.c
+index bad9da521bf9..cd1fa4635b26 100644
+--- a/sound/isa/opti9xx/opti93x.c
++++ b/sound/isa/opti9xx/opti93x.c
+@@ -1,3 +1,4 @@
++// SPDX-License-Identifier: GPL-2.0
+ #define OPTi93X
+ #include "opti92x-ad1848.c"
+ 
+diff --git a/sound/isa/sb/jazz16.c b/sound/isa/sb/jazz16.c
+index 69d9bfb6c14c..3f2a5c4e47a7 100644
+--- a/sound/isa/sb/jazz16.c
++++ b/sound/isa/sb/jazz16.c
+@@ -1,14 +1,9 @@
+-
++// SPDX-License-Identifier: GPL-2.0
+ /*
+  * jazz16.c - driver for Media Vision Jazz16 based soundcards.
+  * Copyright (C) 2009 Krzysztof Helt <krzysztof.h1@wp.pl>
+  * Based on patches posted by Rask Ingemann Lambertsen and Rene Herman.
+  * Based on OSS Sound Blaster driver.
+- *
+- * This file is subject to the terms and conditions of the GNU General Public
+- * License.  See the file COPYING in the main directory of this archive for
+- * more details.
+- *
+  */
+ 
+ #include <linux/init.h>
+diff --git a/sound/isa/sb/sbawe.c b/sound/isa/sb/sbawe.c
+index 2ec52a3473a2..1e00a6b4a1bd 100644
+--- a/sound/isa/sb/sbawe.c
++++ b/sound/isa/sb/sbawe.c
+@@ -1,2 +1,3 @@
++// SPDX-License-Identifier: GPL-2.0
+ #define SNDRV_SBAWE
+ #include "sb16.c"
+-- 
+2.43.0
+

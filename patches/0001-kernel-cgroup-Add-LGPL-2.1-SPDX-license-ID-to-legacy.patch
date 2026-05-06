@@ -1,0 +1,40 @@
+From 60a3692b009f7958ebffcd0f6d62624d3fd8e6a9 Mon Sep 17 00:00:00 2001
+From: Tim Bird <tim.bird@sony.com>
+Date: Wed, 14 Jan 2026 14:22:35 -0700
+Subject: [PATCH] kernel: cgroup: Add LGPL-2.1 SPDX license ID to
+ legacy_freezer.c
+
+Add an appropriate SPDX-License-Identifier line to the file,
+and remove the GNU boilerplate text.
+
+Signed-off-by: Tim Bird <tim.bird@sony.com>
+---
+ kernel/cgroup/legacy_freezer.c | 9 +--------
+ 1 file changed, 1 insertion(+), 8 deletions(-)
+
+diff --git a/kernel/cgroup/legacy_freezer.c b/kernel/cgroup/legacy_freezer.c
+index 915b02f65980..817c33450fee 100644
+--- a/kernel/cgroup/legacy_freezer.c
++++ b/kernel/cgroup/legacy_freezer.c
+@@ -1,17 +1,10 @@
++// SPDX-License-Identifier: LGPL-2.1
+ /*
+  * cgroup_freezer.c -  control group freezer subsystem
+  *
+  * Copyright IBM Corporation, 2007
+  *
+  * Author : Cedric Le Goater <clg@fr.ibm.com>
+- *
+- * This program is free software; you can redistribute it and/or modify it
+- * under the terms of version 2.1 of the GNU Lesser General Public License
+- * as published by the Free Software Foundation.
+- *
+- * This program is distributed in the hope that it would be useful, but
+- * WITHOUT ANY WARRANTY; without even the implied warranty of
+- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+  */
+ 
+ #include <linux/export.h>
+-- 
+2.43.0
+
