@@ -75,7 +75,7 @@ if [ -n "$SHOW_BRACES" ] ; then
     echo "{{{"
 fi
 
-echo "Here is a summary of the top-level Linux kernel source tree directories"
+echo "Here is a summary of the top-level Linux kernel directories"
 echo "and how many source files are missing SPDX headers"
 echo "=================================================="
 echo -n "KERNEL_SRC="

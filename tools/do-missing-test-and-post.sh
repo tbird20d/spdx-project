@@ -39,3 +39,9 @@ PAGE_NAME="Kernel_Dirs_Missing_SPDX_Counts_$TIMESTAMP"
 # has colons
 echo "Putting data to boot-time wiki..."
 tbclient -w birdcloud.org:/bc put_page $PAGE_NAME --infile $RESULTS_FILE
+
+echo "  You should be able to access the test results at:"
+echo "     https://birdcloud.org/bc/$PAGE_NAME"
+echo "       or possibly"
+echo "     https://birdcloud.org/bc/KTest_Missing_SPDX"
+echo "       if this is the latest test results file"
