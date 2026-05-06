@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # spdxnext.sh - show the next set of files to work on for
 # adding missing SPDX-License-Identifier lines
 #
@@ -9,17 +9,47 @@ WORKING_AREAS="sound crypto net lib"
 #WORKING_AREAS="arch include drivers"
 #
 
+DEFAULT_KERNEL_SRC=/home/tbird/work/torvalds/linux
+
+if [ "$1" = "-h" ] ; then
+    cat <<USAGE
+Usage: spdxnext.sh [-h]
+
+Show a list of the files to work on next for the SPDX project.
+These are files in a specific directory (or set of directories)
+that are missing SPDX ID lines.
+
+To update the set of directories to report on, update the
+WORKING_AREAS variable in this script.
+
+If this script is not run at the top of a kernel source directory
+then run it in the default location: $DEFAULT_KERNEL_SRC
+
+Options:
+ -h               Show this usage help
+USAGE
+    exit 0
+fi
+
+
+# arguments for spdxcheck.py
+# limit scan to source files (omit files not used in a build)
 ARGS=-e scripts/spdx-omit-nobuild-files
 
-# next area to work on:
-# sound
-
 if [ ! -f MAINTAINERS ] ; then
-    echo "Please run this script at the root of a kernel source tree"
-    exit 1
+    echo "Using default kernel src dir: $DEFAULT_KERNEL_SRC"
+    pushd $DEFAULT_KERNEL_SRC >/dev/null
+    DID_PUSHD=1
 fi
+
+echo "Working areas are: $WORKING_AREAS"
 
 for AREA in $WORKING_AREAS ; do
     echo "Source files missing SPDX-License-Identifier lines in '$AREA':"
     scripts/spdxcheck.py $ARGS -f $AREA 2>&1 | grep [.][chS]
 done
+
+if [ -n "$DID_PUSHD" ] ; then
+    popd >/dev/null
+fi
+
