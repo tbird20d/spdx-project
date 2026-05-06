@@ -1,5 +1,5 @@
 #!/bin/bash
-# spdxnext.sh - show the next set of files to work on for
+# spdx-next.sh - show the next set of files to work on for
 # adding missing SPDX-License-Identifier lines
 #
 # init ipc io_uring mm security usr
@@ -8,12 +8,15 @@
 WORKING_AREAS="sound crypto net lib"
 #WORKING_AREAS="arch include drivers"
 #
+#
+# uncomment next line to debug
+#set -x
 
 DEFAULT_KERNEL_SRC=/home/tbird/work/torvalds/linux
 
 if [ "$1" = "-h" ] ; then
     cat <<USAGE
-Usage: spdxnext.sh [-h]
+Usage: spdx-next.sh [-h]
 
 Show a list of the files to work on next for the SPDX project.
 These are files in a specific directory (or set of directories)
