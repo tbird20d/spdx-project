@@ -3,22 +3,13 @@
 #   (specifically, create a sorted list of files that were affected by a
 #    set of commits)
 #
-# Usage: files-worked-on [scope-qualifiers]
-#
-# <scope-qualifiers> are any valid arguments usable with 'git log' to restrict
-# the set of commits to analyze.  Some common ones are:
-# v3.4..  - set a baseline version (only include commits after v3.4)
-# --author="*sony*"
-# --since=2023-04-01
-#
-# uses environment var GIT_SCOPE, if defined
-#
-# See README-git-analysis-tools.txt for details about the suite of
-# tools that this tool is part of
+# This is useful for checking what a particular author has been
+# working on lately (through the whole tree).  Use git log <dir>
+# to see what authors have been working in a particular dir.
 #
 
 # uncomment the next line to debug this script
-set -x
+#set -x
 
 KERNEL_SRC=/home/tbird/work/torvalds/linux
 
@@ -26,25 +17,44 @@ usage() {
 cat <<HERE
 Usage: files-worked-on <options> <scope-args>
 
-List the files worked in a git repository, using the specified scope
-arguments.  The scope arguments are the same as passed to 'git log',
-and are usually something like --author= and --since=
+List the files worked on in a git repository, for commits
+that match the specified scope arguments.  The scope
+arguments are passed to 'git log', and are usually
+something like --author= and --since=
+
+ Some common scope args types are:
+   arch/arm64         - get files worked on by commits in the arch/arm64 dir
+   --author="*sony*"  - get files worked on by Sony developers
+   --since=2023-04-01 - get files worked on since April 1, 2023
+   v3.4..             - get files worked on since the v3.4 tag
+
+Output is in diffstat format
+
+Note that this uses environment var GIT_SCOPE, if defined
 
 Example:
 files-worked-on --author=tim.bird --since=2024-01-01
 
 Options:
- -h   Show this usage help
- -f   Force using the current directory.  If this option is not specified
-      and there is no MAINTAINERS file in the current directory, then
-      change to a default KERNEL_SRC directory, before running the command.
-      The default KERNEL_SRC dir is: $KERNEL_SRC
+ -h        Show this usage help
+ -k <dir>  Use <dir> as the kernel source dir.  Otherwise, this
+           script tries to autodetect it.
+ -f        Force using the current directory, instead of autodetecting
+           the default (which is: '$KERNEL_SRC').
 HERE
 }
 
 if [ "$1" = "-h" ] ; then
     usage
     exit 0
+fi
+
+if [ "$1" = "-k" ] ; then
+    shift
+    KERNEL_SRC="$1"
+    shift
+    pushd $KERNEL_SRC >/dev/null
+    DID_PUSHD=1
 fi
 
 CHECK_DIR=1
@@ -68,16 +78,17 @@ if [ -n "$SCOPE" ] ; then
 fi
 COMMIT_LIST=$(git log --all-match --pretty=%h -i $SCOPE)
 
+COMMIT_COUNT=$(echo $COMMIT_LIST | wc -w)
+echo "Number of commits = $COMMIT_COUNT"
+
 TMPFILE=$(mktemp)
 for COMMIT in $COMMIT_LIST ; do
     git show $COMMIT | diffstat -p 0 | head -n-1 >>$TMPFILE
 done
 
-cat $TMPFILE | sort
+# remove leading ' b/'
+cat $TMPFILE | sed "s#^ b/##" | sort
 rm $TMPFILE
-
-COMMIT_COUNT=$(echo $COMMIT_LIST | wc -w)
-echo "COMMIT_COUNT=$COMMIT_COUNT"
 
 if [ -n "$DID_PUSHD" ] ; then
     popd >/dev/null
