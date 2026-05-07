@@ -3,8 +3,7 @@ Here is some information about the tools in this directory:
 The tools fall into 4 categories:
  helper tools, file list checkers, report tools, build log scanner
 
-Tools
-#####
+# Tools
 
  * helper tools:
    * guess-license - scan file for license text and suggest an appropriate SDPX-license identifier line
@@ -35,14 +34,12 @@ Tools
  * build log scanner:
    * scan-build-log - my attempt at deriving build files from output of kernel make
 
-Data
-####
+# Data
  * scripts/spdx-omit-nobuild-files
    * files to omit some files and dirs from inclusion in spdxcheck.py reports
      * to be put in: scripts/spdx-omit-nobuild-files in a kernel source tree
 
-Other
-#####
+# Other
 Tools and data not in this directory:
 ~/work/kselftest/ktap-benchmark-support/spdx-missing-test.sh
  - produces ktap value lines and results lines for kernel top-level directories
