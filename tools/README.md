@@ -49,6 +49,9 @@ Tools and data not in this directory:
  - /home/tbird/spdx-stuff/sdpx-missing-[criteria|ref-value].txt files
 
 
+# Workflows
+
+## patch work
 The general flow of operation for patch work is:
  * determine the file or set of files to work on
    * use spdx-next.sh or 'grep -L SPDX-License <dir>/* ' to find the next
@@ -67,6 +70,9 @@ The general flow of operation for patch work is:
  * write a script (based on one in mysends dir) to send the patch
  * send the patch
 
+## status checks
 The general flow of operation for status report work is:
- * *FIXTHIS - add data here*
+ * *FIXTHIS - add workflow here*
 
+## report generation
+ * *FIXTHIS - add workflow here*
