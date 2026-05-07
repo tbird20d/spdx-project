@@ -81,7 +81,7 @@ The general flow of operation for status report work is:
    * make a complete source file list for the build
      * use get-files-from-sbom.sh
    * find files missing source from the source file list
-     * use get-missing-spdx-for-source-files.sh
+     * use check-files-for-spdx.sh -m
    * find priority directories to work in
      * use top-dirs-from-file-list.py
    * find files in those dirs (whether source files or not), that need work

@@ -12,7 +12,7 @@
 
 usage() {
     cat <<USAGE
-Usage: check-files-for-spdx.sh <files-list-file>
+Usage: check-files-for-spdx.sh [<files-list-file>|--]
 
 Read a file containing the list of files, and check
 whether each one has an SPDX ID line or not.
@@ -22,20 +22,24 @@ to only source files.  If '-k' is specified, filter the
 list to only source files used in a kernel image (omit tools,
 scripts, etc.)
 
-Output is in CSV format, where the first field is the filename,
+Output can be in CSV mode, or flat file list mode.
+(use -m for flat file list of missing files only)
+
+If output is in CSV format, the first field is the filename,
 and the second field indicates whether the file has an
 SPDX identifier line or not:
 
-  has spdx = has an SPDX id line
-  no spdx  = does not have an SPDX id line
+  'has spdx' = has an SPDX id line
+  'no spdx'  = does not have an SPDX id line
 
 Options:
  -h    Show this usage help
  -m    Only show files missing an SPDX line.  In this mode, the
        output is NOT in CSV mode, but just a list of filenames.
+ --    Use 'find' to generate the list of files to check
  -s    Limit find to source files (files ending in .c, .h, and .S)
- -k    Omit files that are not part of a kernel image.
-       This omits tools, scripts, etc.
+ -k    Kernel build files only. Omit files that are not part of a
+       kernel build, such as tools, scripts, etc.
  -d    Show debug output.
 
 USAGE
