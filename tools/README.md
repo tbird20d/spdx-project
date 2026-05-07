@@ -59,7 +59,7 @@ The general flow of operation for patch work is:
  * research the license to add
    * use git-when-introduced.sh to get history info on a file, if needed
    * use guess-license to figure out the license to use, based on a
-     licenses header text
+     file's license header text
    * use spdx-count-ids.sh or guess-license to see what other files in
      this sub-system are using for licenses. (ie maybe try to match them)
  * add the license:
