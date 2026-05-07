@@ -7,6 +7,8 @@ The tools fall into 4 categories:
 
  * helper tools:
    * guess-license - scan file for license text and suggest an appropriate SDPX-license identifier line
+   * spvi - adds an SPDX id line to a file, then opens it for editing
+     - you can control which id it adds with a command line option
    * git-when-introduced.sh - provide info on when a file was first introduced into the kernel source tree
      - should be used in a Linux repo with full history
    * git-when-deleted.sh - provide info on when a file was deleted from the kernel source tree
@@ -46,4 +48,25 @@ Tools and data not in this directory:
  - uses ~/work/kselftest/ktap-benchmark-support/process-results.py and
  - /home/tbird/spdx-stuff/sdpx-missing-[criteria|ref-value].txt files
 
+
+The general flow of operation for patch work is:
+ * determine the file or set of files to work on
+   * use spdx-next.sh or 'grep -L SPDX-License <dir>/* ' to find the next
+   files to work on
+ * research the license to add
+   * use git-when-introduced.sh to get history info on a file, if needed
+   * use guess-license to figure out the license to use, based on a
+     licenses header text
+   * use spdx-count-ids.sh or guess-license to see what other files in
+     this sub-system are using for licenses. (ie maybe try to match them)
+ * add the license:
+   * use spvi to automatically pre-pend the right license format for
+     the file type (.c or .h format)
+ * create the patch, validate it, collect recipients
+   * See **guidelines** for this
+ * write a script (based on one in mysends dir) to send the patch
+ * send the patch
+
+The general flow of operation for status report work is:
+ * *FIXTHIS - add data here*
 
