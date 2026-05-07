@@ -9,10 +9,11 @@
 
 # uncomment to debug
 #set -x
+#
 
 usage() {
     cat <<USAGE
-Usage: check-files-for-spdx.sh [<files-list-file>|--]
+Usage: check-files-for-spdx.sh [options] [<files-list-file>|--]
 
 Read a file containing the list of files, and check
 whether each one has an SPDX ID line or not.
@@ -36,7 +37,8 @@ Options:
  -h    Show this usage help
  -m    Only show files missing an SPDX line.  In this mode, the
        output is NOT in CSV mode, but just a list of filenames.
- --    Use 'find' to generate the list of files to check
+ --    Read the list of filenames to scan from stdin.
+ -f    Use 'find' to generate the list of files to check.
  -s    Limit find to source files (files ending in .c, .h, and .S)
  -k    Kernel build files only. Omit files that are not part of a
        kernel build, such as tools, scripts, etc.
@@ -67,8 +69,12 @@ while [ -n "$1" ] ; do
             KERNEL_SOURCE=1
             shift
             ;;
-        --)
+        -f)
             USE_FIND=1
+            shift
+            ;;
+        --)
+            FILE_LIST="/dev/stdin"
             shift
             ;;
         *)
@@ -107,7 +113,13 @@ if [ -n "$USE_FIND" ] ; then
     TMP_FILE=$FILE_LIST
 fi
 
-for f in $(cat $FILE_LIST) ; do
+if [ -n "$ONLY_MISSING" ] ; then
+    # this is faster
+    cat $FILE_LIST | xargs grep -L SPDX-License-Identifier:
+    exit 0
+fi
+
+while IFS= read f ; do
     # skip 'is' and 'missing', so we can run this file on its own output
     if [ "$f" = "is" ]  ; then
         continue
@@ -130,7 +142,7 @@ for f in $(cat $FILE_LIST) ; do
             echo "$f"
         fi
     fi
-done
+done <${FILE_LIST}
 
 # clean up temp files
 if [ -n "$TMP_FILE" ] ; then
