@@ -3,7 +3,9 @@ Here is some information about the tools in this directory:
 The tools fall into 4 categories:
  helper tools, file list checkers, report tools, build log scanner
 
-== Tools ==
+Tools
+#####
+
  * helper tools:
    * guess-license - scan file for license text and suggest an appropriate SDPX-license identifier line
    * git-when-introduced.sh - provide info on when a file was first introduced into the kernel source tree
@@ -16,24 +18,31 @@ The tools fall into 4 categories:
 
  * file list checkers: (check specific file lists for missing spdx id lines)
    * check-files-for-spdx.sh - scan a list of files for spdx id lines
-   * get-missing-spdx-for-source-files.sh - scan only source files for missing spdx id lines
    * top-dirs-from-file-list.py - gives counts of how many files are in each top dir (used to see missing counts from build data)
+   * get-missing-spdx-for-source-files.sh - scan only source files for missing spdx id lines
 
- * generate kernel reports:
-   * gen-spdx-top-dir-report.sh
-   * report-spdx-data.sh - all spdx lines, their author and date of introduction
+ * report tools: (generate kernel reports):
+   * gen-spdx-top-dir-report.sh - generates a detailed set of stats from spdxcheck
+     - produces details spdxcheck reports
+   * report-spdx-data.sh - finds all spdx lines, their author and date of introduction
      - generates a csv file
    * author-report-breakdown-by-author.sh
    * author-report-breakdown-by-year.sh
+   * get-kernel-spdx-missing-list-top-dirs.sh - creates a summary report of missing files for top kernel dirs
+   * do-missing-test-and-post.sh - creates a missing report and posts it to a wiki
+     - sends data to the wiki at: https://birdcloud.org/bc
 
  * build log scanner:
    * scan-build-log - my attempt at deriving build files from output of kernel make
 
-== Tools ==
+Data
+####
  * scripts/spdx-omit-nobuild-files
    * files to omit some files and dirs from inclusion in spdxcheck.py reports
      * to be put in: scripts/spdx-omit-nobuild-files in a kernel source tree
 
+Other
+#####
 Tools and data not in this directory:
 ~/work/kselftest/ktap-benchmark-support/spdx-missing-test.sh
  - produces ktap value lines and results lines for kernel top-level directories
