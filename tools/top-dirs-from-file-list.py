@@ -64,8 +64,14 @@ dirvals = sorted(dirvals, key=itemgetter(1))
 
 print("top dirs for '%s':" % file_list_file )
 print("-------------------------------------")
+total_count = 0
 for dirname, count in dirvals:
     print(f"{dirname:20} = {count:5} files")
+    total_count += count
+
+print("-------------------------------------")
+dirname = "Total"
+print(f"{dirname:20} = {total_count:5} files")
 
 if verbose:
     print("="*40)
