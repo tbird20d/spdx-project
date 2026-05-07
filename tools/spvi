@@ -22,6 +22,7 @@ Options:
  -m     Default to MIT
  -b     Default to BSD
  -3     Default to BSD-3-Clause
+ -g3    Default to GPL-2.0 OR BSD-3-Clause
 HERE
     exit 0
 }
@@ -54,6 +55,10 @@ while [ -n "$1" ] ; do
             ;;
         -3)
             SPDX_ID="BSD-3-Clause"
+            shift
+            ;;
+        -g3)
+            SPDX_ID="GPL-2.0 OR BSD-3-Clause"
             shift
             ;;
         -b)
