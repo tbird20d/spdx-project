@@ -54,7 +54,7 @@ Tools and data not in this directory:
 ## patch work
 The general flow of operation for patch work is:
  * determine the file or set of files to work on
-   * use spdx-next.sh or 'grep -L SPDX-License <dir>/* ' to find the next
+   * use spdx-next.sh or 'grep -L SPDX-License {dir}/* ' to find the next
    files to work on
  * research the license to add
    * use git-when-introduced.sh to get history info on a file, if needed
