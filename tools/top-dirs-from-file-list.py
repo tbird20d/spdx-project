@@ -23,10 +23,15 @@ Options:
 """)
     sys.exit(0)
 
+show_missing = True
 verbose = False
 if "-v" in sys.argv:
     sys.argv.remove("-v")
     verbose = True
+
+# automatically omit missing file warnings if we're not in a kernel tree
+if not os.path.isfile("MAINTAINERS"):
+    show_missing = False
 
 try:
     file_list_file = sys.argv[1]
@@ -37,7 +42,12 @@ dir_count = {}
 dir_count2 = {}
 for line in open(file_list_file, "r").readlines():
     line = line.strip()
-    if not os.path.isfile(line):
+
+    # warn about missing files
+    # this should be rare - only if file list is for different kernel
+    # version than one we're in
+    if show_missing and not os.path.isfile(line):
+        print("Warning: missing file '%s'" % line)
         continue
 
     top_dir = line.split("/")[0]
@@ -52,7 +62,7 @@ for line in open(file_list_file, "r").readlines():
 dirvals = dir_count.items()
 dirvals = sorted(dirvals, key=itemgetter(1))
 
-print("top dirs:")
+print("top dirs for '%s':" % file_list_file )
 print("-------------------------------------")
 for dirname, count in dirvals:
     print(f"{dirname:20} = {count:5} files")
