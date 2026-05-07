@@ -4,15 +4,25 @@
 # usage: get-files-from-sbom.sh sbom-source.spdx.json
 
 if [ ! -f "$1" ] ; then
-    echo "Usage: get-files-from-sbom.sh sbom-source.spdx.json"
+    cat <<USAGE
+Usage: get-files-from-sbom.sh <sbom-source-spdx-json-filename>
+
+Generates a list of files in the kernel source tree based
+on the provided file, which should be a KernelSbom file
+This is usually named sbom-source.spdx.json, and is located
+in the build output directory for the build.
+USAGE
     exit 1
 fi
 
-# convert json to pretty format, find "name": lines, strip junk and sort
-cat $1 | jq | grep \"name\": | sed -e 's/.*name\": \"//' | sed -e 's/\",$//' | sort | tail -n+3 | sed -e "s/^linux\///"
+# convert json to pretty format, find "name": lines, strip junk, sort and filter
 
-# note: first two lines of the sorted list are bogus:
-# $(src-tree), KernelSbom"
-# remove them with: tail -n+3
-#
+# omit 'name: KernelSbom' line
+# note: first line of the sorted list are bogus:
+# '$(src-tree)'
+# remove them with: tail -n+2
 # also remove leading "linux/" in filenames
+
+# here it is in all its glory
+cat $1 | jq | grep \"name\": | grep -v "KernelSbom" | sed -e 's/.*name\": \"//' | sed -e 's/\",$//' | sort | tail -n+2 | sed -e "s/^linux\///"
+

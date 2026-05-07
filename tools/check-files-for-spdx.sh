@@ -83,7 +83,7 @@ if [ -n "$USE_FIND" ] ; then
     FILE_LIST=$(mktemp -q)
     if [ -n "$KERNEL_SOURCE" ] ; then
         if [ -n "$SOURCE_ONLY" ] ; then
-            find . -type f -name "*.[chS]" | grep -v "./Documentation/" | \
+            find . -type f -name "*.[chS]" -o -name "*.rs" | grep -v "./Documentation/" | \
                 grep -v "./tools" | grep -v "./scripts" | grep -v "./samples" \
                 | grep -v LICENSES  | grep -v "./kbuild" \
                 >$FILE_LIST
@@ -95,7 +95,7 @@ if [ -n "$USE_FIND" ] ; then
         fi
     else
         if [ -n "$SOURCE_ONLY" ] ; then
-            find . -type f -name "*.[chS]" >$FILE_LIST
+            find . -type f -name "*.[chS]" -o --name "*.rs" >$FILE_LIST
         else
             find . -type f >$FILE_LIST
         fi
