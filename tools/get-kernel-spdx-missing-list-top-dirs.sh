@@ -1,6 +1,9 @@
 #!/bin/bash
 # show a list of kernel top source directories, and the number of
 # SPDX files each is missing
+#
+
+KERNEL_SRC=/home/tbird/work/torvalds/linux
 
 usage() {
     cat <<USAGE
@@ -14,6 +17,8 @@ Options:
  -c          = Show core kernel dirs only (Omit arch and drivers)
  -d          = Show info for sub-dirs of 'drivers'
  -a          = Show info for sub-dirs of 'arch'
+ -k <srcdir> = Use the specified kernel srcdir, instead of the default:
+                 $KERNEL_SRC
  -b          = Add triple-braces around output.
                This is useful when putting output directly to a wiki.
 USAGE
@@ -45,10 +50,25 @@ while [ -n "$1" ] ; do
         shift
         continue
     fi
+    if [ "$1" = "-k" ] ; then
+        shift
+        KERNEL_SRC=$1
+        shift
+        continue
+    fi
     echo "Unknown arg '$1', use -h for usage help"
 done
 
-KERNEL_SRC=/home/tbird/work/torvalds/linux
+# Uncomment these lines to use this script on an old kernel tree
+# (which doesn't have scripts/spdxcheck.py or LICENSES)
+# Make sure KERNEL_SRC points to a modern kernel source tree (post 6.10)
+#cp $KERNEL_SRC/scripts/spdxcheck.py scripts
+#cp $KERNEL_SRC/scripts/spdxexclude scripts
+#git add scripts/spdxcheck.py scripts/spdxexclude
+#git commit -m "Add spdxcheck stuff"
+#cp -a $KERNEL_SRC/LICENSES .
+#git add LICENSES
+#git commit -m "Add LICENSES"
 
 DIR_LIST="arch block certs crypto drivers fs include init io_uring ipc \
     kernel lib mm net security sound usr virt"
